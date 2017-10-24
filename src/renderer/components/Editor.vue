@@ -1,0 +1,120 @@
+<template>
+  <main class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto py-5">
+        <div id="Quill"></div>
+      </div>
+    </div>
+  </main>
+</template>
+
+<script>
+import _ from 'lodash'
+import Quill from 'quill'
+// import 'quill/dist/quill.core.css'
+// import 'quill/dist/quill.snow.css'
+export default {
+  data () {
+    return {
+      quill: null,
+      previousCursor: 0
+    }
+  },
+
+  methods: {
+    getPayload () {
+      const selection = this.quill.getSelection()
+      const [line, offset] = this.quill.getLine(selection.index)
+      const text = line.domNode.textContent.trim()
+      const words = _.words(text, /[#a-zA-Z0-9]+/g)
+      let payload = {
+        selection,
+        line,
+        offset,
+        text,
+        words,
+        index: selection.index
+      }
+      return payload
+    },
+
+    initQuill () {
+      this.quill = new Quill('#Quill')
+      this.quill.focus()
+    },
+
+    handleEditorUpdate () {
+      this.quill.on('editor-change', () => {
+        let payload = this.getPayload()
+        console.log(payload, this.quill.editor.delta.ops)
+      })
+    },
+
+    handleTextUpdate () {
+      this.quill.on('text-change', (delta) => {
+        let payload = this.getPayload()
+
+        // console.log(payload, delta)
+
+        delta.ops.forEach(element => {
+          if (element.insert === ' ' || element.delete) {
+            payload.phrase = payload.text.slice(this.previousCursor, payload.offset)
+            this.previousCursor = payload.offset
+            this.matchHeader(payload)
+          }
+        })
+      })
+    },
+
+    matchHeader (payload) {
+      const cases = {
+        '#': 1,
+        '##': 2,
+        '###': 3,
+        '####': 4,
+        '#####': 5,
+        '######': 6
+      }
+
+      if (cases[payload.words[0]] && _.startsWith(payload.text, '#')) {
+        // this.quill.formatLine(payload.offset, 0, 'header', cases[payload.words[0]])
+        this.quill.formatLine(payload.index, 0, 'header', cases[payload.words[0]])
+      } else if (payload.offset === 0 || 1) {
+        this.quill.formatLine(payload.index, 0, 'header', false)
+      }
+    }
+
+  },
+
+  mounted () {
+    this.initQuill()
+    // this.handleEditorUpdate()
+    this.handleTextUpdate()
+    // this.quill.setContents({
+    //   'ops': [
+    //     {
+    //       'insert': '# Hello world'
+    //     },
+    //     {
+    //       'attributes': {
+    //         'header': 1
+    //       },
+    //       'insert': '\n'
+    //     }
+    //   ]
+    // })
+  }
+}
+</script>
+
+<style lang="scss">
+@import './../assets/main.scss';
+h1, h2, h3, h4, h5, h6 {
+  font-family: $fontBody;
+  font-weight: 600;
+}
+p {
+  font-family: $fontBody;
+  font-weight: 500;
+}
+</style>
