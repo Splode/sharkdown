@@ -5,11 +5,13 @@
 </template>
 
 <script>
-  export default {
-    name: 'sharkdown'
-  }
-</script>
+const cssLoader = require('./../utils/css-loader')
+export default {
+  name: 'sharkdown',
 
-<style>
-  /* CSS */
-</style>
+  created () {
+    const link = cssLoader.createCSS('static/themes/dracula.css')
+    cssLoader.mountToHead(link)
+  }
+}
+</script>

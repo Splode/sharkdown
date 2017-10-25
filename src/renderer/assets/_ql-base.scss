@@ -1,4 +1,13 @@
+.ql-clipboard {
+  left: -100000px;
+  height: 1px;
+  overflow-y: hidden;
+  position: absolute;
+  top: 50%;
+}
+
 .ql-editor {
+  letter-spacing: 1px;
   text-align: justify;
   &:focus {
     outline: 0;

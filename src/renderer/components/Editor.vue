@@ -27,19 +27,22 @@ export default {
       const [line, offset] = this.quill.getLine(selection.index)
       const text = line.domNode.textContent.trim()
       const words = _.words(text, /[#a-zA-Z0-9]+/g)
+      const index = selection.index
       let payload = {
         selection,
         line,
         offset,
         text,
         words,
-        index: selection.index
+        index
       }
       return payload
     },
 
     initQuill () {
-      this.quill = new Quill('#Quill')
+      this.quill = new Quill('#Quill', {
+        // theme: 'snow'
+      })
       this.quill.focus()
     },
 
@@ -109,12 +112,4 @@ export default {
 
 <style lang="scss">
 @import './../assets/main.scss';
-h1, h2, h3, h4, h5, h6 {
-  font-family: $fontBody;
-  font-weight: 600;
-}
-p {
-  font-family: $fontBody;
-  font-weight: 500;
-}
 </style>
