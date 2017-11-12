@@ -2,6 +2,18 @@
 
 import { app, BrowserWindow } from 'electron'
 
+import LocalStore from './../utils/local-store'
+
+const localStore = new LocalStore({
+  configName: 'user-preferences',
+  defaults: {
+    windowBounds: {
+      width: 1024,
+      height: 1024
+    }
+  }
+})
+
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -17,7 +29,12 @@ const winURL = process.env.NODE_ENV === 'development'
 // const menu = new Menu()
 
 app.on('ready', () => {
-  createWindow()
+  let { width, height } = localStore.get('windowBounds')
+  console.log(localStore)
+  createWindow({
+    width,
+    height
+  })
   // Menu.setApplicationMenu(menu)
 })
 
@@ -33,11 +50,11 @@ app.on('activate', () => {
   }
 })
 
-function createWindow () {
+function createWindow (opts) {
   mainWindow = new BrowserWindow({
     backgroundColor: '#282a36',
-    width: 800,
-    height: 1024,
+    width: opts.width,
+    height: opts.height,
     show: false,
     useContentSize: true
   })
@@ -50,6 +67,14 @@ function createWindow () {
 
   mainWindow.on('closed', () => {
     mainWindow = null
+  })
+
+  mainWindow.on('resize', () => {
+    let { width, height } = mainWindow.getBounds()
+    localStore.set('windowBounds', {
+      width,
+      height
+    })
   })
 }
 

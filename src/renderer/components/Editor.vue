@@ -1,6 +1,6 @@
 <template>
   <main class="container">
-    <div class="row">
+    <div class="row Editor" @click="giveFocus">
       <div class="col-lg-10 mx-auto py-5">
         <div id="Quill"></div>
       </div>
@@ -39,6 +39,10 @@ export default {
       return payload
     },
 
+    giveFocus () {
+      this.quill.focus()
+    },
+
     initQuill () {
       this.quill = new Quill('#Quill', {
         // theme: 'snow'
@@ -58,6 +62,7 @@ export default {
         let payload = this.getPayload()
 
         // console.log(payload, delta)
+        console.log(this.quill.root.innerHTML)
 
         delta.ops.forEach(element => {
           if (element.insert === ' ' || element.delete) {
@@ -112,4 +117,9 @@ export default {
 
 <style lang="scss">
 @import './../assets/main.scss';
+
+.Editor {
+  width: 100%;
+  height: 100vh;
+}
 </style>
