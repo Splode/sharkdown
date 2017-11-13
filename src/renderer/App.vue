@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <router-view/>
   </div>
 </template>
 
 <script>
-const cssLoader = require('./../utils/css-loader')
+import cssLoader from './../utils/css-loader'
 export default {
   name: 'sharkdown',
 
+  mixins: [ cssLoader ],
+
+  computed: {
+    theme () {
+      return this.$store.getters.settings.theme.toLowerCase()
+    }
+  },
+
   created () {
-    const link = cssLoader.createCSS('static/themes/dracula.css')
-    cssLoader.mountToHead(link)
+    const theme = this.theme
+    const link = this.createCSS('static/themes/' + theme + '.css')
+    this.mountToHead(link)
   }
 }
 </script>

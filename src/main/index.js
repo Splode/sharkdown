@@ -5,7 +5,7 @@ import { app, BrowserWindow } from 'electron'
 import LocalStore from './../utils/local-store'
 
 const localStore = new LocalStore({
-  configName: 'user-preferences',
+  configName: 'app-settings',
   defaults: {
     windowBounds: {
       width: 1024,

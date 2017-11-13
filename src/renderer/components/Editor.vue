@@ -1,7 +1,10 @@
 <template>
   <main class="container">
-    <div class="row Editor" @click="giveFocus">
-      <div class="col-lg-10 mx-auto py-5">
+    <div class="row py-5 Editor" @click="giveFocus">
+      <div class="col-1">
+        <router-link to="/settings"><h2 class="Test">TEST</h2></router-link>
+      </div>
+      <div class="col-10 mr-auto" :style="{ 'font-family': settings.font }">
         <div id="Quill"></div>
       </div>
     </div>
@@ -30,6 +33,10 @@ export default {
 
     editorOps () {
       return this.quill.getContents()
+    },
+
+    settings () {
+      return this.$store.getters.settings
     }
   },
 
@@ -148,6 +155,9 @@ export default {
 
 <style lang="scss">
 @import './../assets/main.scss';
+.Test {
+  font-family: $fontLora;
+}
 
 .Editor {
   height: 100vh;

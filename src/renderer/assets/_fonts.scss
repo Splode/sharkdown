@@ -1,0 +1,88 @@
+// Fira Sans
+@font-face {
+  font-family: Fira Sans;
+  src: url(~@/assets/fonts/FiraSans-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Fira Sans;
+  src: url(~@/assets/fonts/FiraSans-Bold.ttf);
+  font-weight: bold;
+}
+
+$fontFiraSans: 'Fira Sans', sans-serif;
+
+// Inconsolata
+@font-face {
+  font-family: Inconsolata;
+  src: url(~@/assets/fonts/Inconsolata-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Inconsolata;
+  src: url(~@/assets/fonts/Inconsolata-Bold.ttf);
+  font-weight: bold;
+}
+
+$fontInconsolata: 'Inconsolata', monospace;
+
+// Lato
+@font-face {
+  font-family: Lato;
+  src: url(~@/assets/fonts/Lato-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url(~@/assets/fonts/Lato-Bold.ttf);
+  font-weight: bold;
+}
+
+$fontLato: 'Lato', sans-serif;
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(~@/assets/fonts/OpenSans-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(~@/assets/fonts/OpenSans-Bold.ttf);
+  font-weight: bold;
+}
+
+$fontOpenSans: 'Open Sans', sans-serif;
+
+// Roboto
+@font-face {
+  font-family: Roboto;
+  src: url(~@/assets/fonts/Roboto-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(~@/assets/fonts/Roboto-Bold.ttf);
+  font-weight: bold;
+}
+
+$fontRoboto: 'Roboto', sans-serif;
+
+// Lora
+@font-face {
+  font-family: Lora;
+  src: url(~@/assets/fonts/Lora-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Lora', serif;
+  src: url(~@/assets/fonts/Lora-Bold.ttf);
+  font-weight: bold;
+}
+
+$fontLora: 'Lora', serif;
