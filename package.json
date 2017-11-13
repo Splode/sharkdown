@@ -10,13 +10,17 @@
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
     "build:web": "cross-env BUILD_TARGET=web node .electron-vue/build.js",
+    "predev": "npm run theme",
     "dev": "node .electron-vue/dev-runner.js",
     "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src",
     "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix src",
     "pack": "npm run pack:main && npm run pack:renderer",
     "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
     "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
-    "postinstall": "npm run lint:fix"
+    "postinstall": "npm run lint:fix",
+    "theme:dracula": "node-sass --output-style expanded --precision 6 src/renderer/themesheets/dracula.scss static/test/dracula.css",
+    "theme:oneDark": "node-sass --output-style expanded --precision 6 src/renderer/themesheets/oneDark.scss static/test/oneDark.css",
+    "theme": "npm-run-all theme:dracula theme:oneDark"
   },
   "build": {
     "productName": "sharkdown",
@@ -95,7 +99,8 @@
     "html-webpack-plugin": "^2.30.1",
     "multispinner": "^0.2.1",
     "node-loader": "^0.6.0",
-    "node-sass": "^4.6.0",
+    "node-sass": "^4.6.1",
+    "npm-run-all": "^4.1.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
