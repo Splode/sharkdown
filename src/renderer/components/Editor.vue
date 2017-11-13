@@ -1,14 +1,14 @@
 <template>
-  <main class="container">
-    <div class="row py-5 Editor" @click="giveFocus">
-      <div class="col-1">
-        <router-link to="/settings"><h2 class="Test">TEST</h2></router-link>
-      </div>
-      <div class="col-10 mr-auto" :style="{ 'font-family': settings.font }">
+  <!-- <main class="container Editor-wrapper">
+    <div class="row Editor" @click="giveFocus"> -->
+      <div>
+      <div class="col-10 mx-auto" :style="{ 'font-family': settings.font }">
         <div id="Quill"></div>
       </div>
-    </div>
-  </main>
+      <div class="col-1"></div>
+      </div>
+    <!-- </div>
+  </main> -->
 </template>
 
 <script>
@@ -82,20 +82,20 @@ export default {
 
     handleTextUpdate () {
       this.quill.on('text-change', (delta) => {
-        let payload = this.getPayload()
+        // let payload = this.getPayload()
 
-        console.log(payload, delta)
+        // console.log(payload, delta)
         // console.log(this.quill.root.innerHTML)
 
         this.changes = true
 
-        delta.ops.forEach(element => {
-          if (element.insert === ' ' || element.delete) {
-            payload.phrase = payload.text.slice(this.previousCursor, payload.offset)
-            this.previousCursor = payload.offset
-            this.matchHeader(payload)
-          }
-        })
+        // delta.ops.forEach(element => {
+        //   if (element.insert === ' ' || element.delete) {
+        //     payload.phrase = payload.text.slice(this.previousCursor, payload.offset)
+        //     this.previousCursor = payload.offset
+        //     this.matchHeader(payload)
+        //   }
+        // })
       })
     },
 
@@ -108,9 +108,15 @@ export default {
 
     load (filename) {
       let localStore = new LocalStore({
-        configName: filename
+        configName: filename,
+        defaults: {
+          ops: null
+        }
       })
       const ops = localStore.get('ops')
+      if (ops === null) {
+        return null
+      }
       this.quill.setContents(ops)
     },
 
@@ -161,5 +167,9 @@ export default {
 
 .Editor {
   height: 100vh;
+}
+
+.Editor-wrapper {
+  padding-top: 80px
 }
 </style>

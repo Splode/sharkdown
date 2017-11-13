@@ -12,6 +12,10 @@ body::-webkit-scrollbar-thumb {
   background-color: #44475a;
 }
 
+.Header {
+  background-color: #282a36;
+}
+
 .ql-editor h1,
 h2,
 h3,

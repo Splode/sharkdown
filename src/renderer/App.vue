@@ -1,13 +1,26 @@
 <template>
   <div id="app">
-    <router-view/>
+    <app-header/>
+    <div class="container App-container">
+      <div class="row">
+        <app-sidebar/>
+        <router-view/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import cssLoader from './../utils/css-loader'
+import appHeader from './components/Partials/Header'
+import appSidebar from './components/Partials/Sidebar'
 export default {
   name: 'sharkdown',
+
+  components: {
+    appHeader,
+    appSidebar
+  },
 
   mixins: [ cssLoader ],
 
@@ -24,3 +37,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.App-container {
+  padding: 80px 0 0 0;
+}
+</style>
