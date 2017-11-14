@@ -1,13 +1,36 @@
 <template>
   <!-- <main class="container Editor-wrapper">
     <div class="row Editor" @click="giveFocus"> -->
-      <div>
-      <div class="col-10 mx-auto" :style="{ 'font-family': settings.font }">
-        <div id="Quill"></div>
+  <div class="row">
+    <div class="col-10 ml-auto" :style="{ 'font-family': settings.font }">
+      <div id="Quill"></div>
+    </div>
+    <div class="col-1">
+      <div id="Quill-toolbar">
+        <ul class="Toolbar-list">
+          <li>
+            <button class="ql-bold">B</button>
+          </li>
+          <li>
+            <button class="ql-italic">i</button>
+          </li>
+          <li>
+            <button class="ql-header" value="1">h1</button>
+          </li>
+          <li>
+            <button class="ql-header" value="2">h2</button>
+          </li>
+          <li>
+            <button class="ql-code">```</button>
+          </li>
+          <li>
+            <button class="ql-code-block"></></button>
+          </li>
+        </ul>
       </div>
-      <div class="col-1"></div>
-      </div>
-    <!-- </div>
+    </div>
+  </div>
+  <!-- </div>
   </main> -->
 </template>
 
@@ -102,6 +125,12 @@ export default {
     initQuill () {
       this.quill = new Quill('#Quill', {
         // theme: 'snow'
+        modules: {
+          toolbar: {
+            container: '#Quill-toolbar'
+          }
+        },
+        'syntax': true
       })
       this.quill.focus()
     },
@@ -161,9 +190,6 @@ export default {
 
 <style lang="scss">
 @import './../assets/main.scss';
-.Test {
-  font-family: $fontLora;
-}
 
 .Editor {
   height: 100vh;
@@ -171,5 +197,18 @@ export default {
 
 .Editor-wrapper {
   padding-top: 80px
+}
+
+.ql-toolbar {
+  position: fixed;
+}
+
+.Toolbar-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.Toolbar-list button {
+  cursor: pointer;
 }
 </style>

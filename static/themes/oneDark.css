@@ -1,19 +1,19 @@
 body {
-  background-color: #282a36;
+  background-color: #282C34;
 }
 
 /* Custom scroll bar */
 body::-webkit-scrollbar-track {
   /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
-  background-color: #6272a4;
+  background-color: #ABB2BF;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #44475a;
+  background-color: #22252B;
 }
 
 .Header {
-  background-color: #282a36;
+  background-color: #282C34;
 }
 
 .ql-editor h1,
@@ -22,19 +22,19 @@ h3,
 h4,
 h5,
 h6 {
-  color: #50fa7b;
+  color: #C678DD;
   font-weight: 600;
 }
 
 .ql-editor p {
-  color: #bd93f9;
+  color: #ABB2BF;
   font-weight: 400;
 }
 
 .ql-editor code, pre {
-  background-color: #2f313e;
+  background-color: #2D313B;
   border-radius: 2px;
-  color: #ff79c6;
+  color: #61AFEF;
 }
 
 .ql-editor code {
@@ -58,10 +58,10 @@ h6 {
 .ql-editor pre::selection,
 .ql-editor strong::selection,
 .ql-editor u::selection {
-  background: rgba(68, 71, 90, 0.99);
+  background: rgba(34, 37, 43, 0.99);
   opacity: 1;
 }
 
 ol, ul {
-  color: #bd93f9;
+  color: #ABB2BF;
 }

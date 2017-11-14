@@ -2,10 +2,10 @@
   <div id="app">
     <app-header/>
     <div class="container App-container">
-      <div class="row">
+      <!-- <div class="row"> -->
         <app-sidebar/>
         <router-view/>
-      </div>
+      <!-- </div> -->
     </div>
   </div>
 </template>

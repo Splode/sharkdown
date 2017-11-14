@@ -1,5 +1,7 @@
 body {
+  cursor: default;
   letter-spacing: 1px;
+  user-select: none;
 }
 
 body::-webkit-scrollbar {

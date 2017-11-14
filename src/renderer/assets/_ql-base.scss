@@ -7,9 +7,21 @@
 }
 
 .ql-editor {
-  // letter-spacing: 1px;
+  cursor: auto;
+  tab-size: 4;
   text-align: justify;
+  white-space: pre-wrap;
+  word-wrap: break-word;
   &:focus {
     outline: 0;
   }
+}
+
+.ql-editor code {
+  font-family: $fontInconsolata;
+}
+
+.ql-syntax {
+  font-family: $fontInconsolata;
+  white-space: inherit;
 }

@@ -18,8 +18,8 @@
     "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
     "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
     "postinstall": "npm run lint:fix",
-    "theme:dracula": "node-sass --output-style expanded --precision 6 src/renderer/themesheets/dracula.scss static/test/dracula.css",
-    "theme:oneDark": "node-sass --output-style expanded --precision 6 src/renderer/themesheets/oneDark.scss static/test/oneDark.css",
+    "theme:dracula": "node-sass --output-style expanded --precision 6 src/renderer/themesheets/dracula.scss static/themes/dracula.css",
+    "theme:oneDark": "node-sass --output-style expanded --precision 6 src/renderer/themesheets/oneDark.scss static/themes/oneDark.css",
     "theme": "npm-run-all theme:dracula theme:oneDark"
   },
   "build": {

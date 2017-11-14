@@ -20,7 +20,7 @@
           </li>
         </ul>
         <h2>Theme</h2>
-        <button @click="selectTheme('blank')">Blank</button>
+        <button @click="selectTheme('oneDark')">Blank</button>
         <button @click="selectTheme('dracula')">Dracula</button>
       </div>
       </div>
@@ -43,7 +43,8 @@ export default {
         'Lato',
         'Lora',
         'Open Sans',
-        'Roboto'
+        'Roboto',
+        'Roboto Condensed'
       ]
     }
   },

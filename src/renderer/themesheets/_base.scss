@@ -1,15 +1,17 @@
 body {
-  background-color: #282a36;
+  background-color: $colorBackground;
 }
 
+
 /* Custom scroll bar */
+
 body::-webkit-scrollbar-track {
   /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
-  background-color: #6272a4;
+  background-color: $colorComment;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #44475a;
+  background-color: $colorSelection;
 }
 
 .Header {
@@ -22,20 +24,52 @@ h3,
 h4,
 h5,
 h6 {
-  color: $color1;
+  color: $colorHeading;
   font-weight: 600;
 }
 
 .ql-editor p {
-  color: #bd93f9;
+  color: $colorBody;
   font-weight: 400;
 }
 
-.ql-editor p::selection {
-  background: rgba(68, 71, 90, .99);
-  opacity: 1;
+.ql-editor code, pre {
+  background-color: $colorCurrentLine;
+  border-radius: 2px;
+  color: $colorCode;
 }
 
-ul {
-  color: #bd93f9;
+.ql-editor code {
+  padding: .2em .5em;
+}
+
+.ql-editor pre {
+  padding: 1em 1.5em;
+}
+
+// $colorBodySelection must be rgba with opacity of .99
+// due to chromium bug
+.ql-editor {
+  code,
+  em,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  p,
+  pre,
+  strong,
+  u {
+    &::selection {
+    background: $colorBodySelection;
+    opacity: 1;
+    }
+  }
+}
+
+ol, ul {
+  color: $colorBody;
 }
