@@ -5,11 +5,11 @@ body {
 /* Custom scroll bar */
 body::-webkit-scrollbar-track {
   /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
-  background-color: #ABB2BF;
+  background-color: #2D313B;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #22252B;
+  background-color: #C678DD;
 }
 
 .Header {

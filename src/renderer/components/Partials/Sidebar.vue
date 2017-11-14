@@ -1,14 +1,22 @@
 <template>
   <div class="Sidebar">
-    <router-link to="/settings">
-      <h4 class="Test">[==]</h4>
-    </router-link>
+    <keep-alive>
+      <router-link to="/settings">
+        <button>
+          <icon name="cog"/>
+        </button>
+      </router-link>
+    </keep-alive>
   </div>
 </template>
 
 <script>
+import Icon from 'vue-awesome/components/Icon'
+import 'vue-awesome/icons/cog'
 export default {
-
+  components: {
+    Icon
+  }
 }
 </script>
 

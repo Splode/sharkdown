@@ -9,22 +9,32 @@
       <div id="Quill-toolbar">
         <ul class="Toolbar-list">
           <li>
-            <button class="ql-bold">B</button>
+            <button class="ql-bold">
+              <icon name="bold"/>
+            </button>
           </li>
           <li>
-            <button class="ql-italic">i</button>
+            <button class="ql-italic">
+              <icon name="italic"/>
+            </button>
           </li>
           <li>
-            <button class="ql-header" value="1">h1</button>
+            <button class="ql-header" value="1">
+              <icon name="header"/><span>1</span>
+            </button>
           </li>
           <li>
-            <button class="ql-header" value="2">h2</button>
+            <button class="ql-header" value="2">
+              <icon name="header"/><span>2</span>
+            </button>
           </li>
           <li>
             <button class="ql-code">```</button>
           </li>
           <li>
-            <button class="ql-code-block"></></button>
+            <button class="ql-code-block">
+              <icon name="code"/>
+            </button>
           </li>
         </ul>
       </div>
@@ -40,7 +50,16 @@ import Quill from 'quill'
 import LocalStore from './../../utils/local-store'
 // import 'quill/dist/quill.core.css'
 // import 'quill/dist/quill.snow.css'
+import Icon from 'vue-awesome/components/Icon'
+import 'vue-awesome/icons/bold'
+import 'vue-awesome/icons/code'
+import 'vue-awesome/icons/header'
+import 'vue-awesome/icons/italic'
 export default {
+  components: {
+    Icon
+  },
+
   data () {
     return {
       changes: false,
@@ -206,9 +225,5 @@ export default {
 .Toolbar-list {
   list-style-type: none;
   padding: 0;
-}
-
-.Toolbar-list button {
-  cursor: pointer;
 }
 </style>
