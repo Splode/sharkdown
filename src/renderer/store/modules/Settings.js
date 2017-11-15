@@ -1,13 +1,6 @@
-import LocalStore from './../../../utils/local-store'
+import { editorSettings } from '../../../utils/defaultStore'
 
-const localStore = new LocalStore({
-  configName: 'editor-settings',
-  dirName: 'settings',
-  defaults: {
-    theme: 'Dracula',
-    font: 'Fira Sans'
-  }
-})
+const localStore = editorSettings()
 
 const state = {
   localStore: localStore.data

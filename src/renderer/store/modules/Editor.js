@@ -1,13 +1,6 @@
-import LocalStore from './../../../utils/local-store'
+import { editorState } from './../../../utils/defaultStore'
 
-const localStore = new LocalStore({
-  configName: 'app-state',
-  dirName: 'settings',
-  defaults: {
-    currentDoc: 'untitled',
-    documentDir: 'documents'
-  }
-})
+const localStore = editorState()
 
 const state = {
   localStore: localStore.data

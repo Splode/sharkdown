@@ -12,7 +12,7 @@
 
 <script>
 import cssLoader from './../utils/css-loader'
-import LocalStore from './../utils/local-store'
+import { editorSettings } from './../utils/defaultStore'
 import appHeader from './components/Partials/Header'
 import appSidebar from './components/Partials/Sidebar'
 export default {
@@ -27,14 +27,7 @@ export default {
 
   methods: {
     loadTheme () {
-      const localStore = new LocalStore({
-        configName: 'editor-settings',
-        dirName: 'settings',
-        defaults: {
-          theme: 'Dracula',
-          font: 'Fira Sans'
-        }
-      })
+      const localStore = editorSettings()
       const theme = localStore.get('theme')
       const link = this.createCSS('static/themes/' + theme + '.css')
       this.mountToHead(link)
