@@ -1,14 +1,38 @@
+import LocalStore from './../../../utils/local-store'
+
+const localStore = new LocalStore({
+  configName: 'app-state',
+  dirName: 'settings',
+  defaults: {
+    currentDoc: 'untitled',
+    documentDir: 'documents'
+  }
+})
+
 const state = {
-  currentDoc: 'Test',
-  documentDir: 'documents'
+  localStore: localStore.data
 }
 
 const getters = {
-  currentDoc: state => state.currentDoc,
-  documentDir: state => state.documentDir
+  editor: state => state.localStore
+}
+
+const actions = {
+  setState ({ commit }, payload) {
+    commit('SET_STATE', payload)
+  }
+}
+
+const mutations = {
+  SET_STATE (state, payload) {
+    localStore.set(payload.key, payload.val)
+    state.localStore[payload.key] = payload.val
+  }
 }
 
 export default {
   state,
-  getters
+  getters,
+  actions,
+  mutations
 }

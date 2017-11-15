@@ -10,23 +10,23 @@ const localStore = new LocalStore({
 })
 
 const state = {
-  settings: localStore.data
+  localStore: localStore.data
 }
 
 const getters = {
-  settings: state => state.settings
+  settings: state => state.localStore
 }
 
 const actions = {
-  setState ({ commit }, payload) {
-    commit('SET_STATE', payload)
+  setSetting ({ commit }, payload) {
+    commit('SET_SETTING', payload)
   }
 }
 
 const mutations = {
-  SET_STATE (state, payload) {
+  SET_SETTING (state, payload) {
     localStore.set(payload.key, payload.val)
-    state.settings[payload.key] = payload.val
+    state.localStore[payload.key] = payload.val
   }
 }
 

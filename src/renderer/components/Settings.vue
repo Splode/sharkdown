@@ -58,7 +58,7 @@ export default {
   methods: {
     selectFont (font) {
       const payload = new Payload('font', font)
-      this.$store.dispatch('setState', payload)
+      this.$store.dispatch('setSetting', payload)
     },
 
     selectTheme (theme) {
@@ -66,7 +66,7 @@ export default {
       this.appendTheme(theme, () => {
         this.removeTheme(theme)
       })
-      this.$store.dispatch('setState', payload)
+      this.$store.dispatch('setSetting', payload)
     },
 
     appendTheme (theme) {

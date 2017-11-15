@@ -1,8 +1,6 @@
 <template>
-  <!-- <main class="container Editor-wrapper">
-    <div class="row Editor" @click="giveFocus"> -->
   <div class="row">
-    <div class="col-10 ml-auto" :style="{ 'font-family': settings.font }">
+    <div class="col-10 ml-auto Editor" @click="giveFocus" :style="{ 'font-family': settings.font }">
       <div id="Quill"></div>
     </div>
     <div class="col-1">
@@ -80,8 +78,6 @@
       </div>
     </div>
   </div>
-  <!-- </div>
-  </main> -->
 </template>
 
 <script>
@@ -89,7 +85,6 @@ import _ from 'lodash'
 import Quill from 'quill'
 import LocalStore from './../../utils/local-store'
 // import 'quill/dist/quill.core.css'
-// import 'quill/dist/quill.snow.css'
 import Icon from 'vue-awesome/components/Icon'
 import 'vue-awesome/icons/bold'
 import 'vue-awesome/icons/code'
@@ -128,6 +123,10 @@ export default {
       return this.quill.getContents()
     },
 
+    editorStore () {
+      return this.$store.getters.editor
+    },
+
     settings () {
       return this.$store.getters.settings
     },
@@ -143,8 +142,8 @@ export default {
         if (!this.changes) {
           return false
         } else if (this.changes) {
-          this.save(this.currentDoc)
-          console.log(`Autosaved ${this.currentDoc}.`)
+          this.save(this.editorStore.currentDoc)
+          console.log(`Autosaved ${this.editorStore.currentDoc}.`)
         }
       }, 10000)
     },
@@ -198,13 +197,11 @@ export default {
 
     initQuill () {
       this.quill = new Quill('#Quill', {
-        // theme: 'snow'
         modules: {
           toolbar: {
             container: '#Quill-toolbar'
           }
-        },
-        'syntax': true
+        }
       })
       this.quill.focus()
     },
@@ -212,7 +209,7 @@ export default {
     load (filename) {
       let localStore = new LocalStore({
         configName: filename,
-        dirName: this.documentDir,
+        dirName: this.editorStore.documentDir,
         defaults: {
           ops: null
         }
@@ -245,7 +242,7 @@ export default {
     save (filename) {
       let localStore = new LocalStore({
         configName: filename,
-        dirName: this.documentDir,
+        dirName: this.editorStore.documentDir,
         defaults: {}
       })
       localStore.set('ops', this.editorOps)
@@ -256,7 +253,7 @@ export default {
 
   mounted () {
     this.initQuill()
-    this.load(this.currentDoc)
+    this.load(this.editorStore.currentDoc)
     // this.handleEditorUpdate()
     this.handleTextUpdate()
     this.autoSave()
@@ -266,9 +263,9 @@ export default {
 
 <style lang="scss">
 @import './../assets/main.scss';
- Button Button--transparent
+
 .Editor {
-  height: 100vh;
+  height: calc(100vh - 80px);
 }
 
 .Editor-wrapper {

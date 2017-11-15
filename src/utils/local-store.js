@@ -13,7 +13,7 @@ export default class {
 
   makeDir () {
     if (!fs.existsSync(this.dir)) {
-      fs.mkdirSync(this.dir)
+      fs.mkdirSync(this.dir, err => console.log(err))
     }
   }
 
