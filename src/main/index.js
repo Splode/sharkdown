@@ -6,6 +6,7 @@ import LocalStore from './../utils/local-store'
 
 const localStore = new LocalStore({
   configName: 'app-settings',
+  dirName: 'settings',
   defaults: {
     windowBounds: {
       width: 1024,

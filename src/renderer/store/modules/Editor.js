@@ -1,9 +1,11 @@
 const state = {
-  currentDoc: 'Test'
+  currentDoc: 'Test',
+  documentDir: 'documents'
 }
 
 const getters = {
-  currentDoc: state => state.currentDoc
+  currentDoc: state => state.currentDoc,
+  documentDir: state => state.documentDir
 }
 
 export default {

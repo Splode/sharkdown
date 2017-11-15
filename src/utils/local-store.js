@@ -6,8 +6,15 @@ export default class {
   constructor (opts) {
     const userDataPath = (electron.app || electron.remote.app).getPath('userData')
 
-    this.path = path.join(userDataPath, opts.configName + '.json')
+    this.dir = path.join(userDataPath, opts.dirName)
+    this.path = path.join(userDataPath, opts.dirName, opts.configName + '.json')
     this.data = this.parseDataFile(this.path, opts.defaults)
+  }
+
+  makeDir () {
+    if (!fs.existsSync(this.dir)) {
+      fs.mkdirSync(this.dir)
+    }
   }
 
   get (key) {
@@ -16,6 +23,7 @@ export default class {
 
   set (key, val) {
     this.data[key] = val
+    this.makeDir()
     fs.writeFileSync(this.path, JSON.stringify(this.data))
   }
 

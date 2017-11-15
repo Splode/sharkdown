@@ -2,6 +2,7 @@ import LocalStore from './../../../utils/local-store'
 
 const localStore = new LocalStore({
   configName: 'editor-settings',
+  dirName: 'settings',
   defaults: {
     theme: 'Dracula',
     font: 'Fira Sans'

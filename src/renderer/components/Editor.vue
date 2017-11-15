@@ -9,31 +9,71 @@
       <div id="Quill-toolbar">
         <ul class="Toolbar-list" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false">
           <li>
-            <button class="ql-bold Button Button--transparent" :class="tooltipClasses">
-              <icon name="bold"/>
-            </button>
-          </li>
-          <li>
-            <button class="ql-italic Button Button--transparent" :class="tooltipClasses">
-              <icon name="italic"/>
-            </button>
-          </li>
-          <li>
-            <button class="ql-header Button Button--transparent" value="1" :class="tooltipClasses">
+            <button class="ql-header Button Button--transparent" value="1" title="Heading 1" :class="tooltipClasses">
               <icon name="header"/><sub>1</sub>
             </button>
           </li>
           <li>
-            <button class="ql-header Button Button--transparent" value="2" :class="tooltipClasses">
+            <button class="ql-header Button Button--transparent" value="2" title="Heading 2" :class="tooltipClasses">
               <icon name="header"/><sub>2</sub>
             </button>
           </li>
           <li>
-            <button class="ql-code Button Button--transparent" :class="tooltipClasses">```</button>
+            <button class="ql-header Button Button--transparent" value="3" title="Heading 3" :class="tooltipClasses">
+              <icon name="header"/><sub>3</sub>
+            </button>
           </li>
           <li>
-            <button class="ql-code-block Button Button--transparent" :class="tooltipClasses">
+            <button class="ql-header Button Button--transparent" value="4" title="Heading 4" :class="tooltipClasses">
+              <icon name="header"/><sub>4</sub>
+            </button>
+          </li>
+          <li>
+            <button class="ql-blockquote Button Button--transparent" title="Blockquote" :class="tooltipClasses">
+              <icon name="quote-right"/>
+            </button>
+          </li>
+          <li>
+            <button class="ql-code-block Button Button--transparent" title="Code Block" :class="tooltipClasses">
               <icon name="code"/>
+            </button>
+          </li>
+          <li>
+            <button class="ql-list Button Button--transparent" value="ordered" title="Numbered List" :class="tooltipClasses">
+              <icon name="list-ol"/>
+            </button>
+          </li>
+          <li>
+            <button class="ql-list Button Button--transparent" value="bullet" title="List" :class="tooltipClasses">
+              <icon name="list-ul"/>
+            </button>
+          </li>
+          <li>
+            <button class="ql-bold Button Button--transparent" title="Bold" :class="tooltipClasses">
+              <icon name="bold"/>
+            </button>
+          </li>
+          <li>
+            <button class="ql-italic Button Button--transparent" title="Italic" :class="tooltipClasses">
+              <icon name="italic"/>
+            </button>
+          </li>
+          <li>
+            <button class="ql-underline Button Button--transparent" title="Underline" :class="tooltipClasses">
+              <icon name="underline"/>
+            </button>
+          </li>
+          <li>
+            <button class="ql-strike Button Button--transparent" title="Strikethrough" :class="tooltipClasses">
+              <icon name="strikethrough"/>
+            </button>
+          </li>
+          <li>
+            <button class="ql-code Button Button--transparent" title="Inline Code" :class="tooltipClasses"><strong>{ }</strong></button>
+          </li>
+          <li>
+            <button class="ql-clean Button Button--transparent" title="Clear Format" :class="tooltipClasses">
+              <icon name="minus-square-o"/>
             </button>
           </li>
         </ul>
@@ -55,6 +95,12 @@ import 'vue-awesome/icons/bold'
 import 'vue-awesome/icons/code'
 import 'vue-awesome/icons/header'
 import 'vue-awesome/icons/italic'
+import 'vue-awesome/icons/list-ol'
+import 'vue-awesome/icons/list-ul'
+import 'vue-awesome/icons/minus-square-o'
+import 'vue-awesome/icons/quote-right'
+import 'vue-awesome/icons/strikethrough'
+import 'vue-awesome/icons/underline'
 export default {
   components: {
     Icon
@@ -72,6 +118,10 @@ export default {
   computed: {
     currentDoc () {
       return this.$store.getters.currentDoc
+    },
+
+    documentDir () {
+      return this.$store.getters.documentDir
     },
 
     editorOps () {
@@ -162,6 +212,7 @@ export default {
     load (filename) {
       let localStore = new LocalStore({
         configName: filename,
+        dirName: this.documentDir,
         defaults: {
           ops: null
         }
@@ -194,6 +245,7 @@ export default {
     save (filename) {
       let localStore = new LocalStore({
         configName: filename,
+        dirName: this.documentDir,
         defaults: {}
       })
       localStore.set('ops', this.editorOps)
