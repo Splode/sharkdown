@@ -12,6 +12,7 @@
 
 <script>
 import cssLoader from './../utils/css-loader'
+import LocalStore from './../utils/local-store'
 import appHeader from './components/Partials/Header'
 import appSidebar from './components/Partials/Sidebar'
 export default {
@@ -24,16 +25,24 @@ export default {
 
   mixins: [ cssLoader ],
 
-  computed: {
-    theme () {
-      return this.$store.getters.settings.theme.toLowerCase()
+  methods: {
+    loadTheme () {
+      const localStore = new LocalStore({
+        configName: 'editor-settings',
+        dirName: 'settings',
+        defaults: {
+          theme: 'Dracula',
+          font: 'Fira Sans'
+        }
+      })
+      const theme = localStore.get('theme')
+      const link = this.createCSS('static/themes/' + theme + '.css')
+      this.mountToHead(link)
     }
   },
 
-  created () {
-    const theme = this.theme
-    const link = this.createCSS('static/themes/' + theme + '.css')
-    this.mountToHead(link)
+  mounted () {
+    this.loadTheme()
   }
 }
 </script>
