@@ -137,17 +137,7 @@ export default {
   },
 
   methods: {
-    autoSave () {
-      setInterval(() => {
-        if (!this.changes) {
-          return false
-        } else if (this.changes) {
-          this.save(this.editorStore.currentDoc)
-          console.log(`Autosaved ${this.editorStore.currentDoc}.`)
-        }
-      }, 10000)
-    },
-
+    // Quill functions
     getPayload () {
       const selection = this.quill.getSelection()
       const [line, offset] = this.quill.getLine(selection.index)
@@ -203,22 +193,34 @@ export default {
           }
         }
       })
+      this.keybinding()
       this.quill.focus()
     },
 
-    load (filename) {
-      let localStore = new LocalStore({
-        configName: filename,
-        dirName: this.editorStore.documentDir,
-        defaults: {
-          ops: null
-        }
+    keybinding () {
+      this.quill.keyboard.addBinding({ key: '1', ctrlKey: true }, (range) => {
+        this.formatLineToggle(range, 'header', 1)
       })
-      const ops = localStore.get('ops')
-      if (ops === null) {
-        return null
+      this.quill.keyboard.addBinding({ key: '2', ctrlKey: true }, (range) => {
+        this.formatLineToggle(range, 'header', 2)
+      })
+      this.quill.keyboard.addBinding({ key: '3', ctrlKey: true }, (range) => {
+        this.formatLineToggle(range, 'header', 3)
+      })
+      this.quill.keyboard.addBinding({ key: '4', ctrlKey: true }, (range) => {
+        this.formatLineToggle(range, 'header', 4)
+      })
+      this.quill.keyboard.addBinding({ key: 's', ctrlKey: true }, () => {
+        this.save(this.editorStore.currentDoc)
+      })
+    },
+
+    formatLineToggle (range, format, value) {
+      if (this.quill.getFormat(range)[format] === value) {
+        this.quill.removeFormat(range)
+      } else {
+        this.quill.formatLine(range, format, value)
       }
-      this.quill.setContents(ops)
     },
 
     matchHeader (payload) {
@@ -237,6 +239,33 @@ export default {
       } else if (payload.offset === 0 || 1) {
         this.quill.formatLine(payload.index, 0, 'header', false)
       }
+    },
+
+    // Local Store functions
+    autoSave () {
+      setInterval(() => {
+        if (!this.changes) {
+          return false
+        } else if (this.changes) {
+          this.save(this.editorStore.currentDoc)
+          console.log(`Autosaved ${this.editorStore.currentDoc}.`)
+        }
+      }, 10000)
+    },
+
+    load (filename) {
+      let localStore = new LocalStore({
+        configName: filename,
+        dirName: this.editorStore.documentDir,
+        defaults: {
+          ops: null
+        }
+      })
+      const ops = localStore.get('ops')
+      if (ops === null) {
+        return null
+      }
+      this.quill.setContents(ops)
     },
 
     save (filename) {
@@ -279,5 +308,8 @@ export default {
 .Toolbar-list {
   list-style-type: none;
   padding: 0;
+  & li {
+    margin: 0 0 1.5em 0;
+  }
 }
 </style>

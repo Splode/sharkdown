@@ -24,6 +24,31 @@ body::-webkit-scrollbar-thumb {
   background-color: #282a36;
 }
 
+.ql-editor blockquote {
+  border-left: 3px solid #50fa7b;
+  color: #bd93f9;
+  font-style: italic;
+  margin: 2em 0 0 0;
+  padding: 0 0 0 2em;
+}
+
+.ql-editor blockquote + blockquote {
+  margin: 0;
+}
+
+.ql-editor blockquote + h1,
+.ql-editor blockquote + h2,
+.ql-editor blockquote + h3,
+.ql-editor blockquote + h4,
+.ql-editor blockquote + h5,
+.ql-editor blockquote + h6,
+.ql-editor blockquote + p,
+.ql-editor blockquote + pre,
+.ql-editor blockquote + li,
+.ql-editor blockquote + ul {
+  margin-top: 2em;
+}
+
 .ql-editor h1,
 h2,
 h3,
@@ -39,10 +64,11 @@ h6 {
   font-weight: 400;
 }
 
-.ql-editor code, pre {
+.ql-editor code,
+pre {
   background-color: #2f313e;
   border-radius: 2px;
-  color: #ff79c6;
+  color: #8be9fd;
 }
 
 .ql-editor code {
@@ -70,6 +96,7 @@ h6 {
   opacity: 1;
 }
 
-ol, ul {
+ol,
+ul {
   color: #bd93f9;
 }

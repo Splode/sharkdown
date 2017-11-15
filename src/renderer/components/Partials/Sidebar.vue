@@ -38,7 +38,9 @@ export default {
 
 <style lang="scss" scoped>
 .Sidebar {
+  display: flex;
+  flex-direction: column;
   position: fixed;
-  width: 70px;
+  // width: 70px;
 }
 </style>

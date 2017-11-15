@@ -17,11 +17,36 @@ body::-webkit-scrollbar-thumb {
 }
 
 .Button--transparent:hover {
-  color: #61AFEF;
+  color: #56B6C2;
 }
 
 .Header {
   background-color: #282C34;
+}
+
+.ql-editor blockquote {
+  border-left: 3px solid #C678DD;
+  color: #ABB2BF;
+  font-style: italic;
+  margin: 2em 0 0 0;
+  padding: 0 0 0 2em;
+}
+
+.ql-editor blockquote + blockquote {
+  margin: 0;
+}
+
+.ql-editor blockquote + h1,
+.ql-editor blockquote + h2,
+.ql-editor blockquote + h3,
+.ql-editor blockquote + h4,
+.ql-editor blockquote + h5,
+.ql-editor blockquote + h6,
+.ql-editor blockquote + p,
+.ql-editor blockquote + pre,
+.ql-editor blockquote + li,
+.ql-editor blockquote + ul {
+  margin-top: 2em;
 }
 
 .ql-editor h1,
@@ -39,7 +64,8 @@ h6 {
   font-weight: 400;
 }
 
-.ql-editor code, pre {
+.ql-editor code,
+pre {
   background-color: #2D313B;
   border-radius: 2px;
   color: #61AFEF;
@@ -70,6 +96,7 @@ h6 {
   opacity: 1;
 }
 
-ol, ul {
+ol,
+ul {
   color: #ABB2BF;
 }

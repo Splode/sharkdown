@@ -17,12 +17,35 @@ body::-webkit-scrollbar-thumb {
 .Button--transparent {
   color: $colorHeading;
   &:hover {
-    color: $colorCode;
+    color: $colorHighlight;
   }
 }
 
 .Header {
   background-color: $colorBackground;
+}
+
+.ql-editor blockquote {
+  border-left: 3px solid $colorHeading;
+  color: $colorBody;
+  font-style: italic;
+  margin: 2em 0 0 0;
+  padding: 0 0 0 2em;
+  &+blockquote {
+    margin: 0;
+  }
+  &+h1,
+  &+h2,
+  &+h3,
+  &+h4,
+  &+h5,
+  &+h6,
+  &+p,
+  &+pre,
+  &+li,
+  &+ul, {
+    margin-top: 2em;
+  }
 }
 
 .ql-editor h1,
@@ -40,7 +63,8 @@ h6 {
   font-weight: 400;
 }
 
-.ql-editor code, pre {
+.ql-editor code,
+pre {
   background-color: $colorCurrentLine;
   border-radius: 2px;
   color: $colorCode;
@@ -71,12 +95,13 @@ h6 {
   strong,
   u {
     &::selection {
-    background: $colorBodySelection;
-    opacity: 1;
+      background: $colorBodySelection;
+      opacity: 1;
     }
   }
 }
 
-ol, ul {
+ol,
+ul {
   color: $colorBody;
 }

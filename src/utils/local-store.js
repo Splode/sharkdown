@@ -25,6 +25,7 @@ export default class {
     this.data[key] = val
     this.makeDir()
     fs.writeFileSync(this.path, JSON.stringify(this.data))
+    console.log(`Saved ${this.path}`)
   }
 
   parseDataFile (filePath, defaults) {
