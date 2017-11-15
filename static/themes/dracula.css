@@ -12,6 +12,14 @@ body::-webkit-scrollbar-thumb {
   background-color: #44475a;
 }
 
+.Button--transparent {
+  color: #50fa7b;
+}
+
+.Button--transparent:hover {
+  color: #ff79c6;
+}
+
 .Header {
   background-color: #282a36;
 }

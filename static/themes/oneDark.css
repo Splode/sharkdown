@@ -9,7 +9,15 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #C678DD;
+  background-color: #61AFEF;
+}
+
+.Button--transparent {
+  color: #C678DD;
+}
+
+.Button--transparent:hover {
+  color: #61AFEF;
 }
 
 .Header {

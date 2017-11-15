@@ -1,9 +1,9 @@
 <template>
-  <div class="Sidebar">
+  <div class="Sidebar" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false">
     <keep-alive>
       <router-link to="/settings">
-        <button>
-          <icon name="cog"/>
+        <button class="Button Button--transparent" :class="tooltipClasses">
+          <icon name="cog" scale="2"/>
         </button>
       </router-link>
     </keep-alive>
@@ -16,6 +16,18 @@ import 'vue-awesome/icons/cog'
 export default {
   components: {
     Icon
+  },
+
+  data () {
+    return {
+      toolbarIsActive: false
+    }
+  },
+
+  computed: {
+    tooltipClasses () {
+      return this.toolbarIsActive ? 'is-active' : 'is-inactive'
+    }
   }
 }
 </script>

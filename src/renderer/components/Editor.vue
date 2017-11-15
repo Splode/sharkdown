@@ -7,32 +7,32 @@
     </div>
     <div class="col-1">
       <div id="Quill-toolbar">
-        <ul class="Toolbar-list">
+        <ul class="Toolbar-list" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false">
           <li>
-            <button class="ql-bold">
+            <button class="ql-bold Button Button--transparent" :class="tooltipClasses">
               <icon name="bold"/>
             </button>
           </li>
           <li>
-            <button class="ql-italic">
+            <button class="ql-italic Button Button--transparent" :class="tooltipClasses">
               <icon name="italic"/>
             </button>
           </li>
           <li>
-            <button class="ql-header" value="1">
-              <icon name="header"/><span>1</span>
+            <button class="ql-header Button Button--transparent" value="1" :class="tooltipClasses">
+              <icon name="header"/><sub>1</sub>
             </button>
           </li>
           <li>
-            <button class="ql-header" value="2">
-              <icon name="header"/><span>2</span>
+            <button class="ql-header Button Button--transparent" value="2" :class="tooltipClasses">
+              <icon name="header"/><sub>2</sub>
             </button>
           </li>
           <li>
-            <button class="ql-code">```</button>
+            <button class="ql-code Button Button--transparent" :class="tooltipClasses">```</button>
           </li>
           <li>
-            <button class="ql-code-block">
+            <button class="ql-code-block Button Button--transparent" :class="tooltipClasses">
               <icon name="code"/>
             </button>
           </li>
@@ -64,7 +64,8 @@ export default {
     return {
       changes: false,
       quill: null,
-      previousCursor: 0
+      previousCursor: 0,
+      toolbarIsActive: false
     }
   },
 
@@ -79,6 +80,10 @@ export default {
 
     settings () {
       return this.$store.getters.settings
+    },
+
+    tooltipClasses () {
+      return this.toolbarIsActive ? 'is-active' : 'is-inactive'
     }
   },
 
@@ -209,7 +214,7 @@ export default {
 
 <style lang="scss">
 @import './../assets/main.scss';
-
+ Button Button--transparent
 .Editor {
   height: 100vh;
 }

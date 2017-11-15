@@ -8,6 +8,24 @@ body::-webkit-scrollbar {
   width: .5em;
 }
 
-button {
+.Button {
+  border: 0;
   cursor: pointer;
+  outline: 0;
+  transition: $transitionPrimary;
+  width: 50px;
+  height: 50px;
+  &:focus {
+    outline: 0;
+  }
+  &.is-active {
+    opacity: 1;
+  }
+  &.is-inactive {
+    opacity: .25;
+  }
+}
+
+.Button--transparent {
+  background-color: transparent;
 }
