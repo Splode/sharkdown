@@ -253,7 +253,7 @@ export default {
           this.save(this.editorStore.currentDoc)
           console.log(`Autosaved ${this.editorStore.currentDoc}.`)
         }
-      }, 10000)
+      }, 5000)
     },
 
     load (filename) {
@@ -269,6 +269,7 @@ export default {
         return null
       }
       this.quill.setContents(ops)
+      this.quill.history.clear()
     },
 
     save (filename) {
@@ -284,8 +285,8 @@ export default {
   },
 
   created () {
-    EventBus.$on('newDoc', (payload) => {
-      console.log(payload)
+    EventBus.$on('newDoc', () => {
+      this.save(this.editorStore.currentDoc)
     })
   },
 

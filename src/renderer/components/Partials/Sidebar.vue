@@ -40,7 +40,7 @@ export default {
   methods: {
     emitNewDoc () {
       console.log('clicked new document')
-      EventBus.$emit('newDoc', 'test')
+      EventBus.$emit('newDoc')
     }
   }
 }

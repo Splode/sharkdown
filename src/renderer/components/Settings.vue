@@ -20,8 +20,9 @@
           </li>
         </ul>
         <h2>Theme</h2>
-        <button @click="selectTheme('oneDark')">Blank</button>
         <button @click="selectTheme('dracula')">Dracula</button>
+        <button @click="selectTheme('oneDark')">One Dark</button>
+        <button @click="selectTheme('monokai')">Monokai</button>
       </div>
       </div>
     <!-- </div>

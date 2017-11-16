@@ -10,7 +10,7 @@ body::-webkit-scrollbar {
 
 .Button {
   border: 0;
-  cursor: pointer;
+  cursor: default;
   outline: 0;
   transition: $transitionPrimary;
   // width: 50px;
