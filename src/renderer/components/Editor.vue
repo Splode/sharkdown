@@ -85,8 +85,9 @@
 <script>
 import _ from 'lodash'
 import Quill from 'quill'
-import LocalStore from './../../utils/local-store'
 // import 'quill/dist/quill.core.css'
+import LocalStore from './../../utils/local-store'
+import { EventBus } from './../../utils/event-bus'
 import Icon from 'vue-awesome/components/Icon'
 import 'vue-awesome/icons/bold'
 import 'vue-awesome/icons/code'
@@ -280,6 +281,12 @@ export default {
       // NOTE: refresh save state
       this.changes = false
     }
+  },
+
+  created () {
+    EventBus.$on('newDoc', (payload) => {
+      console.log(payload)
+    })
   },
 
   mounted () {
