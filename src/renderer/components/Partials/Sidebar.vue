@@ -1,5 +1,6 @@
 <template>
-  <div class="Sidebar" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false">
+  <div class="col-1 d-flex flex-column align-items-center" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false">
+    <div class="position-fixed d-flex flex-column align-items-center">
     <button class="Button Button--transparent" title="New Document" :class="tooltipClasses">
       <icon name="plus" scale="1.5"/>
     </button>
@@ -10,6 +11,7 @@
         </button>
       </router-link>
     </keep-alive>
+    </div>
   </div>
 </template>
 

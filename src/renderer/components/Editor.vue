@@ -1,9 +1,10 @@
 <template>
-  <div class="row">
-    <div class="col-10 ml-auto Editor" @click="giveFocus" :style="{ 'font-family': settings.font }">
+  <!-- <div class="row"> -->
+  <div class="col-11 d-flex Editor-wrapper">
+    <div class="col-11 Editor" @click="giveFocus" :style="{ 'font-family': settings.font }">
       <div id="Quill"></div>
     </div>
-    <div class="col-1">
+    <div class="col-1 d-flex flex-column align-items-center">
       <div id="Quill-toolbar">
         <ul class="Toolbar-list" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false">
           <li>
@@ -78,6 +79,7 @@
       </div>
     </div>
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -298,7 +300,7 @@ export default {
 }
 
 .Editor-wrapper {
-  padding-top: 80px
+  padding-left: 0;
 }
 
 .ql-toolbar {
