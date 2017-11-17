@@ -18,7 +18,8 @@ export function editorState () {
     dirName: 'settings',
     defaults: {
       currentDoc: 'untitled',
-      documentDir: 'documents'
+      documentDir: 'documents',
+      userDir: false
     }
   })
   return localStore

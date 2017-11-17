@@ -8,6 +8,11 @@ body::-webkit-scrollbar {
   width: .5em;
 }
 
+input[type=radio] {
+  display: none;
+  visibility: hidden;
+}
+
 .Button {
   border: 0;
   cursor: default;

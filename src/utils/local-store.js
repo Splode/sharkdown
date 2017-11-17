@@ -7,7 +7,12 @@ export default class {
     const userDataPath = (electron.app || electron.remote.app).getPath('userData')
 
     this.dir = path.join(userDataPath, opts.dirName)
-    this.path = path.join(userDataPath, opts.dirName, opts.configName + '.json')
+    if (opts.userDir) {
+      console.log(opts.userDir)
+      this.path = path.join(opts.userDir, opts.configName + '.json')
+    } else {
+      this.path = path.join(userDataPath, opts.dirName, opts.configName + '.json')
+    }
     this.data = this.parseDataFile(this.path, opts.defaults)
   }
 

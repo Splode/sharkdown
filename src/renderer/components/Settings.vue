@@ -1,32 +1,42 @@
 <template>
-  <!-- <div class="container">
-    <div class="row"> -->
-      <div class="col-11 ml-auto Settings">
+  <div class="col-11 Settings">
+    <div class="row">
       <div class="col-12">
         <h1>Settings</h1>
+        <router-link to="/">
+          <h1>BACK</h1>
+        </router-link>
       </div>
-      <div class="col-12">
-        <router-link to="/"><h1>BACK</h1></router-link>
-        <h2>Font</h2>
-        <ul>
-          <li 
-            class="Settings-item"
-            v-for="font in fonts" 
-            @click="selectFont(font)"
-            :class="{ 'is-active': settings.font === font }"
-            :style="{ 'font-family': font }"
-            :key="generateKey()">
-              {{ font }}
-          </li>
-        </ul>
-        <h2>Theme</h2>
-        <button @click="selectTheme('dracula')">Dracula</button>
-        <button @click="selectTheme('oneDark')">One Dark</button>
-        <button @click="selectTheme('monokai')">Monokai</button>
-      </div>
-      </div>
-    <!-- </div>
-  </div> -->
+
+      <!-- <div class="row"> -->
+        <div class="col-md-5 Section">
+          <h2 class="Section-title">Font</h2>
+          <ul class="Settings-list">
+            <li class="Settings-list-item" v-for="font in fonts" @click="selectFont(font)" :class="{ 'is-active': settings.font === font }"
+              :style="{ 'font-family': font }" :key="font">
+              <span class="RadioButton"></span>
+              <label :for="font">{{ font }}</label>
+              <input type="radio" :id="font">
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-5 Section">
+          <h2 class="Section-title">Theme</h2>
+          <button @click="selectTheme('dracula')">Dracula</button>
+          <button @click="selectTheme('oneDark')">One Dark</button>
+          <button @click="selectTheme('monokai')">Monokai</button>
+        </div>
+
+        <div class="col-md-5 Section">
+          <h2 class="Section-title">Document Location</h2>
+          <p>{{ editorStore.userDir }}</p>
+          <label for="chooseUserDir">Choose</label>
+          <input id="chooseUserDir" type="file" @change="onFileChange" webkitdirectory/>
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
 </template>
 
 <script>
@@ -51,6 +61,10 @@ export default {
   },
 
   computed: {
+    editorStore () {
+      return this.$store.getters.editor
+    },
+
     settings () {
       return this.$store.getters.settings
     }
@@ -78,15 +92,17 @@ export default {
     removeTheme (theme) {
       const link = this.createCSS('static/images' + theme + '.css')
       this.removeTheme(link)
+    },
+
+    onFileChange (e) {
+      const userDir = e.target.files[0].path
+      const payload = new Payload('userDir', userDir)
+      this.$store.dispatch('setState', payload)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
-.Settings-item {
-  cursor: pointer;
-}
 
 </style>

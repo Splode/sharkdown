@@ -114,14 +114,6 @@ export default {
   },
 
   computed: {
-    currentDoc () {
-      return this.$store.getters.currentDoc
-    },
-
-    documentDir () {
-      return this.$store.getters.documentDir
-    },
-
     editorOps () {
       return this.quill.getContents()
     },
@@ -260,6 +252,7 @@ export default {
       let localStore = new LocalStore({
         configName: filename,
         dirName: this.editorStore.documentDir,
+        userDir: this.editorStore.userDir,
         defaults: {
           ops: null
         }
@@ -276,6 +269,7 @@ export default {
       let localStore = new LocalStore({
         configName: filename,
         dirName: this.editorStore.documentDir,
+        userDir: this.editorStore.userDir,
         defaults: {}
       })
       localStore.set('ops', this.editorOps)

@@ -1,5 +1,6 @@
 body {
   background-color: #282C34;
+  color: #ABB2BF;
 }
 
 /* Custom scroll bar */
@@ -96,7 +97,38 @@ pre {
   opacity: 1;
 }
 
-ol,
-ul {
-  color: #ABB2BF;
+.RadioButton {
+  border: 2px solid #ABB2BF;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 4px 1em 0 0;
+  width: 15px;
+  height: 15px;
+}
+
+.Section {
+  margin: 1.5em 0;
+}
+
+.Section:nth-child(odd) {
+  margin-left: auto;
+}
+
+.Section-title {
+  border-bottom: 3px solid #C678DD;
+  margin: 0 0 1em 0;
+}
+
+.Settings-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Settings-list-item {
+  display: flex;
+}
+
+.Settings-list-item.is-active .RadioButton {
+  background-color: #ABB2BF;
 }

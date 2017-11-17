@@ -1,5 +1,6 @@
 body {
   background-color: $colorBackground;
+  color: $colorBody;
 }
 
 
@@ -101,7 +102,36 @@ pre {
   }
 }
 
-ol,
-ul {
-  color: $colorBody;
+.RadioButton {
+  border: 2px solid $colorBody;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 4px 1em 0 0;
+  width: 15px;
+  height: 15px;
+}
+
+.Section {
+  margin: 1.5em 0;
+  &:nth-child(odd) {
+    margin-left: auto;
+  }
+}
+
+.Section-title {
+  border-bottom: 3px solid $colorHeading;
+  margin: 0 0 1em 0;
+}
+
+.Settings-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Settings-list-item {
+  display: flex;
+  &.is-active .RadioButton {
+    background-color: $colorBody;
+  }
 }
