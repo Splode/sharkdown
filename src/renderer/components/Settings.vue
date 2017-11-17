@@ -10,7 +10,8 @@
 
       <!-- <div class="row"> -->
         <div class="col-md-5 Section">
-          <h2 class="Section-title">Font</h2>
+          <h2 class="Section-title">Editor</h2>
+          <h3>Font</h3>
           <ul class="Settings-list">
             <li class="Settings-list-item" v-for="font in fonts" @click="selectFont(font)" :class="{ 'is-active': settings.font === font }"
               :style="{ 'font-family': font }" :key="font">
@@ -19,6 +20,7 @@
               <input type="radio" :id="font">
             </li>
           </ul>
+          <h3>Font Size</h3>
         </div>
 
         <div class="col-md-5 Section">

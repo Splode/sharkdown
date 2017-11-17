@@ -6,7 +6,7 @@ export function editorSettings () {
     dirName: 'settings',
     defaults: {
       theme: 'dracula',
-      font: 'Fira Sans'
+      font: 'Roboto'
     }
   })
   return localStore
