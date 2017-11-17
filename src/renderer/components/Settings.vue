@@ -32,7 +32,7 @@
 
         <div class="col-md-5 Section">
           <h2 class="Section-title">Document Location</h2>
-          <p>{{ editorStore.userDir }}</p>
+          <p>{{ settings.userDir }}</p>
           <label for="chooseUserDir">Choose</label>
           <input id="chooseUserDir" type="file" @change="onFileChange" webkitdirectory/>
         </div>
@@ -63,10 +63,6 @@ export default {
   },
 
   computed: {
-    editorStore () {
-      return this.$store.getters.editor
-    },
-
     settings () {
       return this.$store.getters.settings
     }
@@ -99,7 +95,7 @@ export default {
     onFileChange (e) {
       const userDir = e.target.files[0].path
       const payload = new Payload('userDir', userDir)
-      this.$store.dispatch('setState', payload)
+      this.$store.dispatch('setSetting', payload)
     }
   }
 }

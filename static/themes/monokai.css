@@ -6,11 +6,11 @@ body {
 /* Custom scroll bar */
 body::-webkit-scrollbar-track {
   /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
-  background-color: #FFD866;
+  background-color: #3E3B3F;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #3E3B3F;
+  background-color: #FFD866;
 }
 
 .Button--transparent {

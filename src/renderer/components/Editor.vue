@@ -118,10 +118,6 @@ export default {
       return this.quill.getContents()
     },
 
-    editorStore () {
-      return this.$store.getters.editor
-    },
-
     settings () {
       return this.$store.getters.settings
     },
@@ -206,7 +202,7 @@ export default {
         this.formatLineToggle(range, 'header', 4)
       })
       this.quill.keyboard.addBinding({ key: 's', ctrlKey: true }, () => {
-        this.save(this.editorStore.currentDoc)
+        this.save(this.settings.currentDoc)
       })
     },
 
@@ -242,8 +238,8 @@ export default {
         if (!this.changes) {
           return false
         } else if (this.changes) {
-          this.save(this.editorStore.currentDoc)
-          console.log(`Autosaved ${this.editorStore.currentDoc}.`)
+          this.save(this.settings.currentDoc)
+          console.log(`Autosaved ${this.settings.currentDoc}.`)
         }
       }, 5000)
     },
@@ -251,8 +247,8 @@ export default {
     load (filename) {
       let localStore = new LocalStore({
         configName: filename,
-        dirName: this.editorStore.documentDir,
-        userDir: this.editorStore.userDir,
+        dirName: this.settings.documentDir,
+        userDir: this.settings.userDir,
         defaults: {
           ops: null
         }
@@ -268,8 +264,8 @@ export default {
     save (filename) {
       let localStore = new LocalStore({
         configName: filename,
-        dirName: this.editorStore.documentDir,
-        userDir: this.editorStore.userDir,
+        dirName: this.settings.documentDir,
+        userDir: this.settings.userDir,
         defaults: {}
       })
       localStore.set('ops', this.editorOps)
@@ -280,13 +276,13 @@ export default {
 
   created () {
     EventBus.$on('newDoc', () => {
-      this.save(this.editorStore.currentDoc)
+      this.save(this.settings.currentDoc)
     })
   },
 
   mounted () {
     this.initQuill()
-    this.load(this.editorStore.currentDoc)
+    this.load(this.settings.currentDoc)
     // this.handleEditorUpdate()
     this.handleTextUpdate()
     this.autoSave()
@@ -298,6 +294,7 @@ export default {
 @import './../assets/main.scss';
 
 .Editor {
+  width: 100%;
   height: calc(100vh - 80px);
 }
 
