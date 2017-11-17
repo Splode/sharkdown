@@ -3,7 +3,7 @@
 - [ ] File tree
 - [ ] File rename function
 - [ ] Font size slider
-- [ ] Refactor settings store
+- [x] Refactor settings store
 - [x] Incorporate vue-awesome icons
 - [ ] Attempt two-way data binding with `contenteditable` (debounce events)
 - [x] Wireframe basic views
@@ -15,3 +15,10 @@
 ## Potential Names
 - Clarity
 - Blackstone
+
+## Font Sizes
+- 14px => .875rem
+- 16px => 1rem
+- 18px => 1.125rem
+- 20px => 1.25rem
+- 22px => 1.375rem

@@ -9,33 +9,41 @@
       </div>
 
       <!-- <div class="row"> -->
-        <div class="col-md-5 Section">
-          <h2 class="Section-title">Editor</h2>
-          <h3>Font</h3>
-          <ul class="Settings-list">
-            <li class="Settings-list-item" v-for="font in fonts" @click="selectFont(font)" :class="{ 'is-active': settings.font === font }"
-              :style="{ 'font-family': font }" :key="font">
-              <span class="RadioButton"></span>
-              <label :for="font">{{ font }}</label>
-              <input type="radio" :id="font">
-            </li>
-          </ul>
-          <h3>Font Size</h3>
-        </div>
+      <div class="col-md-5 Section">
+        <h2 class="Section-title">Editor</h2>
+        <h3>Font</h3>
+        <ul class="Settings-list">
+          <li class="Settings-list-item" v-for="font in fonts" @click="selectFont(font)" :class="{ 'is-active': settings.font === font }"
+            :style="{ 'font-family': font }" :key="font">
+            <span class="RadioButton"></span>
+            <label :for="font">{{ font }}</label>
+            <input type="radio" :id="font">
+          </li>
+        </ul>
+        <h3>Font Size</h3>
+        <input type="range" min="14" max="22" step="2" list="font-sizes" v-model="fontSize">
+        <datalist id="font-sizes">
+          <option label="14px" value="14" />
+          <option label="16px" value="16" />
+          <option label="18px" value="18" />
+          <option label="20px" value="20" />
+          <option label="22px" value="22" />
+        </datalist>
+      </div>
 
-        <div class="col-md-5 Section">
-          <h2 class="Section-title">Theme</h2>
-          <button @click="selectTheme('dracula')">Dracula</button>
-          <button @click="selectTheme('oneDark')">One Dark</button>
-          <button @click="selectTheme('monokai')">Monokai</button>
-        </div>
+      <div class="col-md-5 Section">
+        <h2 class="Section-title">Theme</h2>
+        <button @click="selectTheme('dracula')">Dracula</button>
+        <button @click="selectTheme('oneDark')">One Dark</button>
+        <button @click="selectTheme('monokai')">Monokai</button>
+      </div>
 
-        <div class="col-md-5 Section">
-          <h2 class="Section-title">Document Location</h2>
-          <p>{{ settings.userDir }}</p>
-          <label for="chooseUserDir">Choose</label>
-          <input id="chooseUserDir" type="file" @change="onFileChange" webkitdirectory/>
-        </div>
+      <div class="col-md-5 Section">
+        <h2 class="Section-title">Document Location</h2>
+        <p>{{ settings.userDir }}</p>
+        <label for="chooseUserDir">Choose</label>
+        <input id="chooseUserDir" type="file" @change="onFileChange" webkitdirectory/>
+      </div>
       <!-- </div> -->
     </div>
   </div>
@@ -58,7 +66,8 @@ export default {
         'Open Sans',
         'Roboto',
         'Roboto Condensed'
-      ]
+      ],
+      fontSize: ''
     }
   },
 

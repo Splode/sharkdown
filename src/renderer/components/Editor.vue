@@ -84,6 +84,7 @@
 
 <script>
 import _ from 'lodash'
+// import fs from 'fs'
 import Quill from 'quill'
 // import 'quill/dist/quill.core.css'
 import LocalStore from './../../utils/local-store'
@@ -253,6 +254,7 @@ export default {
           ops: null
         }
       })
+      // console.log(fs.readdirSync(this.settings.userDir))
       const ops = localStore.get('ops')
       if (ops === null) {
         return null

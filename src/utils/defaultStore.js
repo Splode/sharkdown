@@ -9,7 +9,8 @@ export function editorSettings () {
       documentDir: 'documents',
       userDir: false,
       theme: 'dracula',
-      font: 'Roboto'
+      font: 'Roboto',
+      fontSize: '16'
     }
   })
   return localStore

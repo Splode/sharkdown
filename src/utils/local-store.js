@@ -40,4 +40,8 @@ export default class {
       return defaults
     }
   }
+
+  listFiles (path) {
+    return fs.readdirSync(this.dir)
+  }
 }
