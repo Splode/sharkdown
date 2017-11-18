@@ -4,12 +4,12 @@ body {
 }
 
 /* Custom scroll bar */
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track, .Drawer::-webkit-scrollbar-track {
   /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
   background-color: #2D313B;
 }
 
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb, .Drawer::-webkit-scrollbar-thumb {
   background-color: #61AFEF;
 }
 
@@ -19,6 +19,10 @@ body::-webkit-scrollbar-thumb {
 
 .Button--transparent:hover {
   color: #56B6C2;
+}
+
+.Drawer {
+  background-color: #282C34;
 }
 
 .Header {
@@ -107,11 +111,7 @@ pre {
 }
 
 .Section {
-  margin: 1.5em 0;
-}
-
-.Section:nth-child(odd) {
-  margin-left: auto;
+  margin: 1em 0 0 0;
 }
 
 .Section-title {

@@ -19,6 +19,6 @@ export default {
   pointer-events: none;
   position: fixed;
   height: 80px;
-  z-index: 1;
+  z-index: 2;
 }
 </style>

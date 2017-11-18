@@ -13,11 +13,6 @@ export default new Router({
     {
       path: '*',
       redirect: '/'
-    },
-    {
-      path: '/settings',
-      name: 'settings',
-      component: require('@/components/Settings').default
     }
   ]
 })

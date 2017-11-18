@@ -1,15 +1,12 @@
 <template>
-  <div class="col-11 Settings">
+  <div class="col Settings">
     <div class="row">
       <div class="col-12">
         <h1>Settings</h1>
-        <router-link to="/">
-          <h1>BACK</h1>
-        </router-link>
       </div>
 
       <!-- <div class="row"> -->
-      <div class="col-md-5 Section">
+      <div class="col-12 Section">
         <h2 class="Section-title">Editor</h2>
         <h3>Font</h3>
         <ul class="Settings-list">
@@ -21,24 +18,24 @@
           </li>
         </ul>
         <h3>Font Size</h3>
-        <input type="range" min="14" max="22" step="2" list="font-sizes" v-model="fontSize">
-        <datalist id="font-sizes">
+        <input type="range" min="14" max="22" step="2" class="FontSizeSelector" @change="selectFontSize" :value="settings.fontSize">
+        <!-- <datalist id="font-sizes">
           <option label="14px" value="14" />
           <option label="16px" value="16" />
           <option label="18px" value="18" />
           <option label="20px" value="20" />
           <option label="22px" value="22" />
-        </datalist>
+        </datalist> -->
       </div>
 
-      <div class="col-md-5 Section">
+      <div class="col-12 Section">
         <h2 class="Section-title">Theme</h2>
         <button @click="selectTheme('dracula')">Dracula</button>
         <button @click="selectTheme('oneDark')">One Dark</button>
         <button @click="selectTheme('monokai')">Monokai</button>
       </div>
 
-      <div class="col-md-5 Section">
+      <div class="col-12 Section">
         <h2 class="Section-title">Document Location</h2>
         <p>{{ settings.userDir }}</p>
         <label for="chooseUserDir">Choose</label>
@@ -50,9 +47,9 @@
 </template>
 
 <script>
-import Payload from './../../utils/payload'
-import cssLoader from './../../utils/css-loader'
-import keygen from './../../utils/key'
+import Payload from './../../../utils/payload'
+import cssLoader from './../../../utils/css-loader'
+import keygen from './../../../utils/key'
 export default {
   mixins: [ cssLoader, keygen ],
 
@@ -66,8 +63,7 @@ export default {
         'Open Sans',
         'Roboto',
         'Roboto Condensed'
-      ],
-      fontSize: ''
+      ]
     }
   },
 
@@ -80,6 +76,12 @@ export default {
   methods: {
     selectFont (font) {
       const payload = new Payload('font', font)
+      this.$store.dispatch('setSetting', payload)
+    },
+
+    selectFontSize (e) {
+      const size = e.target.value
+      const payload = new Payload('fontSize', size)
       this.$store.dispatch('setSetting', payload)
     },
 
@@ -111,5 +113,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.FontSizeSelector {
+  position: relative;
+  width: 100%;
+  &::after {
+    position: absolute;
+    bottom: -30px;
+    content: '14 16 18 20 22';
+    word-spacing: 59px;
+  }
+}
 </style>

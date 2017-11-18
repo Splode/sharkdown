@@ -1,6 +1,6 @@
 <template>
   <!-- <div class="row"> -->
-  <div class="col-11 d-flex Editor-wrapper">
+  <div class="col-11 d-flex Editor-wrapper" :class="{ 'is-disabled': drawerOpen }">
     <div class="row Editor" @click="giveFocus" :style="{ 'font-family': settings.font }">
       <div id="Quill" class="col-11"></div>
       <div class="col-1 d-flex flex-column align-items-center">
@@ -115,6 +115,10 @@ export default {
   },
 
   computed: {
+    drawerOpen () {
+      return this.$store.getters.viewState.drawerOpen
+    },
+
     editorOps () {
       return this.quill.getContents()
     },
@@ -301,7 +305,10 @@ export default {
 }
 
 .Editor-wrapper {
-  // padding-left: 0;
+  &.is-disabled {
+    opacity: .5;
+    pointer-events: none;
+  }
 }
 
 .ql-toolbar {

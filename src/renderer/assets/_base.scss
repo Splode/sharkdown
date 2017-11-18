@@ -1,11 +1,13 @@
 body {
   cursor: default;
   letter-spacing: 1px;
+  overflow-x: hidden;
   user-select: none;
 }
 
-body::-webkit-scrollbar {
-  width: .5em;
+body::-webkit-scrollbar, .Drawer::-webkit-scrollbar {
+  // width: .5em;
+  width: 3px;
 }
 
 input[type=radio] {
