@@ -4,6 +4,10 @@ body {
 }
 
 /* Custom scroll bar */
+body::-webkit-scrollbar, .Drawer::-webkit-scrollbar {
+  width: 3px;
+}
+
 body::-webkit-scrollbar-track, .Drawer::-webkit-scrollbar-track {
   /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
   background-color: #44475a;
@@ -13,11 +17,38 @@ body::-webkit-scrollbar-thumb, .Drawer::-webkit-scrollbar-thumb {
   background-color: #6272a4;
 }
 
+.Button {
+  border: 0;
+  cursor: default;
+  outline: 0;
+  transition: all .3s ease;
+}
+
+.Button:focus {
+  outline: 0;
+}
+
+.Button.is-active {
+  opacity: 1;
+}
+
+.Button.is-inactive {
+  opacity: .1;
+}
+
+.Button--transparent {
+  background-color: transparent;
+}
+
 .Button--transparent {
   color: #50fa7b;
 }
 
 .Button--transparent:hover {
+  color: #ffb86c;
+}
+
+.Button--transparent.is-selected {
   color: #ffb86c;
 }
 

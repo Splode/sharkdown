@@ -1,19 +1,16 @@
 <template>
-  <div class="col-1 d-flex flex-column align-items-center" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false">
+  <!-- <div class="col-1 d-flex flex-column align-items-center" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false"> -->
+  <div class="col-1 d-flex flex-column align-items-center">
     <div class="position-fixed d-flex flex-column align-items-center">
-      <button class="Button Button--transparent" title="New Document" @click="emitNewDoc" :class="tooltipClasses">
+      <button class="Button Button--transparent" title="New Document" @click="emitNewDoc" :class="{ 'is-selected': viewState.drawerComponent === '' }">
         <icon name="plus" scale="1.5" />
       </button>
-      <button class="Button Button--transparent" title="Notes" @click="toggleDrawer('appDrawerFileTree')" :class="tooltipClasses">
+      <button class="Button Button--transparent" title="Notes" @click="toggleDrawer('appDrawerFileTree')" :class="{ 'is-selected': viewState.drawerComponent === 'appDrawerFileTree' && viewState.drawerOpen }">
         <icon name="plus" scale="1.5" />
       </button>
-      <!-- <keep-alive> -->
-        <!-- <router-link to="/settings"> -->
-          <button class="Button Button--transparent" title="Settings" @click="toggleDrawer('appDrawerSettings')" :class="tooltipClasses">
-            <icon name="cog" scale="1.5" />
-          </button>
-        <!-- </router-link> -->
-      <!-- </keep-alive> -->
+      <button class="Button Button--transparent" title="Settings" @click="toggleDrawer('appDrawerSettings')" :class="{ 'is-selected': viewState.drawerComponent === 'appDrawerSettings' && viewState.drawerOpen }">
+        <icon name="cog" scale="1.5" />
+      </button>
     </div>
   </div>
 </template>
@@ -42,6 +39,10 @@ export default {
 
     tooltipClasses () {
       return this.toolbarIsActive ? 'is-active' : 'is-inactive'
+    },
+
+    viewState () {
+      return this.$store.getters.viewState
     }
   },
 

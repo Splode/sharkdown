@@ -5,11 +5,6 @@ body {
   user-select: none;
 }
 
-body::-webkit-scrollbar, .Drawer::-webkit-scrollbar {
-  // width: .5em;
-  width: 3px;
-}
-
 input[type=radio] {
   display: none;
   visibility: hidden;
@@ -19,9 +14,7 @@ input[type=radio] {
   border: 0;
   cursor: default;
   outline: 0;
-  transition: $transitionPrimary;
-  // width: 50px;
-  // height: 50px;
+  transition: all .3s ease;
   &:focus {
     outline: 0;
   }
