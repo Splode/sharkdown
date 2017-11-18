@@ -2,7 +2,8 @@
 - [ ] Incorporate highlight.js syntax highlighting for `pre` and `code` tags
 - [ ] File tree
 - [ ] File rename function
-- [ ] Font size slider
+- [x] Font size slider
+- [ ] Rename `defaultStore.js` to `default-store.js`
 - [x] Refactor settings store
 - [x] Incorporate vue-awesome icons
 - [ ] Attempt two-way data binding with `contenteditable` (debounce events)

@@ -8,24 +8,29 @@
       <!-- <div class="row"> -->
       <div class="col-12 Section">
         <h2 class="Section-title">Editor</h2>
-        <h3>Font</h3>
+        <h3 class="Section-subtitle">Font</h3>
         <ul class="Settings-list">
           <li class="Settings-list-item" v-for="font in fonts" @click="selectFont(font)" :class="{ 'is-active': settings.font === font }"
             :style="{ 'font-family': font }" :key="font">
             <span class="RadioButton"></span>
-            <label :for="font">{{ font }}</label>
+            <label class="RadioButton-label" :for="font">{{ font }}</label>
             <input type="radio" :id="font">
           </li>
         </ul>
-        <h3>Font Size</h3>
-        <input type="range" min="14" max="22" step="2" class="FontSizeSelector" @change="selectFontSize" :value="settings.fontSize">
-        <!-- <datalist id="font-sizes">
-          <option label="14px" value="14" />
-          <option label="16px" value="16" />
-          <option label="18px" value="18" />
-          <option label="20px" value="20" />
-          <option label="22px" value="22" />
-        </datalist> -->
+        <h3 class="Section-subtitle">Font Size</h3>
+        <input type="range" min=".75" max="1.375" step=".125" class="Slider" @change="selectFontSize" :value="settings.fontSize">
+        <div class="Slider-label">
+          <ul class="Slider-label-list">
+            <li v-for="number in 6" :key="number">|</li>
+          </ul>
+        </div>
+        <h3 class="Section-subtitle">Line Height</h3>
+        <input type="range" min="1.25" max="3" step=".25" class="Slider" @change="selectLineHeight" :value="settings.lineHeight">
+        <div class="Slider-label">
+          <ul class="Slider-label-list">
+            <li v-for="number in 8" :key="number">|</li>
+          </ul>
+        </div>
       </div>
 
       <div class="col-12 Section">
@@ -85,6 +90,12 @@ export default {
       this.$store.dispatch('setSetting', payload)
     },
 
+    selectLineHeight (e) {
+      const height = e.target.value
+      const payload = new Payload('lineHeight', height)
+      this.$store.dispatch('setSetting', payload)
+    },
+
     selectTheme (theme) {
       const payload = new Payload('theme', theme)
       this.appendTheme(theme, () => {
@@ -113,14 +124,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.FontSizeSelector {
-  position: relative;
-  width: 100%;
-  &::after {
-    position: absolute;
-    bottom: -30px;
-    content: '14 16 18 20 22';
-    word-spacing: 59px;
-  }
-}
+
 </style>
