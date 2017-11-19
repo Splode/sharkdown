@@ -17,29 +17,6 @@ body::-webkit-scrollbar-thumb, .Drawer::-webkit-scrollbar-thumb {
   background-color: #6272a4;
 }
 
-.Button {
-  border: 0;
-  cursor: default;
-  outline: 0;
-  transition: all .3s ease;
-}
-
-.Button:focus {
-  outline: 0;
-}
-
-.Button.is-active {
-  opacity: 1;
-}
-
-.Button.is-inactive {
-  opacity: .1;
-}
-
-.Button--transparent {
-  background-color: transparent;
-}
-
 .Button--transparent {
   color: #50fa7b;
 }

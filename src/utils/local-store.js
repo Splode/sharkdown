@@ -4,15 +4,17 @@ const path = require('path')
 
 export default class {
   constructor (opts) {
-    const userDataPath = (electron.app || electron.remote.app).getPath('userData')
+    this.userDataPath = (electron.app || electron.remote.app).getPath('userData')
 
-    this.dir = path.join(userDataPath, opts.dirName)
+    this.dir = path.join(this.userDataPath, opts.dirName)
+
     if (opts.userDir) {
       console.log(opts.userDir)
       this.path = path.join(opts.userDir, opts.configName + '.json')
     } else {
-      this.path = path.join(userDataPath, opts.dirName, opts.configName + '.json')
+      this.path = path.join(this.userDataPath, opts.dirName, opts.configName + '.json')
     }
+
     this.data = this.parseDataFile(this.path, opts.defaults)
   }
 
@@ -39,9 +41,5 @@ export default class {
     } catch (err) {
       return defaults
     }
-  }
-
-  listFiles (filePath) {
-    return fs.readdirSync(filePath)
   }
 }

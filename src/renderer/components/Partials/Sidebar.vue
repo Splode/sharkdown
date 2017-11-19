@@ -1,6 +1,6 @@
 <template>
-  <!-- <div class="col-1 d-flex flex-column align-items-center" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false"> -->
-  <div class="col-1 d-flex flex-column align-items-center">
+  <div class="col-1 d-flex flex-column align-items-center" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false">
+  <!-- <div class="col-1 d-flex flex-column align-items-center"> -->
     <div class="position-fixed d-flex flex-column align-items-center">
       <button class="Button Button--transparent" title="New Document" @click="emitNewDoc" :class="{ 'is-selected': viewState.drawerComponent === '' }">
         <icon name="plus" scale="1.5" />

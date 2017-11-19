@@ -49,6 +49,7 @@ export default {
 
 .Drawer-wrapper {
   padding-top: 80px;
+  padding-bottom: 2em;
 }
 
 @keyframes fade-in {

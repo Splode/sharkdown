@@ -1,8 +1,22 @@
 import LocalStore from './local-store'
 
+export function appConfig () {
+  const localStore = new LocalStore({
+    configName: 'app-config',
+    dirName: 'settings',
+    defaults: {
+      windowBounds: {
+        width: 1024,
+        height: 1024
+      }
+    }
+  })
+  return localStore
+}
+
 export function editorSettings () {
   const localStore = new LocalStore({
-    configName: 'app-state',
+    configName: 'user-config',
     dirName: 'settings',
     defaults: {
       currentDoc: 'untitled',
@@ -11,7 +25,8 @@ export function editorSettings () {
       theme: 'dracula',
       font: 'Roboto',
       fontSize: '1',
-      lineHeight: '2'
+      lineHeight: '2',
+      autoSave: true
     }
   })
   return localStore

@@ -3,11 +3,12 @@ import { editorSettings } from '../../../utils/defaultStore'
 const localStore = editorSettings()
 
 const state = {
-  localStore: localStore.data
+  localStore: localStore
 }
 
 const getters = {
-  settings: state => state.localStore
+  userDataPath: state => state.localStore.userDataPath,
+  settings: state => state.localStore.data
 }
 
 const actions = {
@@ -19,7 +20,7 @@ const actions = {
 const mutations = {
   SET_SETTING (state, payload) {
     localStore.set(payload.key, payload.val)
-    state.localStore[payload.key] = payload.val
+    state.localStore.data[payload.key] = payload.val
   }
 }
 

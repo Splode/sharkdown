@@ -265,6 +265,7 @@ export default {
       }
       this.quill.setContents(ops)
       this.quill.history.clear()
+      console.log(`loaded '${filename}' from '${this.settings.userDir}'`)
     },
 
     save (filename) {
@@ -281,6 +282,10 @@ export default {
   },
 
   created () {
+    EventBus.$on('loadDoc', (file) => {
+      // this.save(this.settings.currentDoc)
+      this.load(file)
+    })
     EventBus.$on('newDoc', () => {
       this.save(this.settings.currentDoc)
     })
@@ -291,7 +296,10 @@ export default {
     this.load(this.settings.currentDoc)
     // this.handleEditorUpdate()
     this.handleTextUpdate()
-    this.autoSave()
+    // this.autoSave()
+    if (this.settings.autoSave) {
+      this.autoSave()
+    }
   }
 }
 </script>

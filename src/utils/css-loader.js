@@ -13,8 +13,9 @@ export default {
       document.getElementsByTagName('head')[0].appendChild(el)
     },
 
-    removeFromHead (el) {
-      document.getElementsByTagName('head')[0].removeChild(el)
+    removeFromHead () {
+      let links = document.getElementsByTagName('link')
+      links[1].parentNode.removeChild(links[1])
     }
   }
 }

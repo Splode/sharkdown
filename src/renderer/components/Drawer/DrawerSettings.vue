@@ -98,20 +98,16 @@ export default {
 
     selectTheme (theme) {
       const payload = new Payload('theme', theme)
-      this.appendTheme(theme, () => {
-        this.removeTheme(theme)
-      })
+      this.appendTheme(theme)
       this.$store.dispatch('setSetting', payload)
+      setTimeout(() => {
+        this.removeFromHead()
+      }, 1000)
     },
 
     appendTheme (theme) {
       const link = this.createCSS('static/themes/' + theme + '.css')
       this.mountToHead(link)
-    },
-
-    removeTheme (theme) {
-      const link = this.createCSS('static/images' + theme + '.css')
-      this.removeTheme(link)
     },
 
     onFileChange (e) {
