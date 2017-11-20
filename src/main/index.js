@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
 
 import LocalStore from './../utils/local-store'
 
@@ -51,9 +51,15 @@ app.on('activate', () => {
   }
 })
 
+ipcMain.on('title-change', (event, arg) => {
+  const title = `sharkdown - ${arg}`
+  mainWindow.setTitle(title)
+})
+
 function createWindow (opts) {
   mainWindow = new BrowserWindow({
     backgroundColor: '#282a36',
+    // frame: false,
     width: opts.width,
     height: opts.height,
     show: false,

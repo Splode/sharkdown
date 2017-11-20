@@ -83,6 +83,7 @@
 </template>
 
 <script>
+import { ipcRenderer } from 'electron'
 import _ from 'lodash'
 // import fs from 'fs'
 import Quill from 'quill'
@@ -258,13 +259,13 @@ export default {
           ops: null
         }
       })
-      // console.log(fs.readdirSync(this.settings.userDir))
       const ops = localStore.get('ops')
       if (ops === null) {
         return null
       }
       this.quill.setContents(ops)
       this.quill.history.clear()
+      ipcRenderer.send('title-change', this.settings.currentDoc)
       console.log(`loaded '${filename}' from '${this.settings.userDir}'`)
     },
 
@@ -283,7 +284,6 @@ export default {
 
   created () {
     EventBus.$on('loadDoc', (file) => {
-      // this.save(this.settings.currentDoc)
       this.load(file)
     })
     EventBus.$on('new-doc-init', () => {
@@ -292,15 +292,15 @@ export default {
     EventBus.$on('new-doc-title-created', () => {
       this.quill.setText('')
       this.quill.focus()
+      ipcRenderer.send('title-change', this.settings.currentDoc)
+      this.save(this.settings.currentDoc)
     })
   },
 
   mounted () {
     this.initQuill()
     this.load(this.settings.currentDoc)
-    // this.handleEditorUpdate()
     this.handleTextUpdate()
-    // this.autoSave()
     if (this.settings.autoSave) {
       this.autoSave()
     }
