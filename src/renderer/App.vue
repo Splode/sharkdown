@@ -3,6 +3,7 @@
     <app-modal v-if="modalOpen">
 
     </app-modal>
+    <app-titlebar/>
     <app-header/>
     <div class="container App-container" :class="{ 'is-blurred': modalOpen }">
       <app-drawer>
@@ -25,6 +26,7 @@ import appDrawerSettings from './components/Drawer/DrawerSettings'
 import appHeader from './components/Partials/Header'
 import appModal from './components/Modal/Modal'
 import appSidebar from './components/Partials/Sidebar'
+import appTitlebar from './components/Partials/Titlebar'
 export default {
   name: 'sharkdown',
 
@@ -34,7 +36,8 @@ export default {
     appDrawerSettings,
     appHeader,
     appModal,
-    appSidebar
+    appSidebar,
+    appTitlebar
   },
 
   mixins: [ cssLoader ],
@@ -72,7 +75,8 @@ export default {
 @import './assets/_variables.scss';
 
 .App-container {
-  padding: 80px 0 0 0;
+  // margin-top: 80px;
+  // padding: 80px 0 0 0;
   &.is-blurred {
     opacity: .33;
     pointer-events: none;

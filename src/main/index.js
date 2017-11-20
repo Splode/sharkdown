@@ -59,7 +59,7 @@ ipcMain.on('title-change', (event, arg) => {
 function createWindow (opts) {
   mainWindow = new BrowserWindow({
     backgroundColor: '#282a36',
-    // frame: false,
+    frame: false,
     width: opts.width,
     height: opts.height,
     show: false,

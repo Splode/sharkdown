@@ -4,16 +4,22 @@ body {
 }
 
 /* Custom scroll bar */
-body::-webkit-scrollbar, .Drawer::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.Editor-wrapper::-webkit-scrollbar,
+.Drawer::-webkit-scrollbar {
   width: 3px;
 }
 
-body::-webkit-scrollbar-track, .Drawer::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track,
+.Editor-wrapper::-webkit-scrollbar-track,
+.Drawer::-webkit-scrollbar-track {
   /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
   background-color: #3E3B3F;
 }
 
-body::-webkit-scrollbar-thumb, .Drawer::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,
+.Editor-wrapper::-webkit-scrollbar-thumb,
+.Drawer::-webkit-scrollbar-thumb {
   background-color: #FFD866;
 }
 
@@ -241,4 +247,12 @@ pre {
   border-bottom: 2px solid #FDF9F3;
   color: #FFD866;
   outline: 0;
+}
+
+.Titlebar {
+  background: #2C292D;
+}
+
+.Titlebar-section--title {
+  color: #3E3B3F;
 }

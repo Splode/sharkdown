@@ -317,6 +317,7 @@ export default {
 }
 
 .Editor-wrapper {
+  // overflow: auto;
   &.is-disabled {
     opacity: .5;
     pointer-events: none;

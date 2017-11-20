@@ -17,7 +17,7 @@ export default {
 .Header {
   opacity: .5;
   pointer-events: none;
-  position: fixed;
+  // position: fixed;
   height: 80px;
   z-index: 2;
 }

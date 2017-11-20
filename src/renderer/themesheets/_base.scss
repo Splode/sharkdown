@@ -4,17 +4,23 @@ body {
 }
 
 /* Custom scroll bar */
-body::-webkit-scrollbar, .Drawer::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.Editor-wrapper::-webkit-scrollbar, 
+.Drawer::-webkit-scrollbar {
   // width: .5em;
   width: 3px;
 }
 
-body::-webkit-scrollbar-track, .Drawer::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track,
+.Editor-wrapper::-webkit-scrollbar-track, 
+.Drawer::-webkit-scrollbar-track {
   /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
   background-color: $colorComment;
 }
 
-body::-webkit-scrollbar-thumb, .Drawer::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,
+.Editor-wrapper::-webkit-scrollbar-thumb, 
+.Drawer::-webkit-scrollbar-thumb {
   background-color: $colorSelection;
 }
 
@@ -235,4 +241,12 @@ pre {
   border-bottom: 2px solid $colorBody;
   color: $colorHeading;
   outline: 0;
+}
+
+.Titlebar {
+  background: $colorBackground;
+}
+
+.Titlebar-section--title {
+  color: $colorComment;
 }
