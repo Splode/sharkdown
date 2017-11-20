@@ -5,18 +5,22 @@
         <h1>Settings</h1>
       </div>
 
-      <!-- <div class="row"> -->
       <div class="col-12 Section">
         <h2 class="Section-title">Editor</h2>
+        <!-- autosave -->
+        <input type="checkbox" id="settting-autosave">
+        <span class="RadioButton"></span>
+        <label for="setting-autosave">Autosave</label>
+        <!-- font -->
         <h3 class="Section-subtitle">Font</h3>
         <ul class="Settings-list">
           <li class="Settings-list-item" v-for="font in fonts" @click="selectFont(font)" :class="{ 'is-active': settings.font === font }"
             :style="{ 'font-family': font }" :key="font">
-            <span class="RadioButton"></span>
             <label class="RadioButton-label" :for="font">{{ font }}</label>
             <input type="radio" :id="font">
           </li>
         </ul>
+        <!-- font size -->
         <h3 class="Section-subtitle">Font Size</h3>
         <input type="range" min=".75" max="1.375" step=".125" class="Slider" @change="selectFontSize" :value="settings.fontSize">
         <div class="Slider-label">
@@ -24,6 +28,7 @@
             <li v-for="number in 6" :key="number">|</li>
           </ul>
         </div>
+        <!-- line height -->
         <h3 class="Section-subtitle">Line Height</h3>
         <input type="range" min="1.25" max="3" step=".25" class="Slider" @change="selectLineHeight" :value="settings.lineHeight">
         <div class="Slider-label">
@@ -42,11 +47,10 @@
 
       <div class="col-12 Section">
         <h2 class="Section-title">Document Location</h2>
-        <p>{{ settings.userDir }}</p>
-        <label for="chooseUserDir">Choose</label>
-        <input id="chooseUserDir" type="file" @change="onFileChange" webkitdirectory/>
+        <label for="chooseUserDir" class="Button Button--block Button--block--field">Browse</label>
+        <input id="chooseUserDir" type="file" class="d-none" @change="onFileChange" webkitdirectory/>
+        <em>{{ docPath }}</em>
       </div>
-      <!-- </div> -->
     </div>
   </div>
 </template>
@@ -73,6 +77,10 @@ export default {
   },
 
   computed: {
+    docPath () {
+      return this.settings.userDir ? this.settings.userDir : 'Default'
+    },
+
     settings () {
       return this.$store.getters.settings
     }

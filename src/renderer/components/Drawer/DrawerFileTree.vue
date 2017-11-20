@@ -1,13 +1,23 @@
 <template>
-  <ul>
-    <li 
-      v-for="(file, i) in files" 
-      @click="selectFile(file)"
-      @click.right="test"
-      :key="'file-' + i">
-      {{ file | removeFileExt }}
-    </li>
-  </ul>
+  <div class="col-12 Drawer-fileTree">
+    <div class="row">
+      <div class="col-12">
+        <h1>Notes</h1>
+      </div>
+      <div class="col-12 Section">
+        <ul class="Settings-list">
+          <li 
+            class="Settings-list-item" 
+            v-for="(file, i) in files" 
+            @click="selectFile(file)" 
+            :class="{ 'is-active': file === settings.currentDoc }"
+            :key="'file-' + i">
+            {{ file }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -32,12 +42,6 @@ export default {
     }
   },
 
-  filters: {
-    removeFileExt (file) {
-      return file.replace(/\.[^/.]+$/, '')
-    }
-  },
-
   methods: {
     readDir () {
       let path
@@ -46,7 +50,9 @@ export default {
       } else {
         path = this.defaultDocPath
       }
-      this.files = fs.readdirSync(path)
+      const files = fs.readdirSync(path)
+      const prettyFiles = files.map(file => this.removeFileExt(file))
+      this.files = prettyFiles
     },
 
     removeFileExt (file) {
@@ -55,17 +61,15 @@ export default {
 
     selectFile (file) {
       const fileNoExt = this.removeFileExt(file)
-      const payload = new Payload('currentDoc', fileNoExt)
-      this.$store.dispatch('setSetting', payload)
+      const payloadDoc = new Payload('currentDoc', fileNoExt)
+      const payloadDrawer = new Payload('drawerOpen', false)
+      this.$store.dispatch('setSetting', payloadDoc)
+      this.$store.dispatch('setViewState', payloadDrawer)
       EventBus.$emit('loadDoc', fileNoExt)
-    },
-
-    test () {
-      console.log('right click')
     }
   },
 
-  mounted () {
+  created () {
     this.readDir()
   }
 }

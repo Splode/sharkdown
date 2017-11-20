@@ -17,6 +17,23 @@ body::-webkit-scrollbar-thumb, .Drawer::-webkit-scrollbar-thumb {
   background-color: #6272a4;
 }
 
+.Button--block {
+  padding: .15em .5em;
+}
+
+.Button--block--field {
+  background-color: #282a36;
+  color: #bd93f9;
+}
+
+.Button--block--field:hover {
+  color: #50fa7b;
+}
+
+.Button--block--field:disabled {
+  color: #44475a;
+}
+
 .Button--transparent {
   color: #50fa7b;
 }
@@ -109,6 +126,10 @@ pre {
   opacity: 1;
 }
 
+.Modal-filename-wrapper {
+  background-color: #2f313e;
+}
+
 .RadioButton {
   border: 2px solid #bd93f9;
   border-radius: 50%;
@@ -123,7 +144,15 @@ pre {
 }
 
 .Section {
+  background-color: #2f313e;
+  border-radius: 3px;
   margin: 1em 0 0 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.Section:first-of-type {
+  margin-top: 0;
 }
 
 .Section-subtitle {
@@ -141,6 +170,7 @@ pre {
 }
 
 .Settings-list-item {
+  border-left: 3px solid transparent;
   border-radius: 3px;
   display: flex;
   margin: .5em 0;
@@ -149,6 +179,12 @@ pre {
 
 .Settings-list-item:hover {
   background-color: rgba(68, 71, 90, 0.99);
+}
+
+.Settings-list-item.is-active {
+  border-color: #50fa7b;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .Settings-list-item.is-active .RadioButton {
@@ -197,4 +233,12 @@ pre {
   list-style-type: none;
   margin: 0;
   padding: 0 6px;
+}
+
+.TextInput {
+  background-color: #2f313e;
+  border: 0;
+  border-bottom: 2px solid #bd93f9;
+  color: #50fa7b;
+  outline: 0;
 }

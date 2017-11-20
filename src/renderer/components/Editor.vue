@@ -286,8 +286,12 @@ export default {
       // this.save(this.settings.currentDoc)
       this.load(file)
     })
-    EventBus.$on('newDoc', () => {
+    EventBus.$on('new-doc-init', () => {
       this.save(this.settings.currentDoc)
+    })
+    EventBus.$on('new-doc-title-created', () => {
+      this.quill.setText('')
+      this.quill.focus()
     })
   },
 

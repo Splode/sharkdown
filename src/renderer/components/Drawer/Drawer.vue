@@ -1,7 +1,9 @@
 <template>
   <div class="Drawer" :class="drawerClass">
     <div class="container Drawer-wrapper">
-      <slot></slot>
+      <div class="row">
+        <slot/>
+      </div>
     </div>
   </div>
 </template>
@@ -25,6 +27,7 @@ export default {
 
 .Drawer {
   overflow-y: auto;
+  padding-right: 1em;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -32,7 +35,7 @@ export default {
   width: 400px;
   height: 100%;
   word-wrap: break-word;
-  z-index: 1;
+  z-index: 2;
   &.is-closed {
     animation: fade-out .3s ease forwards;
     // display: none;

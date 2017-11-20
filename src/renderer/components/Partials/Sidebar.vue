@@ -1,14 +1,25 @@
 <template>
   <div class="col-1 d-flex flex-column align-items-center" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false">
   <!-- <div class="col-1 d-flex flex-column align-items-center"> -->
-    <div class="position-fixed d-flex flex-column align-items-center">
-      <button class="Button Button--transparent" title="New Document" @click="emitNewDoc" :class="{ 'is-selected': viewState.drawerComponent === '' }">
+    <div class="Sidebar" :class="tooltipClasses">
+      <button 
+        class="Button Button--transparent" 
+        title="New Document" 
+        @click="newDoc">
         <icon name="plus" scale="1.5" />
       </button>
-      <button class="Button Button--transparent" title="Notes" @click="toggleDrawer('appDrawerFileTree')" :class="{ 'is-selected': viewState.drawerComponent === 'appDrawerFileTree' && viewState.drawerOpen }">
-        <icon name="plus" scale="1.5" />
+      <button 
+        class="Button Button--transparent" 
+        title="Notes" 
+        @click="toggleDrawer('appDrawerFileTree')" 
+        :class="{ 'is-selected': viewState.drawerComponent === 'appDrawerFileTree' && viewState.drawerOpen }">
+        <icon name="list" scale="1.5" />
       </button>
-      <button class="Button Button--transparent" title="Settings" @click="toggleDrawer('appDrawerSettings')" :class="{ 'is-selected': viewState.drawerComponent === 'appDrawerSettings' && viewState.drawerOpen }">
+      <button 
+        class="Button Button--transparent" 
+        title="Settings" 
+        @click="toggleDrawer('appDrawerSettings')" 
+        :class="{ 'is-selected': viewState.drawerComponent === 'appDrawerSettings' && viewState.drawerOpen }">
         <icon name="cog" scale="1.5" />
       </button>
     </div>
@@ -20,6 +31,7 @@ import Payload from './../../../utils/payload'
 import { EventBus } from './../../../utils/event-bus'
 import Icon from 'vue-awesome/components/Icon'
 import 'vue-awesome/icons/cog'
+import 'vue-awesome/icons/list'
 import 'vue-awesome/icons/plus'
 export default {
   components: {
@@ -38,7 +50,7 @@ export default {
     },
 
     tooltipClasses () {
-      return this.toolbarIsActive ? 'is-active' : 'is-inactive'
+      return (this.toolbarIsActive || this.viewState.drawerOpen) ? 'is-active' : 'is-inactive'
     },
 
     viewState () {
@@ -49,10 +61,18 @@ export default {
   methods: {
     emitNewDoc () {
       console.log('clicked new document')
-      EventBus.$emit('newDoc')
+      EventBus.$emit('new-doc-init')
+    },
+
+    newDoc () {
+      const payload = new Payload('modalOpen', true)
+      this.$store.dispatch('setViewState', payload)
     },
 
     toggleDrawer (drawerComponent) {
+      if (this.drawerOpen) {
+        drawerComponent = ''
+      }
       const payloadToggle = new Payload('drawerOpen', !this.drawerOpen)
       const payloadComponent = new Payload('drawerComponent', drawerComponent)
       this.$store.dispatch('setViewState', payloadToggle)
@@ -64,9 +84,16 @@ export default {
 
 <style lang="scss" scoped>
 .Sidebar {
+  align-items: center;
   display: flex;
   flex-direction: column;
   position: fixed;
-  // width: 70px;
+  transition: all .3s ease;
+  &.is-inactive {
+    opacity: .1;
+  }
+  &.is-active {
+    opacity: 1;
+  }
 }
 </style>

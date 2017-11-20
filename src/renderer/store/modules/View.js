@@ -1,6 +1,7 @@
 const state = {
   drawerComponent: '',
-  drawerOpen: false
+  drawerOpen: false,
+  modalOpen: false
 }
 
 const getters = {
