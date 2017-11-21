@@ -7,10 +7,18 @@
 
       <div class="col-12 Section">
         <h2 class="Section-title">Editor</h2>
-        <!-- autosave -->
-        <input type="checkbox" id="settting-autosave">
-        <span class="RadioButton"></span>
-        <label for="setting-autosave">Autosave</label>
+        <!-- autoSave -->
+        <div class="Section-option-wrapper">
+        <div class="Section-option">
+          <div class="Checkbox" @click="toggleSetting('autoSave')" :class="settings.autoSave ? 'is-active' : 'is-inactive'"></div>
+          <label>Autosave</label>
+        </div>
+        <!-- focusMode -->
+        <div class="Section-option">
+          <div class="Checkbox" @click="toggleSetting('focusMode')" :class="settings.focusMode ? 'is-active' : 'is-inactive'"></div>
+          <label>Focus Mode</label>
+        </div>
+        </div>
         <!-- font -->
         <h3 class="Section-subtitle">Font</h3>
         <ul class="Settings-list">
@@ -87,6 +95,11 @@ export default {
   },
 
   methods: {
+    selectAutosave () {
+      const payload = new Payload('autoSave', !this.settings.autoSave)
+      this.$store.dispatch('setSetting', payload)
+    },
+
     selectFont (font) {
       const payload = new Payload('font', font)
       this.$store.dispatch('setSetting', payload)
@@ -113,6 +126,11 @@ export default {
       }, 1000)
     },
 
+    toggleSetting (setting) {
+      const payload = new Payload(setting, !this.settings[setting])
+      this.$store.dispatch('setSetting', payload)
+    },
+
     appendTheme (theme) {
       const link = this.createCSS('static/themes/' + theme + '.css')
       this.mountToHead(link)
@@ -128,5 +146,54 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.Switch {
+  display: inline-flex;
+  margin-right: 10px;
+  position: relative;
+  width: 30px;
+  height: 16px;
+  vertical-align: middle;
+  &::before {
+    background: white;
+    border-radius: 1px;
+    content: '';
+    margin: auto 0;
+    position: absolute;
+    top: 0;
+    bottom: 1px;
+    width: 100%;
+    height: 3px;
+  }
+}
 
+.Switch-button {
+  background-color: blue;
+  border: 2px solid;
+  border-radius: 50%;
+  // margin: auto 0;
+  position: absolute;
+  // top: 0;
+  transition: all 2s ease;
+  width: 15px;
+  height: 15px;
+  &.is-active {
+    transform: translateX(100%);
+  }
+  &.is-inactive {
+    transform: translateX(0);
+    // left: 0;
+    // animation: slide-right 2s ease forwards;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    left: 0;
+    right: inherit;
+  }
+  to {
+    left: inherit;
+    right: 0;
+  }
+}
 </style>

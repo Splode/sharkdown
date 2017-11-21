@@ -3,7 +3,7 @@
   <div class="col-11 d-flex Editor-wrapper" :class="{ 'is-disabled': drawerOpen }">
     <div class="row Editor" @click="giveFocus" :style="{ 'font-family': settings.font }">
       <div id="Quill" class="col-11" :style="{ 'font-size': settings.fontSize + 'rem', 'line-height': settings.lineHeight }"></div>
-      <div class="col-1 d-flex flex-column align-items-center">
+      <div class="col-1 Sidebar">
         <div id="Quill-toolbar">
           <ul class="Toolbar-list" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false">
             <li>
@@ -313,7 +313,8 @@ export default {
 
 .Editor {
   width: 100%;
-  height: calc(100vh - 80px);
+  // height: calc(100vh - 80px);
+  height: 100vh;
 }
 
 .Editor-wrapper {

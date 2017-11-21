@@ -4,22 +4,16 @@ body {
 }
 
 /* Custom scroll bar */
-body::-webkit-scrollbar,
-.Editor-wrapper::-webkit-scrollbar,
-.Drawer::-webkit-scrollbar {
+div::-webkit-scrollbar {
   width: 3px;
 }
 
-body::-webkit-scrollbar-track,
-.Editor-wrapper::-webkit-scrollbar-track,
-.Drawer::-webkit-scrollbar-track {
+div::-webkit-scrollbar-track {
   /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
   background-color: #2D313B;
 }
 
-body::-webkit-scrollbar-thumb,
-.Editor-wrapper::-webkit-scrollbar-thumb,
-.Drawer::-webkit-scrollbar-thumb {
+div::-webkit-scrollbar-thumb {
   background-color: #61AFEF;
 }
 
@@ -50,6 +44,31 @@ body::-webkit-scrollbar-thumb,
 
 .Button--transparent.is-selected {
   color: #56B6C2;
+}
+
+.Checkbox {
+  border: 2px solid;
+  border-radius: 3px;
+  display: inline-block;
+  margin: -3px 10px 0 0;
+  transition: all .3s ease;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+}
+
+.Checkbox.is-active {
+  background-color: #C678DD;
+  border-color: #2D313B;
+}
+
+.Checkbox.is-inactive {
+  background: #2D313B;
+  border: 2px solid #ABB2BF;
+}
+
+.Checkbox.is-inactive:hover {
+  background-color: #2D313B;
 }
 
 .Drawer {
@@ -250,7 +269,20 @@ pre {
 }
 
 .Titlebar {
-  background: #282C34;
+  background: #2D313B;
+}
+
+.Titlebar-section-icon {
+  fill: #ABB2BF;
+}
+
+.Titlebar-section-icon:hover {
+  background-color: #2D313B;
+}
+
+.Titlebar-section-icon--danger:hover {
+  background-color: #ff5555;
+  fill: #f8f8f2;
 }
 
 .Titlebar-section--title {

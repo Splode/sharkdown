@@ -3,24 +3,39 @@ body {
   color: $colorBody;
 }
 
+// /* Custom scroll bar */
+// body::-webkit-scrollbar,
+// .Editor-wrapper::-webkit-scrollbar, 
+// .Drawer::-webkit-scrollbar {
+//   // width: .5em;
+//   width: 3px;
+// }
+
+// body::-webkit-scrollbar-track,
+// .Editor-wrapper::-webkit-scrollbar-track, 
+// .Drawer::-webkit-scrollbar-track {
+//   /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+//   background-color: $colorComment;
+// }
+
+// body::-webkit-scrollbar-thumb,
+// .Editor-wrapper::-webkit-scrollbar-thumb, 
+// .Drawer::-webkit-scrollbar-thumb {
+//   background-color: $colorSelection;
+// }
+
 /* Custom scroll bar */
-body::-webkit-scrollbar,
-.Editor-wrapper::-webkit-scrollbar, 
-.Drawer::-webkit-scrollbar {
+div::-webkit-scrollbar {
   // width: .5em;
   width: 3px;
 }
 
-body::-webkit-scrollbar-track,
-.Editor-wrapper::-webkit-scrollbar-track, 
-.Drawer::-webkit-scrollbar-track {
+div::-webkit-scrollbar-track {
   /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
   background-color: $colorComment;
 }
 
-body::-webkit-scrollbar-thumb,
-.Editor-wrapper::-webkit-scrollbar-thumb, 
-.Drawer::-webkit-scrollbar-thumb {
+div::-webkit-scrollbar-thumb {
   background-color: $colorSelection;
 }
 
@@ -46,6 +61,31 @@ body::-webkit-scrollbar-thumb,
   }
   &.is-selected {
     color: $colorHighlight;
+  }
+}
+
+.Checkbox {
+  border: 2px solid;
+  border-radius: 3px;
+  display: inline-block;
+  margin: -3px 10px 0 0;
+  transition: all .3s ease;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+  &.is-active {
+    background-color: $colorHeading;
+    border-color: $colorComment;
+    // &:hover {
+    //   background-color: $colorCurrentLine;
+    // }
+  }
+  &.is-inactive {
+    background: $colorCurrentLine;
+    border: 2px solid $colorBody;
+    &:hover {
+      background-color: $colorComment;
+    }
   }
 }
 
@@ -244,7 +284,21 @@ pre {
 }
 
 .Titlebar {
-  background: $colorBackground;
+  background: $colorCurrentLine;
+}
+
+.Titlebar-section-icon {
+  fill: $colorBody;
+  &:hover {
+    background-color: $colorComment;
+  }
+}
+
+.Titlebar-section-icon--danger {
+  &:hover {
+    background-color: $colorDanger;
+    fill: $colorWhite;
+  }
 }
 
 .Titlebar-section--title {

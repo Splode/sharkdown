@@ -4,8 +4,9 @@
 
     </app-modal>
     <app-titlebar/>
-    <app-header/>
-    <div class="container App-container" :class="{ 'is-blurred': modalOpen }">
+    <!-- <app-header/> -->
+    <div class="container-fluid" style="overflow: auto">
+      <div class="container App-container" :class="{ 'is-blurred': modalOpen }">
       <app-drawer>
         <component :is="drawerComponent"/>
       </app-drawer>
@@ -14,6 +15,8 @@
         <router-view/>
       </div>
     </div>
+    </div>
+    
   </div>
 </template>
 
@@ -77,6 +80,7 @@ export default {
 .App-container {
   // margin-top: 80px;
   // padding: 80px 0 0 0;
+  // overflow: auto;
   &.is-blurred {
     opacity: .33;
     pointer-events: none;

@@ -22,7 +22,7 @@
               </g>
             </svg>
           </div>
-          <div class="Titlebar-section-icon">
+          <div class="Titlebar-section-icon Titlebar-section-icon--danger">
             <svg class="" width="10px" height="11px" viewBox="0 0 10 11">
               <g stroke="none" stroke-width="1" fill-rule="evenodd">
                 <g fill-rule="nonzero" class="fill">
@@ -53,6 +53,7 @@ export default {
   // width: 100vw;
   height: 36px;
   z-index: 10;
+  -webkit-app-region: drag;
 }
 
 .Titlebar-section {
@@ -62,18 +63,20 @@ export default {
 
 .Titlebar-section--windowControls {
   position: absolute;
-  top: 12px;
+  top: 0;
   right: 0;
+  height: 36px;
+  -webkit-app-region: no-drag;
 }
 
 .Titlebar-section-icon {
   align-items: center;
   cursor: default;
   display: flex;
-  fill: white;
   flex: 0 0 auto;
   justify-content: center;
-  width: 45px;
+  transition: all .3s ease;
+  width: 50px;
   height: 100%;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="col-1 d-flex flex-column align-items-center" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false">
   <!-- <div class="col-1 d-flex flex-column align-items-center"> -->
-    <div class="Sidebar" :class="tooltipClasses">
+    <div class="Sidebar Sidebar--fixed" :class="tooltipClasses">
       <button 
         class="Button Button--transparent" 
         title="New Document" 
@@ -82,12 +82,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .Sidebar {
   align-items: center;
   display: flex;
   flex-direction: column;
-  position: fixed;
+  padding-top: 100px;
+  // position: fixed;
   transition: all .3s ease;
   &.is-inactive {
     opacity: .1;
@@ -95,5 +96,9 @@ export default {
   &.is-active {
     opacity: 1;
   }
+}
+
+.Sidebar--fixed {
+  position: fixed;
 }
 </style>
