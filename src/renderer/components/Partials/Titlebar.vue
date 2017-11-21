@@ -2,9 +2,11 @@
   <div class="Titlebar container-fluid">
     <div class="container">
       <div class="row">
-        <div class="col-6 offset-1 Titlebar-section Titlebar-section--title">title</div>
+        <div class="col-6 offset-1 Titlebar-section Titlebar-section--title">
+          {{ settings.currentDoc }}
+        </div>
         <div class="Titlebar-section Titlebar-section--windowControls">
-          <div class="Titlebar-section-icon">
+          <div class="Titlebar-section-icon" @click="winMinimize">
             <svg class="" width="10px" height="11px" viewBox="0 0 10 11">
               <g stroke="none" stroke-width="" fill-rule="evenodd">
                 <g class="fill">
@@ -13,7 +15,7 @@
               </g>
             </svg>
           </div>
-          <div class="Titlebar-section-icon">
+          <div class="Titlebar-section-icon" v-if="!winIsMaximized" @click="winMaxHandler">
             <svg class="" width="10px" height="11px" viewBox="0 0 10 11">
               <g stroke="none" stroke-width="1" fill-rule="evenodd">
                 <g fill-rule="nonzero" class="fill">
@@ -22,7 +24,20 @@
               </g>
             </svg>
           </div>
-          <div class="Titlebar-section-icon Titlebar-section-icon--danger">
+          <div class="Titlebar-section-icon" v-else @click="winMaxHandler">
+            <svg class="" width="10px" height="11px" viewBox="0 0 10 11">
+              <g stroke="none" stroke-width="1" fill-rule="evenodd">
+                  <g class="fill">
+                      <polygon points="8 8 10 8 10 7 8 7"></polygon>
+                      <polygon points="2 0 2 3 3 3 3 0"></polygon>
+                      <polygon points="9 0 9 8 10 8 10 0"></polygon>
+                      <polygon points="2 1 10 1 10 0 2 0"></polygon>
+                      <path d="M1,3 L1,9 L7,9 L7,3 L1,3 Z M0,2 L8,2 L8,10 L0,10 L0,2 Z" fill-rule="nonzero"></path>
+                  </g>
+              </g>
+          </svg>
+          </div>
+          <div class="Titlebar-section-icon Titlebar-section-icon--danger" @click="winClose">
             <svg class="" width="10px" height="11px" viewBox="0 0 10 11">
               <g stroke="none" stroke-width="1" fill-rule="evenodd">
                 <g fill-rule="nonzero" class="fill">
@@ -38,8 +53,51 @@
 </template>
 
 <script>
+import { ipcRenderer } from 'electron'
+import Payload from './../../../utils/payload'
 export default {
+  computed: {
+    settings () {
+      return this.$store.getters.settings
+    },
 
+    winIsMaximized () {
+      return this.$store.getters.viewState.winIsMaximized
+    }
+  },
+
+  methods: {
+    resizeHandler () {
+      ipcRenderer.on('win-resized', (event, arg) => {
+        this.setState('winIsMaximized', arg)
+      })
+    },
+
+    setState (key, val) {
+      const payload = new Payload(key, val)
+      this.$store.dispatch('setViewState', payload)
+    },
+
+    winClose () {
+      ipcRenderer.send('window-close')
+    },
+
+    winMaxHandler () {
+      if (this.winIsMaximized) {
+        ipcRenderer.send('window-unmaximize')
+      } else {
+        ipcRenderer.send('window-maximize')
+      }
+    },
+
+    winMinimize () {
+      ipcRenderer.send('window-minimize')
+    }
+  },
+
+  mounted () {
+    this.resizeHandler()
+  }
 }
 </script>
 

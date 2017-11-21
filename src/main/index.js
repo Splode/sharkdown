@@ -56,6 +56,22 @@ ipcMain.on('title-change', (event, arg) => {
   mainWindow.setTitle(title)
 })
 
+ipcMain.on('window-close', (event, arg) => {
+  mainWindow.close()
+})
+
+ipcMain.on('window-maximize', (event, arg) => {
+  mainWindow.maximize()
+})
+
+ipcMain.on('window-unmaximize', (event, arg) => {
+  mainWindow.unmaximize()
+})
+
+ipcMain.on('window-minimize', (event, arg) => {
+  mainWindow.minimize()
+})
+
 function createWindow (opts) {
   mainWindow = new BrowserWindow({
     backgroundColor: '#282a36',
@@ -82,6 +98,11 @@ function createWindow (opts) {
       width,
       height
     })
+  })
+
+  mainWindow.on('resize', () => {
+    const windowIsMaximized = mainWindow.isMaximized()
+    mainWindow.webContents.send('win-resized', windowIsMaximized)
   })
 }
 
