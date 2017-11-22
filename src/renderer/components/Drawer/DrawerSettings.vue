@@ -54,7 +54,7 @@
       </div>
 
       <div class="col-12 Section">
-        <h2 class="Section-title">Document Location</h2>
+        <h2 class="Section-title">Note Location</h2>
         <label for="chooseUserDir" class="Button Button--block Button--block--field">Browse</label>
         <input id="chooseUserDir" type="file" class="d-none" @change="onFileChange" webkitdirectory/>
         <em>{{ docPath }}</em>

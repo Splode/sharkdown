@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-8 mx-auto Modal-filename">
     <div class="Modal-filename-wrapper">
-      <h2>New Document</h2>
+      <h2>New Note</h2>
       <label for="filename-input">Title</label>
       <input type="text" id="filename-input" class="TextInput mb-4 w-100" v-model="filename">
       <button class="Button Button--block Button--block--field" @click="createNewDoc" :disabled="filename === ''">Accept</button>

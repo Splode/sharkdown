@@ -97,6 +97,19 @@ div::-webkit-scrollbar-thumb {
   background-color: $colorBackground;
 }
 
+.Icon--slider {
+  & line {
+    stroke: $colorBody;
+  }
+  & circle {
+    fill: $colorComment;
+    stroke: $colorBody;
+  }
+  &.is-selected circle {
+    fill: $colorHeading;
+  }
+}
+
 .ql-editor blockquote {
   border-left: 3px solid $colorHeading;
   color: $colorBody;
@@ -217,11 +230,13 @@ pre {
 }
 
 .Settings-list-item {
+  align-items: center;
   border-left: 3px solid transparent;
   border-radius: 3px;
   display: flex;
+  justify-content: space-between;
   margin: .5em 0;
-  padding: .25em 0 .25em .5em;
+  padding: .25em .5em;
   &:hover {
     background-color: $colorBodySelection;
   }
