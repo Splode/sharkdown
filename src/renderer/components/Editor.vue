@@ -2,75 +2,79 @@
   <!-- <div class="row"> -->
   <div class="col-11 d-flex Editor-wrapper" :class="{ 'is-disabled': drawerOpen }">
     <div class="row Editor" @click="giveFocus" :style="{ 'font-family': settings.font }">
-      <div id="Quill" class="col-11" :style="{ 'font-size': settings.fontSize + 'rem', 'line-height': settings.lineHeight }"></div>
-      <div class="col-1 Sidebar">
+      <div 
+        id="Quill"
+        class="ql-container mx-auto"
+        :class="'col-' + settings.colWidth" 
+        :style="{ 'font-size': settings.fontSize + 'rem', 'line-height': settings.lineHeight }"></div>
+      <div class="col-1 Sidebar" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false" :class="sidebarClasses">
         <div id="Quill-toolbar">
-          <ul class="Toolbar-list" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false">
+          <ul class="Toolbar-list">
             <li>
-              <button class="ql-header Button Button--transparent" value="1" title="Heading 1" :class="tooltipClasses">
+              <button class="ql-header Button Button--transparent" value="1" title="Heading 1">
                 <icon name="header"/><sub>1</sub>
               </button>
             </li>
             <li>
-              <button class="ql-header Button Button--transparent" value="2" title="Heading 2" :class="tooltipClasses">
+              <button class="ql-header Button Button--transparent" value="2" title="Heading 2">
                 <icon name="header"/><sub>2</sub>
               </button>
             </li>
             <li>
-              <button class="ql-header Button Button--transparent" value="3" title="Heading 3" :class="tooltipClasses">
+              <button class="ql-header Button Button--transparent" value="3" title="Heading 3">
                 <icon name="header"/><sub>3</sub>
               </button>
             </li>
             <li>
-              <button class="ql-header Button Button--transparent" value="4" title="Heading 4" :class="tooltipClasses">
+              <button class="ql-header Button Button--transparent" value="4" title="Heading 4">
                 <icon name="header"/><sub>4</sub>
               </button>
             </li>
             <li>
-              <button class="ql-blockquote Button Button--transparent" title="Blockquote" :class="tooltipClasses">
+              <button class="ql-blockquote Button Button--transparent" title="Blockquote">
                 <icon name="quote-right"/>
               </button>
             </li>
             <li>
-              <button class="ql-code-block Button Button--transparent" title="Code Block" :class="tooltipClasses">
+              <button class="ql-code-block Button Button--transparent" title="Code Block">
                 <icon name="code"/>
               </button>
             </li>
             <li>
-              <button class="ql-list Button Button--transparent" value="ordered" title="Numbered List" :class="tooltipClasses">
+              <button class="ql-list Button Button--transparent" value="ordered" title="Numbered List">
                 <icon name="list-ol"/>
               </button>
             </li>
             <li>
-              <button class="ql-list Button Button--transparent" value="bullet" title="List" :class="tooltipClasses">
+              <button class="ql-list Button Button--transparent" value="bullet" title="List">
                 <icon name="list-ul"/>
               </button>
             </li>
             <li>
-              <button class="ql-bold Button Button--transparent" title="Bold" :class="tooltipClasses">
+              <button class="ql-bold Button Button--transparent" title="Bold">
                 <icon name="bold"/>
               </button>
             </li>
             <li>
-              <button class="ql-italic Button Button--transparent" title="Italic" :class="tooltipClasses">
+              <button class="ql-italic Button Button--transparent" title="Italic">
                 <icon name="italic"/>
               </button>
             </li>
             <li>
-              <button class="ql-underline Button Button--transparent" title="Underline" :class="tooltipClasses">
+              <button class="ql-underline Button Button--transparent" title="Underline">
                 <icon name="underline"/>
               </button>
             </li>
             <li>
-              <button class="ql-strike Button Button--transparent" title="Strikethrough" :class="tooltipClasses">
+              <button class="ql-strike Button Button--transparent" title="Strikethrough">
                 <icon name="strikethrough"/>
               </button>
             </li>
             <li>
-              <button class="ql-code Button Button--transparent" title="Inline Code" :class="tooltipClasses"><strong>{ }</strong></button>
+              <button class="ql-code Button Button--transparent" title="Inline Code"><strong>{ }</strong></button>
             </li>
             <li>
-              <button class="ql-clean Button Button--transparent" title="Clear Format" :class="tooltipClasses">
+              <button class="ql-clean Button Button--transparent" title="Clear Format">
                 <icon name="minus-square-o"/>
               </button>
             </li>
@@ -128,8 +132,12 @@ export default {
       return this.$store.getters.settings
     },
 
-    tooltipClasses () {
-      return this.toolbarIsActive ? 'is-active' : 'is-inactive'
+    sidebarClasses () {
+      if (!this.settings.focusMode) {
+        return 'is-active'
+      } else if (!this.toolbarIsActive) {
+        return 'is-inactive'
+      }
     }
   },
 
@@ -333,7 +341,7 @@ export default {
   list-style-type: none;
   padding: 0;
   & li {
-    margin: 0 0 1.5em 0;
+    margin-bottom: 1.5vmin;
   }
 }
 </style>

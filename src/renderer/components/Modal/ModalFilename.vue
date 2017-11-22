@@ -46,6 +46,7 @@ export default {
 }
 
 .Modal-filename-wrapper {
+  border-radius: 3px;
   padding: 3em 3em 4em 3em;
 }
 </style>

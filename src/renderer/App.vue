@@ -8,7 +8,9 @@
     <div class="container-fluid" style="overflow: auto">
       <div class="container App-container" :class="{ 'is-blurred': modalOpen }">
       <app-drawer>
-        <component :is="drawerComponent"/>
+        <transition name="fade">
+          <component :is="drawerComponent"/>
+        </transition>
       </app-drawer>
       <div class="row Test" :class="{ 'is-compressed': drawerOpen }">
         <app-sidebar/>
@@ -92,7 +94,7 @@ export default {
   &.is-compressed {
     // margin-left: 300px;
     overflow: hidden;
-    transform: translateX(400px)
+    transform: translateX(430px)
   }
 }
 </style>

@@ -17,10 +17,6 @@ div::-webkit-scrollbar-thumb {
   background-color: #61AFEF;
 }
 
-.Button--block {
-  padding: .15em .5em;
-}
-
 .Button--block--field {
   background-color: #282C34;
   color: #ABB2BF;
@@ -35,15 +31,15 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Button--transparent {
-  color: #C678DD;
+  color: #ABB2BF;
 }
 
 .Button--transparent:hover {
-  color: #56B6C2;
+  color: #C678DD;
 }
 
 .Button--transparent.is-selected {
-  color: #56B6C2;
+  color: #C678DD;
 }
 
 .Checkbox {
@@ -79,13 +75,56 @@ div::-webkit-scrollbar-thumb {
   background-color: #282C34;
 }
 
+.Icon-wrapper--circle {
+  background-color: #2D313B;
+}
+
+.Icon-wrapper--circle:hover {
+  background-color: #ABB2BF;
+}
+
+.Icon--files.is-selected .Icon--files-primary {
+  fill: #C678DD;
+  stroke: #ABB2BF;
+}
+
+.Icon--files:hover .Icon--files-primary {
+  stroke: #C678DD;
+}
+
+.Icon--files-primary {
+  fill: #282C34;
+  stroke: #ABB2BF;
+  transition: all .3s ease;
+}
+
+.Icon--files-secondary {
+  fill: #282C34;
+  stroke: #ABB2BF;
+}
+
+.Icon--new line {
+  stroke: #ABB2BF;
+  transition: all .3s ease;
+}
+
+.Icon--new:hover line {
+  stroke: #282C34;
+}
+
 .Icon--slider line {
-  stroke: #2D313B;
+  stroke: #ABB2BF;
 }
 
 .Icon--slider circle {
+  fill: #2D313B;
+  stroke: #ABB2BF;
+  transition: all .3s ease;
+}
+
+.Icon--slider.is-selected circle,
+.Icon--slider:hover circle {
   fill: #C678DD;
-  stroke: #C678DD;
 }
 
 .ql-editor blockquote {
@@ -284,7 +323,7 @@ pre {
 }
 
 .Titlebar-section-icon {
-  fill: #ABB2BF;
+  fill: #61AFEF;
 }
 
 .Titlebar-section-icon:hover {
@@ -297,5 +336,5 @@ pre {
 }
 
 .Titlebar-section--title {
-  color: #2D313B;
+  color: #61AFEF;
 }

@@ -26,8 +26,9 @@ export function editorSettings () {
       font: 'Roboto',
       fontSize: '1',
       lineHeight: '2',
+      colWidth: '11',
       autoSave: true,
-      focusMode: true
+      focusMode: false
     }
   })
   return localStore

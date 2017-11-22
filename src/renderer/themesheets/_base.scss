@@ -39,10 +39,6 @@ div::-webkit-scrollbar-thumb {
   background-color: $colorSelection;
 }
 
-.Button--block {
-  padding: .15em .5em;
-}
-
 .Button--block--field {
   background-color: $colorBackground;
   color: $colorBody;
@@ -55,12 +51,12 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Button--transparent {
-  color: $colorHeading;
+  color: $colorBody;
   &:hover {
-    color: $colorHighlight;
+    color: $colorHeading;
   }
   &.is-selected {
-    color: $colorHighlight;
+    color: $colorHeading;
   }
 }
 
@@ -97,6 +93,44 @@ div::-webkit-scrollbar-thumb {
   background-color: $colorBackground;
 }
 
+.Icon-wrapper--circle {
+  background-color: $colorComment;
+  &:hover {
+    background-color: $colorBody;
+  }
+}
+
+.Icon--files {
+  &.is-selected .Icon--files-primary {
+    fill: $colorHeading;
+    stroke: $colorBody;
+  }
+  &:hover .Icon--files-primary {
+    stroke: $colorHeading;
+  }
+}
+
+.Icon--files-primary {
+  fill: $colorBackground;
+  stroke: $colorBody;
+  transition: all .3s ease;
+}
+
+.Icon--files-secondary {
+  fill: $colorBackground;
+  stroke: $colorBody;
+}
+
+.Icon--new {
+  & line {
+    stroke: $colorBody;
+    transition: all .3s ease;
+  }
+  &:hover line {
+    stroke: $colorBackground;
+  }
+}
+
 .Icon--slider {
   & line {
     stroke: $colorBody;
@@ -104,8 +138,10 @@ div::-webkit-scrollbar-thumb {
   & circle {
     fill: $colorComment;
     stroke: $colorBody;
+    transition: all .3s ease;
   }
-  &.is-selected circle {
+  &.is-selected circle, 
+  &:hover circle {
     fill: $colorHeading;
   }
 }
@@ -214,21 +250,6 @@ pre {
   }
 }
 
-.Section-subtitle {
-  margin: 1.5em 0 .5em 0;
-}
-
-.Section-title {
-  // border-bottom: 3px solid $colorHeading;
-  margin: 0 0 1em 0;
-}
-
-.Settings-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
 .Settings-list-item {
   align-items: center;
   border-left: 3px solid transparent;
@@ -303,7 +324,7 @@ pre {
 }
 
 .Titlebar-section-icon {
-  fill: $colorBody;
+  fill: $colorSelection;
   &:hover {
     background-color: $colorComment;
   }
@@ -317,5 +338,5 @@ pre {
 }
 
 .Titlebar-section--title {
-  color: $colorComment;
+  color: $colorSelection;
 }

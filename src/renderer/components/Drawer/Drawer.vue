@@ -31,7 +31,6 @@ export default {
   position: fixed;
   top: 0;
   bottom: 0;
-  transition: all .6s ease;
   width: 400px;
   height: 100%;
   word-wrap: break-word;

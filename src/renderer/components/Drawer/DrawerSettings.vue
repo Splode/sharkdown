@@ -16,7 +16,7 @@
         <!-- focusMode -->
         <div class="Section-option">
           <div class="Checkbox" @click="toggleSetting('focusMode')" :class="settings.focusMode ? 'is-active' : 'is-inactive'"></div>
-          <label>Focus Mode</label>
+          <label title="Autohide sidebars">Focus Mode</label>
         </div>
         </div>
         <!-- font -->
@@ -42,6 +42,14 @@
         <div class="Slider-label">
           <ul class="Slider-label-list">
             <li v-for="number in 8" :key="number">|</li>
+          </ul>
+        </div>
+        <!-- paragraph width -->
+        <h3 class="Section-subtitle">Paragraph Width</h3>
+        <input type="range" min="6" max="11" step="1" class="Slider" @change="setSliderSetting($event, 'colWidth')" :value="settings.colWidth">
+        <div class="Slider-label">
+          <ul class="Slider-label-list">
+            <li v-for="number in 6" :key="number">|</li>
           </ul>
         </div>
       </div>
@@ -124,6 +132,11 @@ export default {
       setTimeout(() => {
         this.removeFromHead()
       }, 1000)
+    },
+
+    setSliderSetting (e, key) {
+      const payload = new Payload(key, e.target.value)
+      this.$store.dispatch('setSetting', payload)
     },
 
     toggleSetting (setting) {

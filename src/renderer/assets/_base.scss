@@ -30,3 +30,39 @@ input[type=radio] {
 .Button--transparent {
   background-color: transparent;
 }
+
+.Button--block {
+  border-radius: 3px;
+  padding: .15em .5em;
+}
+
+.Icon-group {
+  width: 100%;
+}
+
+.Icon-wrapper {
+  width: 100%;
+  margin: 0 0 .5em 0;
+  max-width: 35px;
+}
+
+.Icon-wrapper--circle {
+  border-radius: 50%;
+  transition: all .3s ease;
+  width: 35px;
+  height: 35px;
+}
+
+.Section-subtitle {
+  margin: 1.5em 0 0 0;
+}
+
+.Section-title {
+  margin: 0 0 1em 0;
+}
+
+.Settings-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
