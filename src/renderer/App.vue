@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <app-modal v-if="modalOpen">
+    <transition name="fade">
+      <app-modal v-if="modalOpen"/>
+    </transition>
 
     </app-modal>
     <app-titlebar/>

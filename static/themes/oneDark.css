@@ -228,6 +228,14 @@ pre {
   margin-top: 0;
 }
 
+.Settings-contextMenu {
+  background-color: #282C34;
+}
+
+.Settings-contextMenu-list-item:hover {
+  color: #C678DD;
+}
+
 .Settings-list-item {
   align-items: center;
   border-left: 3px solid transparent;

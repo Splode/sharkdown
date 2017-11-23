@@ -250,6 +250,16 @@ pre {
   }
 }
 
+.Settings-contextMenu {
+  background-color: $colorBackground;
+}
+
+.Settings-contextMenu-list-item {
+  &:hover {
+    color: $colorHeading;
+  }
+}
+
 .Settings-list-item {
   align-items: center;
   border-left: 3px solid transparent;

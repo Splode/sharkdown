@@ -117,8 +117,10 @@ export default {
     },
 
     newDoc () {
-      const payload = new Payload('modalOpen', true)
-      this.$store.dispatch('setViewState', payload)
+      const payloadModalToggle = new Payload('modalOpen', true)
+      const payloadModalComponent = new Payload('modalComponent', 'appModalFilename')
+      this.$store.dispatch('setViewState', payloadModalToggle)
+      this.$store.dispatch('setViewState', payloadModalComponent)
     },
 
     toggleDrawer (drawerComponent) {

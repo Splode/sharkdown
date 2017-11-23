@@ -1,6 +1,6 @@
 ## TODOs
 - [ ] Incorporate highlight.js syntax highlighting for `pre` and `code` tags
-- [ ] File tree
+- [x] File tree
 - [ ] File rename function
 - [x] Font size slider
 - [ ] Rename `defaultStore.js` to `default-store.js`
@@ -14,6 +14,7 @@
 - [ ] Draft project description / mission
 
 ## Potential Names
+- Waldo
 - Clarity
 - Blackstone
 

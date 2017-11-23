@@ -17,9 +17,11 @@
             <div 
               class="Settings-contextMenu"
               v-if="contextMenu.isOpen && contextMenu.index === i"
+              v-on-clickaway="closeContextMenu"
               :style="contextMenu.pos">
               <ul class="Settings-contextMenu-list">
-                <li>TEST</li>
+                <li class="Settings-contextMenu-list-item" @click="openContextMenu($event, file, i)">Rename</li>
+                <li class="Settings-contextMenu-list-item">Delete</li>
               </ul>
             </div>
           </li>
@@ -35,7 +37,10 @@ import path from 'path'
 import fs from 'fs'
 import Payload from './../../../utils/payload'
 import { EventBus } from './../../../utils/event-bus'
+import { mixin as clickaway } from 'vue-clickaway'
 export default {
+  mixins: [ clickaway ],
+
   data () {
     return {
       files: [],
@@ -62,10 +67,14 @@ export default {
   },
 
   methods: {
+    closeContextMenu () {
+      this.contextMenu.isOpen = false
+    },
+
     openContextMenu (e, file, i) {
       console.log(e, file, i)
       this.contextMenu.isOpen = true
-      this.contextMenu.pos.top = (e.layerY + 50) + 'px'
+      this.contextMenu.pos.top = e.layerY + 'px'
       this.contextMenu.pos.left = e.layerX + 'px'
       this.contextMenu.file = file
       this.contextMenu.index = i
@@ -88,12 +97,14 @@ export default {
     },
 
     selectFile (file) {
-      const fileNoExt = this.removeFileExt(file)
-      const payloadDoc = new Payload('currentDoc', fileNoExt)
-      const payloadDrawer = new Payload('drawerOpen', false)
-      this.$store.dispatch('setSetting', payloadDoc)
-      this.$store.dispatch('setViewState', payloadDrawer)
-      EventBus.$emit('loadDoc', fileNoExt)
+      if (!this.contextMenu.isOpen) {
+        const fileNoExt = this.removeFileExt(file)
+        const payloadDoc = new Payload('currentDoc', fileNoExt)
+        const payloadDrawer = new Payload('drawerOpen', false)
+        this.$store.dispatch('setSetting', payloadDoc)
+        this.$store.dispatch('setViewState', payloadDrawer)
+        EventBus.$emit('loadDoc', fileNoExt)
+      }
     },
 
     test () {
@@ -109,13 +120,19 @@ export default {
 
 <style lang="scss">
 .Settings-contextMenu {
-  background-color: lightgray;
-  padding: 1em;
+  border-radius: 3px;
   position: absolute;
 }
 
 .Settings-contextMenu-list {
+  list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.Settings-contextMenu-list-item {
+  margin: 0;
+  padding: .25em 1em;
+  transition: all .3s ease;
 }
 </style>

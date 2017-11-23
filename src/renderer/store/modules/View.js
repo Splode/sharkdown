@@ -1,6 +1,7 @@
 const state = {
   drawerComponent: '',
   drawerOpen: false,
+  modalComponent: '',
   modalOpen: false,
   winIsMaximized: false
 }

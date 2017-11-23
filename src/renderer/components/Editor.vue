@@ -173,20 +173,20 @@ export default {
 
     handleTextUpdate () {
       this.quill.on('text-change', (delta) => {
-        let payload = this.getPayload()
+        // let payload = this.getPayload()
 
         // console.log(payload, delta)
         // console.log(this.quill.root.innerHTML)
 
         this.changes = true
 
-        delta.ops.forEach(element => {
-          if (element.insert === ' ' || element.delete) {
-            payload.phrase = payload.text.slice(this.previousCursor, payload.offset)
-            this.previousCursor = payload.offset
-            this.matchHeader(payload)
-          }
-        })
+        // delta.ops.forEach(element => {
+        //   if (element.insert === ' ' || element.delete) {
+        //     payload.phrase = payload.text.slice(this.previousCursor, payload.offset)
+        //     this.previousCursor = payload.offset
+        //     this.matchHeader(payload)
+        //   }
+        // })
       })
     },
 

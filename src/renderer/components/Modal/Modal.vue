@@ -2,7 +2,7 @@
   <div class="container-fluid Modal">
     <div class="container">
       <div class="row Modal-wrapper">
-        <app-modal-filename/>
+        <component :is="modalComponent"/>
       </div>
     </div>
   </div>
@@ -13,6 +13,12 @@ import appModalFilename from './ModalFilename'
 export default {
   components: {
     appModalFilename
+  },
+
+  computed: {
+    modalComponent () {
+      return this.$store.getters.viewState.modalComponent
+    }
   }
 }
 </script>

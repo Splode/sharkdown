@@ -1,6 +1,6 @@
 <template>
   <div class="col-md-8 mx-auto Modal-filename">
-    <div class="Modal-filename-wrapper">
+    <div class="Modal-filename-wrapper" v-on-clickaway="closeModal">
       <h2>New Note</h2>
       <label for="filename-input">Title</label>
       <input type="text" id="filename-input" class="TextInput mb-4 w-100" v-model="filename">
@@ -13,7 +13,10 @@
 <script>
 import Payload from './../../../utils/payload'
 import { EventBus } from './../../../utils/event-bus'
+import { mixin as clickaway } from 'vue-clickaway'
 export default {
+  mixins: [ clickaway ],
+
   data () {
     return {
       filename: ''
