@@ -262,6 +262,7 @@ pre {
     background-color: $colorBodySelection;
   }
   &.is-active {
+    background-color: $colorBodySelection;
     border-color: $colorHeading;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;

@@ -228,20 +228,6 @@ pre {
   margin-top: 0;
 }
 
-.Section-subtitle {
-  margin: 1.5em 0 .5em 0;
-}
-
-.Section-title {
-  margin: 0 0 1em 0;
-}
-
-.Settings-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
 .Settings-list-item {
   align-items: center;
   border-left: 3px solid transparent;
@@ -257,6 +243,7 @@ pre {
 }
 
 .Settings-list-item.is-active {
+  background-color: rgba(34, 37, 43, 0.99);
   border-color: #FFD866;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
