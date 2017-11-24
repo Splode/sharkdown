@@ -2,31 +2,31 @@
 $colorBackground: #2C292D;
 
 // primary text, blockquote text
-$colorBody: #FDF9F3;
+$colorBody: #dad2c6;
 
 // primary text selection
-$colorBodySelection: rgba(34, 37, 43, .99);
+$colorBodySelection: rgba(33, 31, 34, 0.99);
 
 // heading
 $colorHeading: #FFD866;
 
 // button hover
-$colorHighlight: #FF6188;
+$colorHighlight: #FC9867;
 
 // code, pre
 $colorCode: #78DCE8;
 
-// scroll track
-$colorComment: #3E3B3F;
+// scroll track, slider track
+$colorComment: #211F22;
 
-// code & pre background
+// code & pre background, section background
 $colorCurrentLine: #3E3B3F;
 
-// scroll thumb
-$colorSelection: #FFD866;
+// scroll thumb, titlebar color
+$colorSelection: #FDF9F3;
 
 // titlebar close
-$colorDanger: #ff5555;
+$colorDanger: #FF6188;
 
 // titlebar close icon
-$colorWhite: #f8f8f2
+$colorWhite: #FDF9F3

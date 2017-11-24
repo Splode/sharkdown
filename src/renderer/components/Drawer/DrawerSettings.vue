@@ -56,6 +56,8 @@
 
       <div class="col-12 Section">
         <h2 class="Section-title">Theme</h2>
+        <button @click="selectTheme('charcoal')">Charcoal</button>
+        <button @click="selectTheme('graphite')">Graphite</button>
         <button @click="selectTheme('dracula')">Dracula</button>
         <button @click="selectTheme('oneDark')">One Dark</button>
         <button @click="selectTheme('monokai')">Monokai</button>
@@ -84,6 +86,7 @@ export default {
         'Fira Sans',
         'Inconsolata',
         'Lato',
+        'Libre Baskerville',
         'Lora',
         'Open Sans',
         'Roboto',

@@ -10,7 +10,7 @@ div::-webkit-scrollbar {
 
 div::-webkit-scrollbar-track {
   /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
-  background-color: #2D313B;
+  background-color: #21252b;
 }
 
 div::-webkit-scrollbar-thumb {
@@ -27,7 +27,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Button--block--field:disabled {
-  color: #2D313B;
+  color: #21252b;
 }
 
 .Button--transparent {
@@ -55,7 +55,7 @@ div::-webkit-scrollbar-thumb {
 
 .Checkbox.is-active {
   background-color: #C678DD;
-  border-color: #2D313B;
+  border-color: #21252b;
 }
 
 .Checkbox.is-inactive {
@@ -64,7 +64,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Checkbox.is-inactive:hover {
-  background-color: #2D313B;
+  background-color: #21252b;
 }
 
 .Drawer {
@@ -117,7 +117,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon--slider circle {
-  fill: #2D313B;
+  fill: #21252b;
   stroke: #ABB2BF;
   transition: all .3s ease;
 }
@@ -274,7 +274,7 @@ pre {
 }
 
 .Slider::-webkit-slider-runnable-track {
-  background-color: #2D313B;
+  background-color: #21252b;
   width: 100%;
   height: 3px;
 }
@@ -322,11 +322,11 @@ pre {
 }
 
 .Titlebar-section-icon:hover {
-  background-color: #2D313B;
+  background-color: #21252b;
 }
 
 .Titlebar-section-icon--danger:hover {
-  background-color: #ff5555;
+  background-color: #E06C75;
   fill: #f8f8f2;
 }
 

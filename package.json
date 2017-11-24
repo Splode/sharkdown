@@ -18,10 +18,12 @@
     "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
     "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
     "postinstall": "npm run lint:fix",
+    "theme:charcoal": "node-sass --output-style expanded --precision 6 src/renderer/themesheets/charcoal.scss static/themes/charcoal.css",
+    "theme:graphite": "node-sass --output-style expanded --precision 6 src/renderer/themesheets/graphite.scss static/themes/graphite.css",
     "theme:dracula": "node-sass --output-style expanded --precision 6 src/renderer/themesheets/dracula.scss static/themes/dracula.css",
     "theme:oneDark": "node-sass --output-style expanded --precision 6 src/renderer/themesheets/oneDark.scss static/themes/oneDark.css",
     "theme:monokai": "node-sass --output-style expanded --precision 6 src/renderer/themesheets/monokai.scss static/themes/monokai.css",
-    "theme": "npm-run-all theme:dracula theme:oneDark theme:monokai"
+    "theme": "npm-run-all theme:charcoal theme:graphite theme:dracula theme:oneDark theme:monokai"
   },
   "build": {
     "productName": "sharkdown",

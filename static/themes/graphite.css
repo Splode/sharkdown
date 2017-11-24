@@ -1,6 +1,6 @@
 body {
-  background-color: #282a36;
-  color: #bd93f9;
+  background-color: #fafafa;
+  color: #212121;
 }
 
 /* Custom scroll bar */
@@ -10,36 +10,36 @@ div::-webkit-scrollbar {
 
 div::-webkit-scrollbar-track {
   /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
-  background-color: #44475a;
+  background-color: #bdbdbd;
 }
 
 div::-webkit-scrollbar-thumb {
-  background-color: #6272a4;
+  background-color: #424242;
 }
 
 .Button--block--field {
-  background-color: #282a36;
-  color: #bd93f9;
+  background-color: #fafafa;
+  color: #212121;
 }
 
 .Button--block--field:hover {
-  color: #50fa7b;
+  color: #424242;
 }
 
 .Button--block--field:disabled {
-  color: #44475a;
+  color: #bdbdbd;
 }
 
 .Button--transparent {
-  color: #bd93f9;
+  color: #212121;
 }
 
 .Button--transparent:hover {
-  color: #50fa7b;
+  color: #424242;
 }
 
 .Button--transparent.is-selected {
-  color: #50fa7b;
+  color: #424242;
 }
 
 .Checkbox {
@@ -54,82 +54,82 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Checkbox.is-active {
-  background-color: #50fa7b;
-  border-color: #44475a;
+  background-color: #424242;
+  border-color: #bdbdbd;
 }
 
 .Checkbox.is-inactive {
-  background: #2f313e;
-  border: 2px solid #bd93f9;
+  background: #eeeeee;
+  border: 2px solid #212121;
 }
 
 .Checkbox.is-inactive:hover {
-  background-color: #44475a;
+  background-color: #bdbdbd;
 }
 
 .Drawer {
-  background-color: #282a36;
+  background-color: #fafafa;
 }
 
 .Header {
-  background-color: #282a36;
+  background-color: #fafafa;
 }
 
 .Icon-wrapper--circle {
-  background-color: #2f313e;
+  background-color: #eeeeee;
 }
 
 .Icon-wrapper--circle:hover {
-  background-color: #bd93f9;
+  background-color: #212121;
 }
 
 .Icon--files.is-selected .Icon--files-primary {
-  fill: #50fa7b;
-  stroke: #bd93f9;
+  fill: #424242;
+  stroke: #212121;
 }
 
 .Icon--files:hover .Icon--files-primary {
-  stroke: #50fa7b;
+  stroke: #424242;
 }
 
 .Icon--files-primary {
-  fill: #282a36;
-  stroke: #bd93f9;
+  fill: #fafafa;
+  stroke: #212121;
   transition: all .3s ease;
 }
 
 .Icon--files-secondary {
-  fill: #282a36;
-  stroke: #bd93f9;
+  fill: #fafafa;
+  stroke: #212121;
 }
 
 .Icon--new line {
-  stroke: #bd93f9;
+  stroke: #212121;
   transition: all .3s ease;
 }
 
 .Icon--new:hover line {
-  stroke: #282a36;
+  stroke: #fafafa;
 }
 
 .Icon--slider line {
-  stroke: #bd93f9;
+  stroke: #212121;
 }
 
 .Icon--slider circle {
-  fill: #44475a;
-  stroke: #bd93f9;
+  fill: #bdbdbd;
+  stroke: #212121;
   transition: all .3s ease;
 }
 
 .Icon--slider.is-selected circle,
 .Icon--slider:hover circle {
-  fill: #50fa7b;
+  fill: #424242;
 }
 
 .ql-editor blockquote {
-  border-left: 3px solid #50fa7b;
-  color: #bd93f9;
+  border-left: 3px solid #424242;
+  color: #212121;
   font-style: italic;
   margin: 2em 0 0 0;
   padding: 0 0 0 2em;
@@ -158,20 +158,20 @@ h3,
 h4,
 h5,
 h6 {
-  color: #50fa7b;
+  color: #424242;
   font-weight: 600;
 }
 
 .ql-editor p {
-  color: #bd93f9;
+  color: #212121;
   font-weight: 400;
 }
 
 .ql-editor code,
 pre {
-  background-color: #2f313e;
+  background-color: #eeeeee;
   border-radius: 2px;
-  color: #8be9fd;
+  color: #757575;
 }
 
 .ql-editor code {
@@ -195,16 +195,16 @@ pre {
 .ql-editor pre::selection,
 .ql-editor strong::selection,
 .ql-editor u::selection {
-  background: rgba(68, 71, 90, 0.99);
+  background: rgba(224, 224, 224, 0.99);
   opacity: 1;
 }
 
 .Modal-filename-wrapper {
-  background-color: #2f313e;
+  background-color: #eeeeee;
 }
 
 .RadioButton {
-  border: 2px solid #bd93f9;
+  border: 2px solid #212121;
   border-radius: 50%;
   display: inline-block;
   margin: 4px 1em 0 0;
@@ -217,7 +217,7 @@ pre {
 }
 
 .Section {
-  background-color: #2f313e;
+  background-color: #eeeeee;
   border-radius: 3px;
   margin: 1em 0 0 0;
   padding-top: 1em;
@@ -229,11 +229,11 @@ pre {
 }
 
 .Settings-contextMenu {
-  background-color: #282a36;
+  background-color: #fafafa;
 }
 
 .Settings-contextMenu-list-item:hover {
-  color: #50fa7b;
+  color: #424242;
 }
 
 .Settings-list-item {
@@ -247,19 +247,19 @@ pre {
 }
 
 .Settings-list-item:hover {
-  background-color: rgba(68, 71, 90, 0.99);
+  background-color: rgba(224, 224, 224, 0.99);
 }
 
 .Settings-list-item.is-active {
-  background-color: rgba(68, 71, 90, 0.99);
-  border-color: #50fa7b;
+  background-color: rgba(224, 224, 224, 0.99);
+  border-color: #424242;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 .Settings-list-item.is-active .RadioButton {
-  background-color: #50fa7b;
-  border-color: #50fa7b;
+  background-color: #424242;
+  border-color: #424242;
 }
 
 .Slider {
@@ -274,14 +274,14 @@ pre {
 }
 
 .Slider::-webkit-slider-runnable-track {
-  background-color: #44475a;
+  background-color: #bdbdbd;
   width: 100%;
   height: 3px;
 }
 
 .Slider::-webkit-slider-thumb {
-  background-color: #50fa7b;
-  border: 2px solid #50fa7b;
+  background-color: #424242;
+  border: 2px solid #424242;
   border-radius: 50%;
   margin-top: -7px;
   transition: all .3s ease;
@@ -291,12 +291,12 @@ pre {
 }
 
 .Slider::-webkit-slider-thumb:hover, .Slider::-webkit-slider-thumb:active {
-  background-color: #ffb86c;
-  border-color: #ffb86c;
+  background-color: #9e9e9e;
+  border-color: #9e9e9e;
 }
 
 .Slider-label-list {
-  color: #bd93f9;
+  color: #212121;
   display: flex;
   font-size: .5rem;
   justify-content: space-between;
@@ -306,30 +306,30 @@ pre {
 }
 
 .TextInput {
-  background-color: #2f313e;
+  background-color: #eeeeee;
   border: 0;
-  border-bottom: 2px solid #bd93f9;
-  color: #50fa7b;
+  border-bottom: 2px solid #212121;
+  color: #424242;
   outline: 0;
 }
 
 .Titlebar {
-  background: #2f313e;
+  background: #eeeeee;
 }
 
 .Titlebar-section-icon {
-  fill: #6272a4;
+  fill: #424242;
 }
 
 .Titlebar-section-icon:hover {
-  background-color: #44475a;
+  background-color: #bdbdbd;
 }
 
 .Titlebar-section-icon--danger:hover {
-  background-color: #ff5555;
-  fill: #f8f8f2;
+  background-color: #e57373;
+  fill: #fafafa;
 }
 
 .Titlebar-section--title {
-  color: #6272a4;
+  color: #424242;
 }

@@ -43,6 +43,20 @@ $fontInconsolata: 'Inconsolata', monospace;
 
 $fontLato: 'Lato', sans-serif;
 
+// Libre Baskerville
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url(~@/assets/fonts/LibreBaskerville-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url(~@/assets/fonts/LibreBaskerville-Bold.ttf);
+  font-weight: bold;
+}
+
+// Open Sans
 @font-face {
   font-family: 'Open Sans';
   src: url(~@/assets/fonts/OpenSans-Regular.ttf);

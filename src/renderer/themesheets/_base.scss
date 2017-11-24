@@ -94,7 +94,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper--circle {
-  background-color: $colorComment;
+  background-color: $colorCurrentLine;
   &:hover {
     background-color: $colorBody;
   }
