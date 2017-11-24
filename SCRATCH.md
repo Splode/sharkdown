@@ -1,21 +1,22 @@
 ## TODOs
+- [ ] Delete file function
 - [ ] Incorporate highlight.js syntax highlighting for `pre` and `code` tags
-- [x] File tree
-- [ ] File rename function
-- [x] Font size slider
 - [ ] Rename `defaultStore.js` to `default-store.js`
-- [x] Refactor settings store
-- [x] Incorporate vue-awesome icons
 - [ ] Attempt two-way data binding with `contenteditable` (debounce events)
-- [x] Wireframe basic views
-- [ ] Light, 'traditional' color themes
 - [ ] Color theme previews
 - [ ] Brainstorm names
 - [ ] Draft project description / mission
+- [x] Light, 'traditional' color themes
+- [x] Refactor settings store
+- [x] Incorporate vue-awesome icons
+- [x] Wireframe basic views
+- [x] File tree
+- [x] File rename function
+- [x] Font size slider
 
 ## Potential Names
 - Waldo
-- Clarity
+- Detangle
 - Blackstone
 
 ## Font Sizes

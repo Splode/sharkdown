@@ -1,10 +1,31 @@
 <template>
   <div class="col-md-8 mx-auto Modal-filename">
     <div class="Modal-filename-wrapper" v-on-clickaway="closeModal">
-      <h2>New Note</h2>
+      <h2>{{ modalTitle }}</h2>
       <label for="filename-input">Title</label>
-      <input type="text" id="filename-input" class="TextInput mb-4 w-100" v-model="filename">
-      <button class="Button Button--block Button--block--field" @click="createNewDoc" :disabled="filename === ''">Accept</button>
+
+      <!-- note create -->
+      <div class="d-inline" v-if="action === 'note-create'">
+        <input type="text" id="filename-input" class="TextInput mb-4 w-100" v-model="filename" @keyup.enter="createNewDoc">
+        <button 
+          class="Button Button--block Button--block--field" 
+          @click="createNewDoc" 
+          :disabled="filename === ''">
+          Accept
+        </button>
+      </div>
+      
+      <!-- note rename -->
+      <div class="d-inline" v-else-if="action === 'note-rename'">
+        <input type="text" id="filename-input" class="TextInput mb-4 w-100" v-model="filename" @keyup.enter="noteRename">
+        <button 
+          class="Button Button--block Button--block--field"
+          @click="noteRename" 
+          :disabled="filename === ''">
+          Accept
+        </button>
+      </div>
+
       <button class="Button Button--block Button--block--field" @click="closeModal">Cancel</button>
     </div>
   </div>
@@ -19,7 +40,30 @@ export default {
 
   data () {
     return {
+      action: '',
       filename: ''
+    }
+  },
+
+  computed: {
+    modalTitle () {
+      this.action = this.viewState.modalAction
+      switch (this.viewState.modalAction) {
+        case 'note-create':
+          this.filename = ''
+          return 'New Note'
+        case 'note-rename':
+          this.filename = this.viewState.activeFile
+          return 'Rename Note'
+      }
+    },
+
+    settings () {
+      return this.$store.getters.settings
+    },
+
+    viewState () {
+      return this.$store.getters.viewState
     }
   },
 
@@ -30,9 +74,22 @@ export default {
     },
 
     createNewDoc () {
-      const payload = new Payload('currentDoc', this.filename)
-      this.$store.dispatch('setSetting', payload)
+      const payloadCurrentDoc = new Payload('currentDoc', this.filename)
+      const payloadDrawerOpen = new Payload('drawerOpen', false)
+      const payloadDrawerComp = new Payload('drawerComponent', '')
+      this.$store.dispatch('setSetting', payloadCurrentDoc)
+      this.$store.dispatch('setViewState', payloadDrawerOpen)
+      this.$store.dispatch('setViewState', payloadDrawerComp)
       EventBus.$emit('new-doc-title-created')
+      this.closeModal()
+    },
+
+    noteRename () {
+      const payload = {
+        oldName: this.viewState.activeFile,
+        newName: this.filename
+      }
+      EventBus.$emit('note-renamed', payload)
       this.closeModal()
     }
   },

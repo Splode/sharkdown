@@ -1,13 +1,12 @@
 <template>
   <div class="col-1 d-flex flex-column align-items-center" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false">
-  <!-- <div class="col-1 d-flex flex-column align-items-center"> -->
     <div class="Sidebar Sidebar--fixed pb-5" :class="sidebarClasses">
 
       <div 
         class="Icon-wrapper--circle" 
         title="New Document" 
         style="margin-bottom: 75px"
-        @click="newDoc">
+        @click="noteCreate">
         <svg 
           version="1.2" 
           baseProfile="tiny" 
@@ -111,15 +110,13 @@ export default {
   },
 
   methods: {
-    emitNewDoc () {
-      console.log('clicked new document')
-      EventBus.$emit('new-doc-init')
-    },
-
-    newDoc () {
+    noteCreate () {
       const payloadModalToggle = new Payload('modalOpen', true)
+      const payloadModalAction = new Payload('modalAction', 'note-create')
       const payloadModalComponent = new Payload('modalComponent', 'appModalFilename')
+      EventBus.$emit('new-doc-init')
       this.$store.dispatch('setViewState', payloadModalToggle)
+      this.$store.dispatch('setViewState', payloadModalAction)
       this.$store.dispatch('setViewState', payloadModalComponent)
     },
 
@@ -141,7 +138,6 @@ export default {
   align-items: center;
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
   padding-top: 100px;
   transition: all .3s ease;
   height: 100%;

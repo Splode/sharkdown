@@ -2,7 +2,7 @@
   <div class="col-12 Drawer-fileTree">
     <div class="row">
       <div class="col-12">
-        <h1 @contextmenu="test">Notes</h1>
+        <h1>Notes</h1>
       </div>
       <div class="col-12 Section">
         <ul class="Settings-list">
@@ -20,7 +20,7 @@
               v-on-clickaway="closeContextMenu"
               :style="contextMenu.pos">
               <ul class="Settings-contextMenu-list">
-                <li class="Settings-contextMenu-list-item" @click="openContextMenu($event, file, i)">Rename</li>
+                <li class="Settings-contextMenu-list-item" @click="noteRenameInit(file)">Rename</li>
                 <li class="Settings-contextMenu-list-item">Delete</li>
               </ul>
             </div>
@@ -57,8 +57,12 @@ export default {
   },
 
   computed: {
-    defaultDocPath () {
-      return path.join(this.$store.getters.userDataPath, this.settings.documentDir)
+    noteDirPath () {
+      if (this.settings.userDir) {
+        return this.settings.userDir
+      } else {
+        return path.join(this.$store.getters.userDataPath, this.settings.documentDir)
+      }
     },
 
     settings () {
@@ -71,8 +75,34 @@ export default {
       this.contextMenu.isOpen = false
     },
 
+    noteRenameInit (file) {
+      const payloadActiveFile = new Payload('activeFile', file)
+      const payloadModalToggle = new Payload('modalOpen', true)
+      const payloadModalAction = new Payload('modalAction', 'note-rename')
+      const payloadModalComponent = new Payload('modalComponent', 'appModalFilename')
+      this.$store.dispatch('setViewState', payloadActiveFile)
+      this.$store.dispatch('setViewState', payloadModalToggle)
+      this.$store.dispatch('setViewState', payloadModalAction)
+      this.$store.dispatch('setViewState', payloadModalComponent)
+    },
+
+    noteRename (oldName, newName) {
+      const oldPath = path.join(this.noteDirPath, oldName + '.json')
+      const newPath = path.join(this.noteDirPath, newName + '.json')
+      fs.rename(oldPath, newPath, err => {
+        if (err) {
+          return err
+        } else if (oldName === this.settings.currentDoc) {
+          const payload = new Payload('currentDoc', newName)
+          this.$store.dispatch('setSetting', payload)
+          this.readDir()
+        } else {
+          this.readDir()
+        }
+      })
+    },
+
     openContextMenu (e, file, i) {
-      console.log(e, file, i)
       this.contextMenu.isOpen = true
       this.contextMenu.pos.top = e.layerY + 'px'
       this.contextMenu.pos.left = e.layerX + 'px'
@@ -81,13 +111,7 @@ export default {
     },
 
     readDir () {
-      let path
-      if (this.settings.userDir) {
-        path = this.settings.userDir
-      } else {
-        path = this.defaultDocPath
-      }
-      const files = fs.readdirSync(path)
+      const files = fs.readdirSync(this.noteDirPath)
       const prettyFiles = files.map(file => this.removeFileExt(file))
       this.files = prettyFiles
     },
@@ -105,15 +129,15 @@ export default {
         this.$store.dispatch('setViewState', payloadDrawer)
         EventBus.$emit('loadDoc', fileNoExt)
       }
-    },
-
-    test () {
-      console.log('tested')
     }
   },
 
   created () {
     this.readDir()
+    EventBus.$on('note-renamed', payload => {
+      this.closeContextMenu()
+      this.noteRename(payload.oldName, payload.newName)
+    })
   }
 }
 </script>

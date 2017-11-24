@@ -1,6 +1,8 @@
 const state = {
+  activeFile: '',
   drawerComponent: '',
   drawerOpen: false,
+  modalAction: '',
   modalComponent: '',
   modalOpen: false,
   winIsMaximized: false
