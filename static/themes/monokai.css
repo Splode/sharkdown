@@ -199,6 +199,10 @@ pre {
   opacity: 1;
 }
 
+.Modal-dialog {
+  background-color: #3E3B3F;
+}
+
 .Modal-filename-wrapper {
   background-color: #3E3B3F;
 }

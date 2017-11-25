@@ -303,6 +303,10 @@ export default {
       ipcRenderer.send('title-change', this.settings.currentDoc)
       this.save(this.settings.currentDoc)
     })
+    EventBus.$on('current-note-deleted', () => {
+      this.quill.setText('')
+      ipcRenderer.send('title-change', this.settings.currentDoc)
+    })
   },
 
   mounted () {

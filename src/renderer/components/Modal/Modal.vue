@@ -9,9 +9,11 @@
 </template>
 
 <script>
+import appModalDialog from './ModalDialog'
 import appModalFilename from './ModalFilename'
 export default {
   components: {
+    appModalDialog,
     appModalFilename
   },
 

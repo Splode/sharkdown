@@ -21,12 +21,11 @@
               :style="contextMenu.pos">
               <ul class="Settings-contextMenu-list">
                 <li class="Settings-contextMenu-list-item" @click="noteRenameInit(file)">Rename</li>
-                <li class="Settings-contextMenu-list-item">Delete</li>
+                <li class="Settings-contextMenu-list-item" @click="noteDeleteInit(file)">Delete</li>
               </ul>
             </div>
           </li>
         </ul>
-        
       </div>
     </div>
   </div>
@@ -67,12 +66,44 @@ export default {
 
     settings () {
       return this.$store.getters.settings
+    },
+
+    viewState () {
+      return this.$store.getters.viewState
     }
   },
 
   methods: {
     closeContextMenu () {
       this.contextMenu.isOpen = false
+    },
+
+    noteDeleteInit (file) {
+      const payloadActiveFile = new Payload('activeFile', file)
+      const payloadModalToggle = new Payload('modalOpen', true)
+      const payloadModalAction = new Payload('modalAction', 'note-delete')
+      const payloadModalComp = new Payload('modalComponent', 'appModalDialog')
+      this.$store.dispatch('setViewState', payloadActiveFile)
+      this.$store.dispatch('setViewState', payloadModalToggle)
+      this.$store.dispatch('setViewState', payloadModalAction)
+      this.$store.dispatch('setViewState', payloadModalComp)
+    },
+
+    noteDelete () {
+      const notePath = path.join(this.noteDirPath, this.viewState.activeFile + '.json')
+      if (this.viewState.activeFile === this.settings.currentDoc) {
+        const payload = new Payload('currentDoc', 'untitled')
+        this.$store.dispatch('setSetting', payload)
+        EventBus.$emit('current-note-deleted')
+      }
+      fs.unlink(notePath, err => {
+        if (err) {
+          console.log(err)
+        } else {
+          this.readDir()
+          this.$forceUpdate()
+        }
+      })
     },
 
     noteRenameInit (file) {
@@ -86,18 +117,17 @@ export default {
       this.$store.dispatch('setViewState', payloadModalComponent)
     },
 
-    noteRename (oldName, newName) {
+    noteRename (oldName, newName, cb) {
       const oldPath = path.join(this.noteDirPath, oldName + '.json')
       const newPath = path.join(this.noteDirPath, newName + '.json')
+      const payload = new Payload('currentDoc', newName)
+      this.$store.dispatch('setSetting', payload)
       fs.rename(oldPath, newPath, err => {
         if (err) {
           return err
-        } else if (oldName === this.settings.currentDoc) {
-          const payload = new Payload('currentDoc', newName)
-          this.$store.dispatch('setSetting', payload)
-          this.readDir()
         } else {
           this.readDir()
+          this.$forceUpdate()
         }
       })
     },
@@ -114,6 +144,7 @@ export default {
       const files = fs.readdirSync(this.noteDirPath)
       const prettyFiles = files.map(file => this.removeFileExt(file))
       this.files = prettyFiles
+      console.log('read dir')
     },
 
     removeFileExt (file) {
@@ -137,6 +168,9 @@ export default {
     EventBus.$on('note-renamed', payload => {
       this.closeContextMenu()
       this.noteRename(payload.oldName, payload.newName)
+    })
+    EventBus.$on('note-delete-confirmed', () => {
+      this.noteDelete()
     })
   }
 }
