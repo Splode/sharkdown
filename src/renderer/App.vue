@@ -1,12 +1,11 @@
 <template>
   <div id="app">
-    <transition name="fade">
+    <transition name="slide-down">
       <app-modal v-if="modalOpen"/>
     </transition>
 
     </app-modal>
     <app-titlebar/>
-    <!-- <app-header/> -->
     <div class="container-fluid" style="overflow: auto">
       <div class="container App-container" :class="{ 'is-blurred': modalOpen }">
       <app-drawer>
@@ -30,7 +29,6 @@ import { editorSettings } from './../utils/defaultStore'
 import appDrawer from './components/Drawer/Drawer'
 import appDrawerFileTree from './components/Drawer/DrawerFileTree'
 import appDrawerSettings from './components/Drawer/DrawerSettings'
-import appHeader from './components/Partials/Header'
 import appModal from './components/Modal/Modal'
 import appSidebar from './components/Partials/Sidebar'
 import appTitlebar from './components/Partials/Titlebar'
@@ -41,7 +39,6 @@ export default {
     appDrawer,
     appDrawerFileTree,
     appDrawerSettings,
-    appHeader,
     appModal,
     appSidebar,
     appTitlebar

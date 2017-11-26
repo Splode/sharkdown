@@ -1,5 +1,7 @@
 ## TODOs
-- [ ] Delete file function
+- [x] Delete file function
+- [ ] Shortcuts menu
+- [ ] About app menu
 - [ ] Incorporate highlight.js syntax highlighting for `pre` and `code` tags
 - [ ] Rename `defaultStore.js` to `default-store.js`
 - [ ] Attempt two-way data binding with `contenteditable` (debounce events)
