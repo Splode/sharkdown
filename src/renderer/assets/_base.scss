@@ -53,6 +53,21 @@ input[type=radio] {
   height: 35px;
 }
 
+.Section-codeBlock {
+  font-family: 'Inconsolata', monospace;
+  font-size: .8rem;
+  padding: .5em;
+  white-space: pre-wrap;
+}
+
+.Section-imagePreview {
+  background-size: cover;
+  border-radius: 3px;
+  margin: 0 auto 1em auto;
+  width: 90%;
+  height: 150px;
+}
+
 .Section-subtitle {
   margin: 1.5em 0 0 0;
 }
@@ -65,4 +80,15 @@ input[type=radio] {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.Settings-list-item {
+  align-items: center;
+  border-left: 3px solid transparent;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  margin: .5em 0;
+  padding: .25em .5em;
+  position: relative;
 }

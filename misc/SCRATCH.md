@@ -1,13 +1,13 @@
 ## TODOs
-- [x] Delete file function
 - [ ] Shortcuts menu
 - [ ] About app menu
 - [ ] Incorporate highlight.js syntax highlighting for `pre` and `code` tags
 - [ ] Rename `defaultStore.js` to `default-store.js`
 - [ ] Attempt two-way data binding with `contenteditable` (debounce events)
-- [ ] Color theme previews
 - [ ] Brainstorm names
 - [ ] Draft project description / mission
+- [x] Delete file function
+- [x] Color theme previews
 - [x] Light, 'traditional' color themes
 - [x] Refactor settings store
 - [x] Incorporate vue-awesome icons

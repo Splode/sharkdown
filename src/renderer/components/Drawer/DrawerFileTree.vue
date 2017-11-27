@@ -46,7 +46,7 @@ export default {
       contextMenu: {
         isOpen: false,
         pos: {
-          top: 0,
+          top: 'initial',
           left: 0
         },
         file: '',
@@ -133,9 +133,10 @@ export default {
     },
 
     openContextMenu (e, file, i) {
+      console.log(e)
       this.contextMenu.isOpen = true
-      this.contextMenu.pos.top = e.layerY + 'px'
-      this.contextMenu.pos.left = e.layerX + 'px'
+      this.contextMenu.pos.top = e.offsetY + 'px'
+      this.contextMenu.pos.left = e.offsetX + 'px'
       this.contextMenu.file = file
       this.contextMenu.index = i
     },
@@ -180,6 +181,7 @@ export default {
 .Settings-contextMenu {
   border-radius: 3px;
   position: absolute;
+  z-index: 10;
 }
 
 .Settings-contextMenu-list {

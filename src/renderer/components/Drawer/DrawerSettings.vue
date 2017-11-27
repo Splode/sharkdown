@@ -56,16 +56,23 @@
 
       <div class="col-12 Section">
         <h2 class="Section-title">Theme</h2>
-        <button @click="selectTheme('charcoal')">Charcoal</button>
+        <div 
+          class="Section-imagePreview" 
+          v-for="(theme, i) in themes"
+          @click="selectTheme(theme)"
+          :key="i"
+          :style="{ backgroundImage: 'url(./static/images/' + theme + '-preview.jpg)' }"></div>
+        <!-- <div class="Section-imagePreview" style="background-image: url(./static/images/charcoal-preview.jpg)"></div> -->
+        <!-- <button @click="selectTheme('charcoal')">Charcoal</button>
         <button @click="selectTheme('graphite')">Graphite</button>
         <button @click="selectTheme('dracula')">Dracula</button>
         <button @click="selectTheme('oneDark')">One Dark</button>
-        <button @click="selectTheme('monokai')">Monokai</button>
+        <button @click="selectTheme('monokai')">Monokai</button> -->
       </div>
 
       <div class="col-12 Section">
         <h2 class="Section-title">Note Location</h2>
-        <em>{{ docPath }}</em>
+        <pre class="Section-codeBlock">{{ docPath }}</pre>
         <label for="chooseUserDir" class="Button Button--block Button--block--field">Browse</label>
         <input id="chooseUserDir" type="file" class="d-none" @change="onFileChange" webkitdirectory/>
       </div>
@@ -91,6 +98,13 @@ export default {
         'Open Sans',
         'Roboto',
         'Roboto Condensed'
+      ],
+      themes: [
+        'charcoal',
+        'graphite',
+        'dracula',
+        'oneDark',
+        'monokai'
       ]
     }
   },

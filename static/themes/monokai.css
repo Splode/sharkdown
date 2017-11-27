@@ -228,22 +228,16 @@ pre {
   margin-top: 0;
 }
 
+.Section-codeBlock {
+  background-color: #211F22;
+}
+
 .Settings-contextMenu {
   background-color: #2C292D;
 }
 
 .Settings-contextMenu-list-item:hover {
   color: #FFD866;
-}
-
-.Settings-list-item {
-  align-items: center;
-  border-left: 3px solid transparent;
-  border-radius: 3px;
-  display: flex;
-  justify-content: space-between;
-  margin: .5em 0;
-  padding: .25em .5em;
 }
 
 .Settings-list-item:hover {
