@@ -61,7 +61,11 @@
           v-for="(theme, i) in themes"
           @click="selectTheme(theme)"
           :key="i"
-          :style="{ backgroundImage: 'url(./static/images/' + theme + '-preview.jpg)' }"></div>
+          :style="{ backgroundImage: 'url(./static/images/' + theme + '-preview.jpg)' }">
+          <div class="Section-imagePreview-icon" v-if="settings.theme === theme">
+            <icon name="check"/>
+          </div>
+        </div>
         <!-- <div class="Section-imagePreview" style="background-image: url(./static/images/charcoal-preview.jpg)"></div> -->
         <!-- <button @click="selectTheme('charcoal')">Charcoal</button>
         <button @click="selectTheme('graphite')">Graphite</button>
@@ -84,7 +88,13 @@
 import Payload from './../../../utils/payload'
 import cssLoader from './../../../utils/css-loader'
 import keygen from './../../../utils/key'
+import Icon from 'vue-awesome/components/Icon'
+import 'vue-awesome/icons/check'
 export default {
+  components: {
+    Icon
+  },
+
   mixins: [ cssLoader, keygen ],
 
   data () {

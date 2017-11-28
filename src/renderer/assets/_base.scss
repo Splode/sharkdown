@@ -64,8 +64,19 @@ input[type=radio] {
   background-size: cover;
   border-radius: 3px;
   margin: 0 auto 1em auto;
+  padding: .5em;
   width: 90%;
   height: 150px;
+}
+
+.Section-imagePreview-icon {
+  align-items: center;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  width: 25px;
+  height: 25px;
 }
 
 .Section-subtitle {

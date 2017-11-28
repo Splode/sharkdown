@@ -52,17 +52,18 @@
         class="Icon-wrapper" 
         title="Settings" 
         @click="toggleDrawer('appDrawerSettings')">
-        <svg class="Icon Icon--slider" version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px" y="0px" viewBox="0 0 35 35" xml:space="preserve"
-        :class="{ 'is-selected': viewState.drawerComponent === 'appDrawerSettings' && viewState.drawerOpen }">
-          <line fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" x1="4.5" y1="7.5" x2="29.5" y2="7.5"/>
-          <circle fill-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" cx="19.5" cy="7.5" r="3"/>
-          <line fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" x1="4.5" y1="17.5" x2="29.5" y2="17.5"/>
-          <circle fill-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" cx="7.5" cy="17.5" r="3"/>
-          <line fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" x1="4.5" y1="27.5" x2="29.5" y2="27.5"/>
-          <circle fill-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" cx="26.5" cy="27.5" r="3"/>
-        </svg>
-      </div>
+        <svg class="Icon Icon--slider" version="1.2" baseProfile="tiny" id="Layer_1"  
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px" y="0px" viewBox="0 0 35 35" xml:space="preserve"
+          :class="{ 'is-selected': viewState.drawerComponent === 'appDrawerSettings' && viewState.drawerOpen }">
+            <line fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" x1="4.5" y1="7.5" x2="29.5" y2="7.5"/>
+            <circle fill-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" cx="19.5" cy="7.5" r="3"/>
+            <line fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" x1="4.5" y1="17.5" x2="29.5" y2="17.5"/>
+            <circle fill-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" cx="7.5" cy="17.5" r="3"/>
+            <line fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" x1="4.5" y1="27.5" x2="29.5" y2="27.5"/>
+            <circle fill-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" cx="26.5" cy="27.5" r="3"/>
+          </svg>
+        </div>
       </div>
       
     </div>
@@ -72,15 +73,7 @@
 <script>
 import Payload from './../../../utils/payload'
 import { EventBus } from './../../../utils/event-bus'
-import Icon from 'vue-awesome/components/Icon'
-import 'vue-awesome/icons/cog'
-import 'vue-awesome/icons/list'
-import 'vue-awesome/icons/plus'
 export default {
-  components: {
-    Icon
-  },
-
   data () {
     return {
       toolbarIsActive: false

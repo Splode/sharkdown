@@ -232,6 +232,11 @@ pre {
   background-color: #211F22;
 }
 
+.Section-imagePreview-icon {
+  background-color: #211F22;
+  color: #FFD866;
+}
+
 .Settings-contextMenu {
   background-color: #2C292D;
 }
