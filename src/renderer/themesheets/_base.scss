@@ -30,7 +30,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Button--transparent {
-  color: $colorBody;
+  color: $colorComment;
   &:hover {
     color: $colorHeading;
   }
@@ -78,7 +78,7 @@ div::-webkit-scrollbar-thumb {
 .Icon--files {
   &.is-selected .Icon--files-primary {
     fill: $colorHeading;
-    stroke: $colorBody;
+    stroke: $colorComment;
   }
   &:hover .Icon--files-primary {
     stroke: $colorHeading;
@@ -87,18 +87,18 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files-primary {
   fill: $colorBackground;
-  stroke: $colorBody;
+  stroke: $colorComment;
   transition: all .3s ease;
 }
 
 .Icon--files-secondary {
   fill: $colorBackground;
-  stroke: $colorBody;
+  stroke: $colorComment;
 }
 
 .Icon--new {
   & line {
-    stroke: $colorBody;
+    stroke: $colorComment;
     transition: all .3s ease;
   }
   &:hover line {
@@ -108,11 +108,11 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--slider {
   & line {
-    stroke: $colorBody;
+    stroke: $colorComment;
   }
   & circle {
     fill: $colorComment;
-    stroke: $colorBody;
+    stroke: $colorCurrentLine;
     transition: all .3s ease;
   }
   &.is-selected circle, 
