@@ -2,18 +2,9 @@
 
 import { app, BrowserWindow, ipcMain } from 'electron'
 
-import LocalStore from './../utils/local-store'
+import { editorSettings } from './../utils/default-store'
 
-const localStore = new LocalStore({
-  configName: 'app-config',
-  dirName: 'settings',
-  defaults: {
-    windowBounds: {
-      width: 1024,
-      height: 1024
-    }
-  }
-})
+const localStore = editorSettings()
 
 /**
  * Set `__static` path to static files in production
@@ -31,10 +22,12 @@ const winURL = process.env.NODE_ENV === 'development'
 
 app.on('ready', () => {
   let { width, height } = localStore.get('windowBounds')
+  let alwaysOnTop = localStore.get('alwaysOnTop')
   console.log(localStore)
   createWindow({
     width,
-    height
+    height,
+    alwaysOnTop
   })
   // Menu.setApplicationMenu(menu)
 })
@@ -56,6 +49,10 @@ ipcMain.on('title-change', (event, arg) => {
   mainWindow.setTitle(title)
 })
 
+ipcMain.on('toggle-alwaysOnTop', (event, arg) => {
+  mainWindow.setAlwaysOnTop(arg)
+})
+
 ipcMain.on('window-close', (event, arg) => {
   mainWindow.close()
 })
@@ -74,12 +71,13 @@ ipcMain.on('window-minimize', (event, arg) => {
 
 function createWindow (opts) {
   mainWindow = new BrowserWindow({
+    alwaysOnTop: opts.alwaysOnTop,
     backgroundColor: '#282a36',
     frame: false,
-    width: opts.width,
-    height: opts.height,
     show: false,
-    useContentSize: true
+    useContentSize: true,
+    width: opts.width,
+    height: opts.height
   })
 
   mainWindow.loadURL(winURL)

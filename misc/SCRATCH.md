@@ -5,11 +5,11 @@
 - [ ] Currently saving icon animation
 - [ ] Export Menu
 - [ ] Incorporate highlight.js syntax highlighting for `pre` and `code` tags
-- [ ] Rename `defaultStore.js` to `default-store.js`
+- [x] Rename `defaultStore.js` to `default-store.js`
 - [ ] Attempt two-way data binding with `contenteditable` (debounce events)
 - [ ] Brainstorm names
 - [ ] Draft project description / mission
-- [ ] Always-on-top option
+- [x] Always-on-top option
 - [ ] VirtualBox environment for update testing
 - [x] Currently active theme indicator
 - [x] Delete file function

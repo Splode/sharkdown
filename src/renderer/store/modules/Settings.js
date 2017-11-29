@@ -1,4 +1,4 @@
-import { editorSettings } from '../../../utils/defaultStore'
+import { editorSettings } from '../../../utils/default-store'
 
 const localStore = editorSettings()
 

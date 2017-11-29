@@ -25,7 +25,7 @@
 
 <script>
 import cssLoader from './../utils/css-loader'
-import { editorSettings } from './../utils/defaultStore'
+import { editorSettings } from './../utils/default-store'
 import appDrawer from './components/Drawer/Drawer'
 import appDrawerFileTree from './components/Drawer/DrawerFileTree'
 import appDrawerSettings from './components/Drawer/DrawerSettings'

@@ -61,12 +61,20 @@ input[type=radio] {
 }
 
 .Section-imagePreview {
-  background-size: cover;
+  // background-size: cover;
   border-radius: 3px;
-  margin: 0 auto 1em auto;
-  padding: .5em;
-  width: 90%;
-  height: 150px;
+  margin-bottom: 1em;
+  // margin: 0 auto 1em auto;
+  // padding: .5em;
+  // width: 90%;
+  // height: 150px;
+}
+
+.Section-imagePreview-wrapper {
+  overflow: hidden;
+  & img {
+    width: 150%;
+  }
 }
 
 .Section-imagePreview-icon {
@@ -75,6 +83,9 @@ input[type=radio] {
   display: flex;
   justify-content: center;
   margin-left: auto;
+  position: absolute;
+  right: 1.5em;
+  bottom: .5em;
   width: 25px;
   height: 25px;
 }

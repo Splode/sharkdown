@@ -6,7 +6,12 @@
         id="Quill"
         class="ql-container mx-auto"
         :class="'col-' + settings.colWidth" 
-        :style="{ 'font-size': settings.fontSize + 'rem', 'line-height': settings.lineHeight }"></div>
+        :style="{
+          'font-size': settings.fontSize + 'rem', 
+          'line-height': settings.lineHeight,
+          'text-align': settings.justify ? 'justify' : 'left'
+        }">
+        </div>
       <div class="col-1 Sidebar" @mouseover="toolbarIsActive = true" @mouseout="toolbarIsActive = false" :class="sidebarClasses">
         <div id="Quill-toolbar">
           <ul class="Toolbar-list">
@@ -89,7 +94,6 @@
 <script>
 import { ipcRenderer } from 'electron'
 import _ from 'lodash'
-// import fs from 'fs'
 import Quill from 'quill'
 // import 'quill/dist/quill.core.css'
 import LocalStore from './../../utils/local-store'
@@ -325,12 +329,10 @@ export default {
 
 .Editor {
   width: 100%;
-  // height: calc(100vh - 80px);
   height: 100vh;
 }
 
 .Editor-wrapper {
-  // overflow: auto;
   &.is-disabled {
     opacity: .5;
     pointer-events: none;

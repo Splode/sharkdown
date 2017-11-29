@@ -27,11 +27,11 @@ export default {
 
 .Drawer {
   overflow-y: auto;
-  padding-right: 1em;
+  padding-right: 2em;
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 400px;
+  width: 420px;
   height: 100%;
   word-wrap: break-word;
   z-index: 2;

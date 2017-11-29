@@ -7,17 +7,33 @@
 
       <div class="col-12 Section">
         <h2 class="Section-title">Editor</h2>
-        <!-- autoSave -->
-        <div class="Section-option-wrapper">
-        <div class="Section-option">
-          <div class="Checkbox" @click="toggleSetting('autoSave')" :class="settings.autoSave ? 'is-active' : 'is-inactive'"></div>
-          <label>Autosave</label>
-        </div>
-        <!-- focusMode -->
-        <div class="Section-option">
-          <div class="Checkbox" @click="toggleSetting('focusMode')" :class="settings.focusMode ? 'is-active' : 'is-inactive'"></div>
-          <label title="Autohide sidebars">Focus Mode</label>
-        </div>
+        
+        <div class="row Section-option-wrapper">
+
+          <!-- always on top -->
+          <div class="col-6 Section-option">
+            <div class="Checkbox" @click="selectAlwaysOnTop" :class="settings.alwaysOnTop ? 'is-active' : 'is-inactive'"></div>
+            <label>Always on Top</label>
+          </div>
+
+          <!-- autoSave -->
+          <div class="col-6 Section-option">
+            <div class="Checkbox" @click="toggleSetting('autoSave')" :class="settings.autoSave ? 'is-active' : 'is-inactive'"></div>
+            <label>Autosave</label>
+          </div>
+
+          <!-- focusMode -->
+          <div class="col-6 Section-option" title="Autohide sidebars">
+            <div class="Checkbox" @click="toggleSetting('focusMode')" :class="settings.focusMode ? 'is-active' : 'is-inactive'"></div>
+            <label>Focus Mode</label>
+          </div>
+
+          <!-- justify text -->
+          <div class="col-6 Section-option">
+            <div class="Checkbox" @click="toggleSetting('justify')" :class="settings.justify ? 'is-active' : 'is-inactive'"></div>
+            <label>Justify Text</label>
+          </div>
+
         </div>
         <!-- font -->
         <h3 class="Section-subtitle">Font</h3>
@@ -56,22 +72,20 @@
 
       <div class="col-12 Section">
         <h2 class="Section-title">Theme</h2>
-        <div 
-          class="Section-imagePreview" 
-          v-for="(theme, i) in themes"
-          @click="selectTheme(theme)"
-          :key="i"
-          :style="{ backgroundImage: 'url(./static/images/' + theme + '-preview.jpg)' }">
-          <div class="Section-imagePreview-icon" v-if="settings.theme === theme">
-            <icon name="check"/>
+        <div class="row">
+          <div 
+            class="col-6 Section-imagePreview" 
+            v-for="(theme, i) in themes"
+            @click="selectTheme(theme)"
+            :key="i">
+            <div class="Section-imagePreview-wrapper">
+              <img :src="'./static/images/' + theme + '-preview.jpg'">
+            </div>
+            <div class="Section-imagePreview-icon" v-if="settings.theme === theme">
+              <icon name="check"/>
+            </div>
           </div>
         </div>
-        <!-- <div class="Section-imagePreview" style="background-image: url(./static/images/charcoal-preview.jpg)"></div> -->
-        <!-- <button @click="selectTheme('charcoal')">Charcoal</button>
-        <button @click="selectTheme('graphite')">Graphite</button>
-        <button @click="selectTheme('dracula')">Dracula</button>
-        <button @click="selectTheme('oneDark')">One Dark</button>
-        <button @click="selectTheme('monokai')">Monokai</button> -->
       </div>
 
       <div class="col-12 Section">
@@ -85,6 +99,7 @@
 </template>
 
 <script>
+import { ipcRenderer } from 'electron'
 import Payload from './../../../utils/payload'
 import cssLoader from './../../../utils/css-loader'
 import keygen from './../../../utils/key'
@@ -130,6 +145,13 @@ export default {
   },
 
   methods: {
+    selectAlwaysOnTop () {
+      const alwaysOnTop = !this.settings.alwaysOnTop
+      const payload = new Payload('alwaysOnTop', alwaysOnTop)
+      this.$store.dispatch('setSetting', payload)
+      ipcRenderer.send('toggle-alwaysOnTop', alwaysOnTop)
+    },
+
     selectAutosave () {
       const payload = new Payload('autoSave', !this.settings.autoSave)
       this.$store.dispatch('setSetting', payload)

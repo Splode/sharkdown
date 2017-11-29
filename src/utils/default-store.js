@@ -19,16 +19,22 @@ export function editorSettings () {
     configName: 'user-config',
     dirName: 'settings',
     defaults: {
+      alwaysOnTop: false,
+      autoSave: true,
+      colWidth: '11',
       currentDoc: 'untitled',
       documentDir: 'documents',
-      userDir: false,
-      theme: 'dracula',
+      focusMode: false,
       font: 'Roboto',
       fontSize: '1',
+      justify: false,
       lineHeight: '2',
-      colWidth: '11',
-      autoSave: true,
-      focusMode: false
+      theme: 'dracula',
+      userDir: false,
+      windowBounds: {
+        width: 1024,
+        height: 1024
+      }
     }
   })
   return localStore
