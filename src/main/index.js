@@ -21,13 +21,13 @@ const winURL = process.env.NODE_ENV === 'development'
 // const menu = new Menu()
 
 app.on('ready', () => {
-  let { width, height } = localStore.get('windowBounds')
   let alwaysOnTop = localStore.get('alwaysOnTop')
+  let { width, height } = localStore.get('windowBounds')
   console.log(localStore)
   createWindow({
+    alwaysOnTop,
     width,
-    height,
-    alwaysOnTop
+    height
   })
   // Menu.setApplicationMenu(menu)
 })
