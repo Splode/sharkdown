@@ -45,7 +45,7 @@ app.on('activate', () => {
 })
 
 ipcMain.on('title-change', (event, arg) => {
-  const title = `sharkdown - ${arg}`
+  const title = `Waldo - ${arg}`
   mainWindow.setTitle(title)
 })
 

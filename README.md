@@ -1,4 +1,4 @@
-# sharkdown
+# Waldo
 
 > An electron-vue project
 

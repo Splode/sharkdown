@@ -1,5 +1,5 @@
 {
-  "name": "sharkdown",
+  "name": "waldo",
   "version": "0.0.0",
   "author": "Christopher Murphy <christopherianmurphy@gmail.com>",
   "description": "An electron-vue project",
@@ -26,7 +26,7 @@
     "theme": "npm-run-all theme:charcoal theme:graphite theme:dracula theme:oneDark theme:monokai"
   },
   "build": {
-    "productName": "sharkdown",
+    "productName": "Waldo",
     "appId": "org.simulatedgreg.electron-vue",
     "directories": {
       "output": "build"
