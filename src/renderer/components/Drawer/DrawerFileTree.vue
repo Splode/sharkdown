@@ -37,6 +37,7 @@ import fs from 'fs'
 import Payload from './../../../utils/payload'
 import { EventBus } from './../../../utils/event-bus'
 import { mixin as clickaway } from 'vue-clickaway'
+
 export default {
   mixins: [ clickaway ],
 

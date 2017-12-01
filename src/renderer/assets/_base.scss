@@ -41,9 +41,12 @@ input[type=radio] {
 }
 
 .Icon-wrapper {
-  width: 100%;
   margin: 0 0 1.5em 0;
+  text-align: center;
+  transition: all .3s ease;
+  width: 100%;
   max-width: 35px;
+  min-height: 35px;
 }
 
 .Icon-wrapper--circle {

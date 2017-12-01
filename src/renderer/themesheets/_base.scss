@@ -68,6 +68,13 @@ div::-webkit-scrollbar-thumb {
   background-color: $colorBackground;
 }
 
+.Icon-wrapper {
+  color: $colorComment;
+  &:hover {
+    color: $colorHeading;
+  }
+}
+
 .Icon-wrapper--circle {
   background-color: $colorCurrentLine;
   &:hover {

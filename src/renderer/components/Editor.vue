@@ -311,6 +311,20 @@ export default {
       this.quill.setText('')
       ipcRenderer.send('title-change', this.settings.currentDoc)
     })
+    EventBus.$on('request-editor-data', (type) => {
+      switch (type) {
+        case 'text':
+          const data = this.quill.getText()
+          const payload = {
+            data: data,
+            type: type
+          }
+          EventBus.$emit('respond-editor-data', payload)
+          break
+        default:
+          break
+      }
+    })
   },
 
   mounted () {

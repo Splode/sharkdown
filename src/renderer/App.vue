@@ -27,6 +27,7 @@
 import cssLoader from './../utils/css-loader'
 import { editorSettings } from './../utils/default-store'
 import appDrawer from './components/Drawer/Drawer'
+import appDrawerExport from './components/Drawer/DrawerExport'
 import appDrawerFileTree from './components/Drawer/DrawerFileTree'
 import appDrawerSettings from './components/Drawer/DrawerSettings'
 import appModal from './components/Modal/Modal'
@@ -37,6 +38,7 @@ export default {
 
   components: {
     appDrawer,
+    appDrawerExport,
     appDrawerFileTree,
     appDrawerSettings,
     appModal,

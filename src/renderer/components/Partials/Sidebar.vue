@@ -4,7 +4,7 @@
 
       <div 
         class="Icon-wrapper--circle" 
-        title="New Document" 
+        title="Create New Note" 
         style="margin-bottom: 75px"
         @click="noteCreate">
         <svg 
@@ -64,6 +64,13 @@
             <circle fill-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" cx="26.5" cy="27.5" r="3"/>
           </svg>
         </div>
+
+        <div 
+          class="Icon-wrapper" 
+          title="Export Current Note" 
+          @click="toggleDrawer('appDrawerExport')">
+          <icon name="paper-plane"/>
+        </div>
       </div>
       
     </div>
@@ -73,7 +80,14 @@
 <script>
 import Payload from './../../../utils/payload'
 import { EventBus } from './../../../utils/event-bus'
+import Icon from 'vue-awesome/components/Icon'
+import 'vue-awesome/icons/paper-plane'
+
 export default {
+  components: {
+    Icon
+  },
+
   data () {
     return {
       toolbarIsActive: false

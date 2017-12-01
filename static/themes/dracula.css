@@ -71,6 +71,14 @@ div::-webkit-scrollbar-thumb {
   background-color: #282a36;
 }
 
+.Icon-wrapper {
+  color: #44475a;
+}
+
+.Icon-wrapper:hover {
+  color: #50fa7b;
+}
+
 .Icon-wrapper--circle {
   background-color: #2f313e;
 }
