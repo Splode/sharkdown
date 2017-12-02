@@ -11,7 +11,11 @@
             @click="requestEditorData('text')">
             Plain Text
           </li>
-          <li class="Settings-list-item">HTML</li>
+          <li 
+            class="Settings-list-item" 
+            @click="requestEditorData('html')">
+            HTML
+          </li>
           <li class="Settings-list-item">Markdown</li>
           <li class="Settings-list-item">PDF</li>
         </ul>
@@ -39,14 +43,14 @@ export default {
       EventBus.$emit('request-editor-data', type)
     },
 
-    exportText (data) {
+    exportText (data, metadata) {
       dialog.showSaveDialog({
-        title: 'Export to Plain Text',
+        title: `Export to ${metadata.name}`,
         defaultPath: this.settings.currentDoc,
         filters: [
           {
-            name: 'Text',
-            extensions: ['txt']
+            name: metadata.name,
+            extensions: metadata.extensions
           }
         ]
       }, function (fileName) {
@@ -60,10 +64,23 @@ export default {
   },
 
   mounted () {
-    EventBus.$on('respond-editor-data', (payload) => {
-      switch (payload.type) {
+    EventBus.$on('respond-editor-data', (response) => {
+      let metadata = {
+        name: '',
+        extensions: []
+      }
+      switch (response.type) {
         case 'text':
-          this.exportText(payload.data)
+          metadata.name = 'Text'
+          metadata.extensions.push('txt')
+          this.exportText(response.data, metadata)
+          break
+
+        case 'html':
+          metadata.name = 'HTML'
+          metadata.extensions.push('html')
+          metadata.extensions.push('htm')
+          this.exportText(response.data, metadata)
           break
 
         default:

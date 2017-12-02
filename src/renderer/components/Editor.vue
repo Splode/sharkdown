@@ -312,15 +312,24 @@ export default {
       ipcRenderer.send('title-change', this.settings.currentDoc)
     })
     EventBus.$on('request-editor-data', (type) => {
+      let data
+      let response = {
+        data: null,
+        type: type
+      }
       switch (type) {
         case 'text':
-          const data = this.quill.getText()
-          const payload = {
-            data: data,
-            type: type
-          }
-          EventBus.$emit('respond-editor-data', payload)
+          data = this.quill.getText()
+          response.data = data
+          EventBus.$emit('respond-editor-data', response)
           break
+
+        case 'html':
+          data = this.quill.root.innerHTML
+          response.data = data
+          EventBus.$emit('respond-editor-data', response)
+          break
+
         default:
           break
       }
