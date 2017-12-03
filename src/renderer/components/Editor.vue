@@ -109,6 +109,9 @@ import 'vue-awesome/icons/minus-square-o'
 import 'vue-awesome/icons/quote-right'
 import 'vue-awesome/icons/strikethrough'
 import 'vue-awesome/icons/underline'
+
+const toMarkdown = require('to-markdown')
+
 export default {
   components: {
     Icon
@@ -326,6 +329,12 @@ export default {
 
         case 'html':
           data = this.quill.root.innerHTML
+          response.data = data
+          EventBus.$emit('respond-editor-data', response)
+          break
+
+        case 'markdown':
+          data = toMarkdown(this.quill.root.innerHTML)
           response.data = data
           EventBus.$emit('respond-editor-data', response)
           break

@@ -16,7 +16,11 @@
             @click="requestEditorData('html')">
             HTML
           </li>
-          <li class="Settings-list-item">Markdown</li>
+          <li 
+            class="Settings-list-item"
+            @click="requestEditorData('markdown')">
+            Markdown
+          </li>
           <li class="Settings-list-item">PDF</li>
         </ul>
       </div>
@@ -80,6 +84,12 @@ export default {
           metadata.name = 'HTML'
           metadata.extensions.push('html')
           metadata.extensions.push('htm')
+          this.exportText(response.data, metadata)
+          break
+
+        case 'markdown':
+          metadata.name = 'Markdown'
+          metadata.extensions.push('md')
           this.exportText(response.data, metadata)
           break
 
