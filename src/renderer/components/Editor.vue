@@ -1,7 +1,11 @@
 <template>
   <!-- <div class="row"> -->
-  <div class="col-11 d-flex Editor-wrapper" :class="{ 'is-disabled': drawerOpen }">
-    <div class="row Editor" @click="giveFocus" :style="{ 'font-family': settings.font }">
+  <div class="col-11 d-flex" @click="toggleDrawer">
+    <div 
+      class="row Editor" 
+      @click="giveFocus" 
+      :class="{ 'is-disabled': drawerOpen }" 
+      :style="{ 'font-family': settings.font }">
       <div 
         id="Quill"
         class="ql-container mx-auto"
@@ -98,6 +102,7 @@ import Quill from 'quill'
 // import 'quill/dist/quill.core.css'
 import LocalStore from './../../utils/local-store'
 import { EventBus } from './../../utils/event-bus'
+import Payload from './../../utils/payload'
 import Icon from 'vue-awesome/components/Icon'
 import 'vue-awesome/icons/bold'
 import 'vue-awesome/icons/code'
@@ -149,6 +154,14 @@ export default {
   },
 
   methods: {
+    // view methods
+    toggleDrawer () {
+      if (this.drawerOpen) {
+        const payload = new Payload('drawerOpen', false)
+        this.$store.dispatch('setViewState', payload)
+      }
+    },
+
     // Quill functions
     getPayload () {
       const selection = this.quill.getSelection()
@@ -362,9 +375,6 @@ export default {
 .Editor {
   width: 100%;
   height: 100vh;
-}
-
-.Editor-wrapper {
   &.is-disabled {
     opacity: .5;
     pointer-events: none;

@@ -157,12 +157,16 @@ div::-webkit-scrollbar-thumb {
 }
 
 .ql-editor h1,
-h2,
 h3,
-h4,
-h5,
-h6 {
+h5 {
   color: #50fa7b;
+  font-weight: 600;
+}
+
+.ql-editor h2,
+h4,
+h6 {
+  color: #8be9fd;
   font-weight: 600;
 }
 

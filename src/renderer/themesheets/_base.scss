@@ -3,7 +3,9 @@ body {
   color: $colorBody;
 }
 
+
 /* Custom scroll bar */
+
 div::-webkit-scrollbar {
   // width: .5em;
   width: 3px;
@@ -50,8 +52,7 @@ div::-webkit-scrollbar-thumb {
   vertical-align: middle;
   &.is-active {
     background-color: $colorHeading;
-    border-color: $colorComment;
-    // &:hover {
+    border-color: $colorComment; // &:hover {
     //   background-color: $colorCurrentLine;
     // }
   }
@@ -122,7 +123,7 @@ div::-webkit-scrollbar-thumb {
     stroke: $colorCurrentLine;
     transition: all .3s ease;
   }
-  &.is-selected circle, 
+  &.is-selected circle,
   &:hover circle {
     fill: $colorHeading;
   }
@@ -146,18 +147,23 @@ div::-webkit-scrollbar-thumb {
   &+p,
   &+pre,
   &+li,
-  &+ul, {
+  &+ul,
+  {
     margin-top: 2em;
   }
 }
 
 .ql-editor h1,
-h2,
 h3,
-h4,
-h5,
-h6 {
+h5{
   color: $colorHeading;
+  font-weight: 600;
+}
+
+.ql-editor h2,
+h4,
+h6 {
+  color: $colorCode;
   font-weight: 600;
 }
 
@@ -293,7 +299,8 @@ pre {
     width: 15px;
     height: 15px;
     -webkit-appearance: none;
-    &:hover, &:active {
+    &:hover,
+    &:active {
       background-color: $colorHighlight;
       border-color: $colorHighlight;
     }
