@@ -9,7 +9,7 @@
     <div class="container-fluid" style="overflow: auto">
       <div class="container App-container" :class="{ 'is-blurred': modalOpen }">
       <app-drawer>
-        <transition name="fade">
+        <transition name="fade" mode="out-in">
           <component :is="drawerComponent"/>
         </transition>
       </app-drawer>

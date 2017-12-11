@@ -26,7 +26,7 @@
         <div 
         class="Icon-wrapper" 
         title="Notes" 
-        @click="toggleDrawer('appDrawerFileTree')">
+        @click="drawerController('appDrawerFileTree')">
         <svg 
           version="1.2" 
           baseProfile="tiny" 
@@ -51,7 +51,7 @@
       <div 
         class="Icon-wrapper" 
         title="Settings" 
-        @click="toggleDrawer('appDrawerSettings')">
+        @click="drawerController('appDrawerSettings')">
         <svg class="Icon Icon--slider" version="1.2" baseProfile="tiny" id="Layer_1"  
           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
           x="0px" y="0px" viewBox="0 0 35 35" xml:space="preserve"
@@ -68,7 +68,7 @@
         <div 
           class="Icon-wrapper" 
           title="Export Current Note" 
-          @click="toggleDrawer('appDrawerExport')">
+          @click="drawerController('appDrawerExport')">
           <icon name="paper-plane"/>
         </div>
       </div>
@@ -117,6 +117,18 @@ export default {
   },
 
   methods: {
+    drawerController (drawerComponent) {
+      if (this.viewState.drawerOpen && drawerComponent === this.viewState.drawerComponent) {
+        drawerComponent = ''
+        this.toggleDrawer(drawerComponent)
+      } else if (this.viewState.drawerOpen) {
+        const payload = new Payload('drawerComponent', drawerComponent)
+        this.$store.dispatch('setViewState', payload)
+      } else {
+        this.toggleDrawer(drawerComponent)
+      }
+    },
+
     noteCreate () {
       const payloadModalToggle = new Payload('modalOpen', true)
       const payloadModalAction = new Payload('modalAction', 'note-create')
@@ -128,9 +140,6 @@ export default {
     },
 
     toggleDrawer (drawerComponent) {
-      if (this.drawerOpen) {
-        drawerComponent = ''
-      }
       const payloadToggle = new Payload('drawerOpen', !this.drawerOpen)
       const payloadComponent = new Payload('drawerComponent', drawerComponent)
       this.$store.dispatch('setViewState', payloadToggle)
