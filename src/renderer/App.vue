@@ -95,7 +95,7 @@ export default {
   &.is-compressed {
     // margin-left: 300px;
     overflow: hidden;
-    transform: translateX(430px)
+    transform: translateX(450px)
   }
 }
 </style>

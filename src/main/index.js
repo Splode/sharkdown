@@ -77,7 +77,9 @@ function createWindow (opts) {
     show: false,
     useContentSize: true,
     width: opts.width,
-    height: opts.height
+    height: opts.height,
+    minWidth: 515,
+    minHeight: 575
   })
 
   mainWindow.loadURL(winURL)
