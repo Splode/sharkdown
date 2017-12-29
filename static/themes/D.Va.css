@@ -303,8 +303,8 @@ pre {
 }
 
 .Slider::-webkit-slider-thumb:hover, .Slider::-webkit-slider-thumb:active {
-  background-color: #629cff;
-  border-color: #629cff;
+  background-color: #279ee6;
+  border-color: #279ee6;
 }
 
 .Slider-label-list {
