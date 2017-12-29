@@ -14,7 +14,7 @@ div::-webkit-scrollbar-track {
 }
 
 div::-webkit-scrollbar-thumb {
-  background-color: #424242;
+  background-color: #9e9e9e;
 }
 
 .Button--block--field {
@@ -156,18 +156,20 @@ div::-webkit-scrollbar-thumb {
   margin-top: 2em;
 }
 
-.ql-editor h1,
-h3,
-h5 {
-  color: #eee;
+.ql-editor h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-.ql-editor h2,
-h4,
-h6 {
-  color: #737373;
-  font-weight: 600;
+.ql-editor h1 {
+  color: #eee;
+}
+
+.ql-editor h2 {
+  color: #9e9e9e;
+}
+
+.ql-editor h3, h4, h5, h6 {
+  color: #424242;
 }
 
 .ql-editor p {
@@ -204,7 +206,7 @@ pre {
 .ql-editor strong::selection,
 .ql-editor u::selection {
   background: rgba(66, 66, 66, 0.99);
-  color: #424242;
+  color: #9e9e9e;
   opacity: 1;
 }
 

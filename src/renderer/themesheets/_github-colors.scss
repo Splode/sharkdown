@@ -10,8 +10,14 @@ $colorBodySelection: rgba(3, 102, 214, .99);
 // selection text color
 $colorSelection: #ffffff;
 
-// heading
-$colorHeading: #0366d6;
+// h1
+$colorHeading1: #0366d6;
+
+// h2
+$colorHeading2: #6f42c1;
+
+// h3-h5
+$colorHeading3: #24292e;
 
 // button hover
 $colorHighlight: #ffb86c;
@@ -25,11 +31,11 @@ $colorCurrentLine: #f6f8fa;
 // slider track
 $colorComment: #C8C9CB;
 
-// scroll thumb
-$colorSelection: #24292e;
-
 // titlebar
 $colorTitlebar: #24292e;
+
+// titlebar text
+$colorTitlebarText: #2f313e;
 
 // titlebar close
 $colorDanger: #cb2431;

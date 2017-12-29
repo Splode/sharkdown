@@ -1,3 +1,14 @@
+$color0: #212121;
+$color1: #9e9e9e;
+$color2: #eee;
+$color3: #737373;
+$color4: #292929;
+$color5: #bdbdbd;
+$color6: #424242;
+$color7: #e57373;
+$color8: #fafafa;
+// $color9: ;
+
 // field
 $colorBackground: #212121;
 
@@ -10,8 +21,14 @@ $colorBodySelection: rgba(66, 66, 66, .99);
 // selection text color
 $colorSelection: #9e9e9e;
 
-// heading
-$colorHeading: #eee;
+// h1
+$colorHeading1: $color2;
+
+// h2
+$colorHeading2: $color1;
+
+// h3-h5
+$colorHeading3: $color6;
 
 // button hover
 $colorHighlight: #9e9e9e;
@@ -25,11 +42,11 @@ $colorCurrentLine: #292929;
 // slider track
 $colorComment: #bdbdbd;
 
-// scroll thumb
-$colorSelection: #424242;
-
 // titlebar
 $colorTitlebar: #292929;
+
+// titlebar text
+$colorTitlebarText: $color6;
 
 // titlebar close
 $colorDanger: #e57373;

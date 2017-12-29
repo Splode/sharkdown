@@ -10,8 +10,14 @@ $colorBodySelection: rgba(34, 37, 43, .99);
 // selection text color
 $colorSelection: #ABB2BF;
 
-// heading
-$colorHeading: #C678DD;
+// h1
+$colorHeading1: #C678DD;
+
+// h2
+$colorHeading2: #56B6C2;
+
+// h3-h5
+$colorHeading3: #2D313B;
 
 // blockquote text
 $colorHighlight: #56B6C2;
@@ -25,11 +31,11 @@ $colorComment: #21252b;
 // code & pre background
 $colorCurrentLine: #2D313B;
 
-// scroll thumb
-$colorSelection: #61AFEF;
-
 // titlebar
 $colorTitlebar: #2D313B;
+
+// titlebar text
+$colorTitlebarText: #2f313e;
 
 // titlebar close
 $colorDanger: #E06C75;

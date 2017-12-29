@@ -24,7 +24,7 @@ div::-webkit-scrollbar-thumb {
   background-color: $colorBackground;
   color: $colorBody;
   &:hover {
-    color: $colorHeading;
+    color: $colorHeading1;
   }
   &:disabled {
     color: $colorComment;
@@ -34,10 +34,10 @@ div::-webkit-scrollbar-thumb {
 .Button--transparent {
   color: $colorComment;
   &:hover {
-    color: $colorHeading;
+    color: $colorHeading1;
   }
   &.is-selected {
-    color: $colorHeading;
+    color: $colorHeading1;
   }
 }
 
@@ -51,7 +51,7 @@ div::-webkit-scrollbar-thumb {
   height: 15px;
   vertical-align: middle;
   &.is-active {
-    background-color: $colorHeading;
+    background-color: $colorHeading1;
     border-color: $colorComment; // &:hover {
     //   background-color: $colorCurrentLine;
     // }
@@ -72,7 +72,7 @@ div::-webkit-scrollbar-thumb {
 .Icon-wrapper {
   color: $colorComment;
   &:hover {
-    color: $colorHeading;
+    color: $colorHeading1;
   }
 }
 
@@ -85,11 +85,11 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files {
   &.is-selected .Icon--files-primary {
-    fill: $colorHeading;
+    fill: $colorHeading1;
     stroke: $colorComment;
   }
   &:hover .Icon--files-primary {
-    stroke: $colorHeading;
+    stroke: $colorHeading1;
   }
 }
 
@@ -125,12 +125,12 @@ div::-webkit-scrollbar-thumb {
   }
   &.is-selected circle,
   &:hover circle {
-    fill: $colorHeading;
+    fill: $colorHeading1;
   }
 }
 
 .ql-editor blockquote {
-  border-left: 3px solid $colorHeading;
+  border-left: 3px solid $colorHeading1;
   color: $colorBody;
   font-style: italic;
   margin: 2em 0 0 0;
@@ -153,18 +153,20 @@ div::-webkit-scrollbar-thumb {
   }
 }
 
-.ql-editor h1,
-h3,
-h5{
-  color: $colorHeading;
+.ql-editor h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-.ql-editor h2,
-h4,
-h6 {
-  color: $colorCode;
-  font-weight: 600;
+.ql-editor h1 {
+  color: $colorHeading1;
+}
+
+.ql-editor h2 {
+  color: $colorHeading2;
+}
+
+.ql-editor h3, h4, h5, h6 {
+  color: $colorHeading3;
 }
 
 .ql-editor p {
@@ -249,7 +251,7 @@ pre {
 
 .Section-imagePreview-icon {
   background-color: $colorComment;
-  color: $colorHeading;
+  color: $colorHeading1;
 }
 
 .Settings-contextMenu {
@@ -258,7 +260,7 @@ pre {
 
 .Settings-contextMenu-list-item {
   &:hover {
-    color: $colorHeading;
+    color: $colorHeading1;
   }
 }
 
@@ -268,13 +270,13 @@ pre {
   }
   &.is-active {
     background-color: $colorBodySelection;
-    border-color: $colorHeading;
+    border-color: $colorHeading1;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
   &.is-active .RadioButton {
-    background-color: $colorHeading;
-    border-color: $colorHeading;
+    background-color: $colorHeading1;
+    border-color: $colorHeading1;
   }
 }
 
@@ -292,8 +294,8 @@ pre {
     height: 3px;
   }
   &::-webkit-slider-thumb {
-    background-color: $colorHeading;
-    border: 2px solid $colorHeading;
+    background-color: $colorHeading1;
+    border: 2px solid $colorHeading1;
     border-radius: 50%;
     margin-top: -7px;
     transition: all .3s ease;
@@ -322,7 +324,7 @@ pre {
   background-color: $colorCurrentLine;
   border: 0;
   border-bottom: 2px solid $colorBody;
-  color: $colorHeading;
+  color: $colorHeading1;
   outline: 0;
 }
 
@@ -331,7 +333,7 @@ pre {
 }
 
 .Titlebar-section-icon {
-  fill: $colorSelection;
+  fill: $colorTitlebarText;
   &:hover {
     background-color: $colorComment;
   }
@@ -345,5 +347,5 @@ pre {
 }
 
 .Titlebar-section--title {
-  color: $colorSelection;
+  color: $colorTitlebarText;
 }

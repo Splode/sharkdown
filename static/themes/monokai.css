@@ -14,7 +14,7 @@ div::-webkit-scrollbar-track {
 }
 
 div::-webkit-scrollbar-thumb {
-  background-color: #FDF9F3;
+  background-color: #dad2c6;
 }
 
 .Button--block--field {
@@ -156,18 +156,20 @@ div::-webkit-scrollbar-thumb {
   margin-top: 2em;
 }
 
-.ql-editor h1,
-h3,
-h5 {
-  color: #FFD866;
+.ql-editor h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-.ql-editor h2,
-h4,
-h6 {
+.ql-editor h1 {
+  color: #FFD866;
+}
+
+.ql-editor h2 {
   color: #78DCE8;
-  font-weight: 600;
+}
+
+.ql-editor h3, h4, h5, h6 {
+  color: #3E3B3F;
 }
 
 .ql-editor p {
@@ -204,7 +206,7 @@ pre {
 .ql-editor strong::selection,
 .ql-editor u::selection {
   background: rgba(33, 31, 34, 0.99);
-  color: #FDF9F3;
+  color: #dad2c6;
   opacity: 1;
 }
 
@@ -330,7 +332,7 @@ pre {
 }
 
 .Titlebar-section-icon {
-  fill: #FDF9F3;
+  fill: #2f313e;
 }
 
 .Titlebar-section-icon:hover {
@@ -343,5 +345,5 @@ pre {
 }
 
 .Titlebar-section--title {
-  color: #FDF9F3;
+  color: #2f313e;
 }
