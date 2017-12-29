@@ -92,7 +92,12 @@
         <h2 class="Section-title">Note Location</h2>
         <pre class="Section-codeBlock">{{ docPath }}</pre>
         <label for="chooseUserDir" class="Button Button--block Button--block--field">Browse</label>
-        <input id="chooseUserDir" type="file" class="d-none" @change="onFileChange" webkitdirectory/>
+        <input id="chooseUserDir" 
+          type="file" 
+          class="d-none" 
+          @change="onFileChange" 
+          webkitdirectory
+        >
       </div>
     </div>
   </div>
@@ -128,8 +133,10 @@ export default {
         'charcoal',
         'graphite',
         'dracula',
+        'D.Va',
         'oneDark',
-        'monokai'
+        'monokai',
+        'github'
       ]
     }
   },

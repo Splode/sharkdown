@@ -34,7 +34,7 @@ import appModal from './components/Modal/Modal'
 import appSidebar from './components/Partials/Sidebar'
 import appTitlebar from './components/Partials/Titlebar'
 export default {
-  name: 'sharkdown',
+  name: 'waldo',
 
   components: {
     appDrawer,

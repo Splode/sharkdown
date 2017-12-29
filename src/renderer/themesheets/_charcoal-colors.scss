@@ -7,6 +7,9 @@ $colorBody: #9e9e9e;
 // primary text selection
 $colorBodySelection: rgba(66, 66, 66, .99);
 
+// selection text color
+$colorSelection: #9e9e9e;
+
 // heading
 $colorHeading: #eee;
 
@@ -19,11 +22,14 @@ $colorCode: #737373;
 // scroll track, code & pre background
 $colorCurrentLine: #292929;
 
-// slider track, 
+// slider track
 $colorComment: #bdbdbd;
 
 // scroll thumb
 $colorSelection: #424242;
+
+// titlebar
+$colorTitlebar: #292929;
 
 // titlebar close
 $colorDanger: #e57373;
