@@ -2,7 +2,7 @@
   <div class="col Settings">
     <div class="row">
       <div class="col-12">
-        <h1>Settings</h1>
+        <h1 class="Drawer-title">Settings</h1>
       </div>
 
       <div class="col-12 Section">

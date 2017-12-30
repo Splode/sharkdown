@@ -2,7 +2,7 @@
   <div class="col-12 Drawer-fileTree">
     <div class="row">
       <div class="col-12">
-        <h1>Notes</h1>
+        <h1 class="Drawer-title">Notes</h1>
       </div>
       <div class="col-12 Section">
         <ul class="Settings-list">

@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-8 mx-auto Modal-filename">
     <div class="Modal-filename-wrapper" v-on-clickaway="closeModal">
-      <h2>{{ modalTitle }}</h2>
+      <h2 class="Modal-title">{{ modalTitle }}</h2>
       <label for="filename-input">Title</label>
 
       <!-- note create -->

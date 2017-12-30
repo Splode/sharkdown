@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-6 mx-auto Modal-dialog-wrapper">
     <div class="Modal-dialog" v-on-clickaway="closeModal">
-      <h2 class="Modal-dialog-title">Delete Note?</h2>
+      <h2 class="Modal-title">Delete Note?</h2>
       <button
         class="Button Button--block Button--block--field"
         @click="confirmDelete">
@@ -50,7 +50,7 @@ export default {
   padding: 1em 2em 2em 2em;
 }
 
-.Modal-dialog-title {
+.Modal-title {
   margin-bottom: 1em;
 }
 </style>
