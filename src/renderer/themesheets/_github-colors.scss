@@ -1,51 +1,66 @@
+$color0: #fff;
+$color1: #24292e;
+$color2: #0366d6;
+$color3: #6f42c1;
+$color4: #ffb86c;
+$color5: #f6f8fa;
+$color6: #C8C9CB;
+$color7: #24292e;
+$color8: #2f313e;
+$color9: #cb2431;
+
 // field
-$colorBackground: #FFFFFF;
+$colorBackground: $color0;
 
 // primary text, blockquote text
-$colorBody: #24292e;
+$colorBody: $color2;
 
 // primary text selection
 $colorBodySelection: rgba(3, 102, 214, .99);
 
 // selection text color
-$colorSelection: #ffffff;
+$colorSelection: $color0;
 
 // h1
-$colorHeading1: #0366d6;
+$colorHeading1: $color2;
 
 // h2
-$colorHeading2: #6f42c1;
+$colorHeading2: $color3;
 
 // h3-h5
-$colorHeading3: #24292e;
+$colorHeading3: $color1;
 
 // button hover
-$colorHighlight: #ffb86c;
+$colorHighlight: $color5;
 
 // code, pre
-$colorCode: #6f42c1;
+$colorCode: $color3;
 
 // scrollbar
-$colorScrollThumb: #f6f8fa;
-$colorScrollTrack: #C8C9CB;
+$colorScrollThumb: $color6;
+$colorScrollTrack: $color7;
 
 // scroll track, code & pre background
-$colorCurrentLine: #f6f8fa;
+$colorCurrentLine: $color6;
 
 // slider track
-$colorComment: #C8C9CB;
+$colorComment: $color7;
 
 // titlebar
-$colorTitlebar: #24292e;
+$colorTitlebar: $color8;
 
 // titlebar text
-$colorTitlebarText: #2f313e;
+$colorTitlebarText: $color9;
 
 // titlebar close
-$colorDanger: #cb2431;
+$colorDanger: $color9;
 
 // titlebar close icon
-$colorWhite: #f8f8f2;
+$colorWhite: $color0;
+
+// toolbar
+$colorToolbarPrimary: $color8;
+$colorToolbarSecondary: $color2;
 
 // Drawer colors
-$colorSectionCodeBlockBg: #fff;
+$colorSectionCodeBlockBg: $color0;

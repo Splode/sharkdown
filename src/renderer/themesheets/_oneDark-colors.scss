@@ -2,6 +2,12 @@ $color0: #282C34;
 $color1: #ABB2BF;
 $color2: #C678DD;
 $color3: #56B6C2;
+$color4: #2D313B;
+$color5: #61AFEF;
+$color6: #21252b;
+$color7: #62686d;
+$color8: #E06C75;
+$color9: #f8f8f2;
 
 // field
 $colorBackground: #282C34;
@@ -25,10 +31,10 @@ $colorHeading2: #56B6C2;
 $colorHeading3: #2D313B;
 
 // blockquote text
-$colorHighlight: #56B6C2;
+$colorHighlight: $color3;
 
 // code, pre
-$colorCode: #61AFEF;
+$colorCode: $color5;
 
 // scrollbar
 $colorScrollThumb: $color2;
@@ -51,6 +57,10 @@ $colorDanger: #E06C75;
 
 // titlebar close icon
 $colorWhite: #f8f8f2;
+
+// toolbar
+$colorToolbarPrimary: $color7;
+$colorToolbarSecondary: $color2;
 
 // Drawer colors
 $colorSectionCodeBlockBg: #282C34;

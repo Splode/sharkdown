@@ -9,7 +9,7 @@ div::-webkit-scrollbar {
 }
 
 div::-webkit-scrollbar-track {
-  background-color: #b2b8ce;
+  background-color: #615769;
 }
 
 div::-webkit-scrollbar-thumb {
@@ -26,11 +26,11 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Button--block--field:disabled {
-  color: #C8C9CB;
+  color: #615769;
 }
 
 .Button--transparent {
-  color: #C8C9CB;
+  color: #615769;
 }
 
 .Button--transparent:hover {
@@ -54,7 +54,7 @@ div::-webkit-scrollbar-thumb {
 
 .Checkbox.is-active {
   background-color: #0de2c9;
-  border-color: #C8C9CB;
+  border-color: #615769;
 }
 
 .Checkbox.is-inactive {
@@ -63,7 +63,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Checkbox.is-inactive:hover {
-  background-color: #C8C9CB;
+  background-color: #615769;
 }
 
 .Drawer {
@@ -75,7 +75,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper {
-  color: #C8C9CB;
+  color: #615769;
 }
 
 .Icon-wrapper:hover {
@@ -92,7 +92,7 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files.is-selected .Icon--files-primary {
   fill: #0de2c9;
-  stroke: #C8C9CB;
+  stroke: #615769;
 }
 
 .Icon--files:hover .Icon--files-primary {
@@ -101,17 +101,17 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files-primary {
   fill: #332d38;
-  stroke: #C8C9CB;
+  stroke: #615769;
   transition: all .3s ease;
 }
 
 .Icon--files-secondary {
   fill: #332d38;
-  stroke: #C8C9CB;
+  stroke: #615769;
 }
 
 .Icon--new line {
-  stroke: #C8C9CB;
+  stroke: #615769;
   transition: all .3s ease;
 }
 
@@ -120,11 +120,11 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon--slider line {
-  stroke: #C8C9CB;
+  stroke: #615769;
 }
 
 .Icon--slider circle {
-  fill: #C8C9CB;
+  fill: #615769;
   stroke: #2d2731;
   transition: all .3s ease;
 }
@@ -254,7 +254,7 @@ pre {
 }
 
 .Section-imagePreview-icon {
-  background-color: #C8C9CB;
+  background-color: #615769;
   color: #0de2c9;
 }
 
@@ -302,7 +302,7 @@ pre {
 }
 
 .Slider::-webkit-slider-runnable-track {
-  background-color: #C8C9CB;
+  background-color: #615769;
   width: 100%;
   height: 3px;
 }
@@ -350,7 +350,7 @@ pre {
 }
 
 .Titlebar-section-icon:hover {
-  background-color: #C8C9CB;
+  background-color: #615769;
 }
 
 .Titlebar-section-icon--danger:hover {

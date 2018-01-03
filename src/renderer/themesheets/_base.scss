@@ -31,12 +31,12 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Button--transparent {
-  color: $colorComment;
+  color: $colorToolbarPrimary;
   &:hover {
-    color: $colorHeading1;
+    color: $colorToolbarSecondary;
   }
   &.is-selected {
-    color: $colorHeading1;
+    color: $colorToolbarSecondary;
   }
 }
 

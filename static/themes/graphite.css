@@ -30,7 +30,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Button--transparent {
-  color: #bdbdbd;
+  color: #eee;
 }
 
 .Button--transparent:hover {
