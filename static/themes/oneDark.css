@@ -75,7 +75,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper {
-  color: #21252b;
+  color: #62686d;
 }
 
 .Icon-wrapper:hover {
@@ -83,16 +83,16 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper--circle {
-  background-color: #2D313B;
+  background-color: #62686d;
 }
 
 .Icon-wrapper--circle:hover {
-  background-color: #ABB2BF;
+  background-color: #C678DD;
 }
 
 .Icon--files.is-selected .Icon--files-primary {
   fill: #C678DD;
-  stroke: #21252b;
+  stroke: #62686d;
 }
 
 .Icon--files:hover .Icon--files-primary {
@@ -101,13 +101,13 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files-primary {
   fill: #282C34;
-  stroke: #21252b;
+  stroke: #62686d;
   transition: all .3s ease;
 }
 
 .Icon--files-secondary {
   fill: #282C34;
-  stroke: #21252b;
+  stroke: #62686d;
 }
 
 .Icon--new line {
@@ -116,16 +116,16 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon--new:hover line {
-  stroke: #282C34;
+  stroke: #21252b;
 }
 
 .Icon--slider line {
-  stroke: #21252b;
+  stroke: #62686d;
 }
 
 .Icon--slider circle {
   fill: #21252b;
-  stroke: #2D313B;
+  stroke: #62686d;
   transition: all .3s ease;
 }
 
@@ -172,7 +172,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .ql-editor h3, h4, h5, h6 {
-  color: #2D313B;
+  color: #61AFEF;
 }
 
 .ql-editor p {
@@ -275,11 +275,11 @@ pre {
 }
 
 .Settings-list-item:hover {
-  background-color: rgba(34, 37, 43, 0.99);
+  background-color: #282C34;
 }
 
 .Settings-list-item.is-active {
-  background-color: rgba(34, 37, 43, 0.99);
+  background-color: #282C34;
   border-color: #C678DD;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -346,7 +346,7 @@ pre {
 }
 
 .Titlebar-section-icon {
-  fill: #2f313e;
+  fill: #62686d;
 }
 
 .Titlebar-section-icon:hover {
@@ -359,5 +359,5 @@ pre {
 }
 
 .Titlebar-section--title {
-  color: #2f313e;
+  color: #62686d;
 }

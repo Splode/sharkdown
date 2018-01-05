@@ -22,13 +22,13 @@ $colorBodySelection: rgba(34, 37, 43, .99);
 $colorSelection: #ABB2BF;
 
 // h1
-$colorHeading1: #C678DD;
+$colorHeading1: $color2;
 
 // h2
-$colorHeading2: #56B6C2;
+$colorHeading2: $color3;
 
 // h3-h5
-$colorHeading3: #2D313B;
+$colorHeading3: $color5;
 
 // blockquote text
 $colorHighlight: $color3;
@@ -47,13 +47,13 @@ $colorComment: #21252b;
 $colorCurrentLine: #2D313B;
 
 // titlebar
-$colorTitlebar: #2D313B;
+$colorTitlebar: $color4;
 
 // titlebar text
-$colorTitlebarText: #2f313e;
+$colorTitlebarText: $color7;
 
 // titlebar close
-$colorDanger: #E06C75;
+$colorDanger: $color8;
 
 // titlebar close icon
 $colorWhite: #f8f8f2;
@@ -63,4 +63,8 @@ $colorToolbarPrimary: $color7;
 $colorToolbarSecondary: $color2;
 
 // Drawer colors
-$colorSectionCodeBlockBg: #282C34;
+$colorIconPrimary: $color7;
+$colorIconSecondary: $color2;
+$colorIconTertiary: $color6;
+$colorSectionCodeBlockBg: $color0;
+$colorSettingsListItemActive: $color0;

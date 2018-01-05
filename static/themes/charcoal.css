@@ -75,7 +75,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper {
-  color: #bdbdbd;
+  color: #e57373;
 }
 
 .Icon-wrapper:hover {
@@ -83,16 +83,16 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper--circle {
-  background-color: #292929;
+  background-color: #e57373;
 }
 
 .Icon-wrapper--circle:hover {
-  background-color: #9e9e9e;
+  background-color: #eee;
 }
 
 .Icon--files.is-selected .Icon--files-primary {
   fill: #eee;
-  stroke: #bdbdbd;
+  stroke: #e57373;
 }
 
 .Icon--files:hover .Icon--files-primary {
@@ -101,31 +101,31 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files-primary {
   fill: #212121;
-  stroke: #bdbdbd;
+  stroke: #e57373;
   transition: all .3s ease;
 }
 
 .Icon--files-secondary {
   fill: #212121;
-  stroke: #bdbdbd;
+  stroke: #e57373;
 }
 
 .Icon--new line {
-  stroke: #bdbdbd;
+  stroke: #424242;
   transition: all .3s ease;
 }
 
 .Icon--new:hover line {
-  stroke: #212121;
+  stroke: #424242;
 }
 
 .Icon--slider line {
-  stroke: #bdbdbd;
+  stroke: #e57373;
 }
 
 .Icon--slider circle {
-  fill: #bdbdbd;
-  stroke: #292929;
+  fill: #424242;
+  stroke: #e57373;
   transition: all .3s ease;
 }
 
@@ -275,11 +275,11 @@ pre {
 }
 
 .Settings-list-item:hover {
-  background-color: rgba(66, 66, 66, 0.99);
+  background-color: #212121;
 }
 
 .Settings-list-item.is-active {
-  background-color: rgba(66, 66, 66, 0.99);
+  background-color: #212121;
   border-color: #eee;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;

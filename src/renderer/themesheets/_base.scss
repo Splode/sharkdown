@@ -73,62 +73,62 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper {
-  color: $colorComment;
+  color: $colorIconPrimary;
   &:hover {
-    color: $colorHeading1;
+    color: $colorIconSecondary;
   }
 }
 
 .Icon-wrapper--circle {
-  background-color: $colorCurrentLine;
+  background-color: $colorIconPrimary;
   &:hover {
-    background-color: $colorBody;
+    background-color: $colorIconSecondary;
   }
 }
 
 .Icon--files {
   &.is-selected .Icon--files-primary {
-    fill: $colorHeading1;
-    stroke: $colorComment;
+    fill: $colorIconSecondary;
+    stroke: $colorIconPrimary;
   }
   &:hover .Icon--files-primary {
-    stroke: $colorHeading1;
+    stroke: $colorIconSecondary;
   }
 }
 
 .Icon--files-primary {
   fill: $colorBackground;
-  stroke: $colorComment;
+  stroke: $colorIconPrimary;
   transition: all .3s ease;
 }
 
 .Icon--files-secondary {
   fill: $colorBackground;
-  stroke: $colorComment;
+  stroke: $colorIconPrimary;
 }
 
 .Icon--new {
   & line {
-    stroke: $colorComment;
+    stroke: $colorIconTertiary;
     transition: all .3s ease;
   }
   &:hover line {
-    stroke: $colorBackground;
+    stroke: $colorIconTertiary;
   }
 }
 
 .Icon--slider {
   & line {
-    stroke: $colorComment;
+    stroke: $colorIconPrimary;
   }
   & circle {
-    fill: $colorComment;
-    stroke: $colorCurrentLine;
+    fill: $colorIconTertiary;
+    stroke: $colorIconPrimary;
     transition: all .3s ease;
   }
   &.is-selected circle,
   &:hover circle {
-    fill: $colorHeading1;
+    fill: $colorIconSecondary;
   }
 }
 
@@ -281,10 +281,10 @@ pre {
 
 .Settings-list-item {
   &:hover {
-    background-color: $colorBodySelection;
+    background-color: $colorSettingsListItemActive;
   }
   &.is-active {
-    background-color: $colorBodySelection;
+    background-color: $colorSettingsListItemActive;
     border-color: $colorHeading1;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;

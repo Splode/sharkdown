@@ -83,11 +83,11 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper--circle {
-  background-color: #2f313e;
+  background-color: #44475a;
 }
 
 .Icon-wrapper--circle:hover {
-  background-color: #bd93f9;
+  background-color: #50fa7b;
 }
 
 .Icon--files.is-selected .Icon--files-primary {
@@ -111,12 +111,12 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon--new line {
-  stroke: #44475a;
+  stroke: #2f313e;
   transition: all .3s ease;
 }
 
 .Icon--new:hover line {
-  stroke: #282a36;
+  stroke: #2f313e;
 }
 
 .Icon--slider line {
@@ -124,8 +124,8 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon--slider circle {
-  fill: #44475a;
-  stroke: #2f313e;
+  fill: #2f313e;
+  stroke: #44475a;
   transition: all .3s ease;
 }
 
@@ -275,11 +275,11 @@ pre {
 }
 
 .Settings-list-item:hover {
-  background-color: rgba(68, 71, 90, 0.99);
+  background-color: #44475a;
 }
 
 .Settings-list-item.is-active {
-  background-color: rgba(68, 71, 90, 0.99);
+  background-color: #44475a;
   border-color: #50fa7b;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;

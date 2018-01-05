@@ -30,7 +30,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Button--transparent {
-  color: #9a959c;
+  color: #3E3B3F;
 }
 
 .Button--transparent:hover {
@@ -75,7 +75,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper {
-  color: #211F22;
+  color: #3E3B3F;
 }
 
 .Icon-wrapper:hover {
@@ -87,12 +87,12 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper--circle:hover {
-  background-color: #dad2c6;
+  background-color: #FFD866;
 }
 
 .Icon--files.is-selected .Icon--files-primary {
   fill: #FFD866;
-  stroke: #211F22;
+  stroke: #3E3B3F;
 }
 
 .Icon--files:hover .Icon--files-primary {
@@ -101,17 +101,17 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files-primary {
   fill: #2C292D;
-  stroke: #211F22;
+  stroke: #3E3B3F;
   transition: all .3s ease;
 }
 
 .Icon--files-secondary {
   fill: #2C292D;
-  stroke: #211F22;
+  stroke: #3E3B3F;
 }
 
 .Icon--new line {
-  stroke: #211F22;
+  stroke: #2C292D;
   transition: all .3s ease;
 }
 
@@ -120,11 +120,11 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon--slider line {
-  stroke: #211F22;
+  stroke: #3E3B3F;
 }
 
 .Icon--slider circle {
-  fill: #211F22;
+  fill: #2C292D;
   stroke: #3E3B3F;
   transition: all .3s ease;
 }
@@ -275,11 +275,11 @@ pre {
 }
 
 .Settings-list-item:hover {
-  background-color: rgba(33, 31, 34, 0.99);
+  background-color: #2C292D;
 }
 
 .Settings-list-item.is-active {
-  background-color: rgba(33, 31, 34, 0.99);
+  background-color: #2C292D;
   border-color: #FFD866;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
