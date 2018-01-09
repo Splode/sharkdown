@@ -351,6 +351,7 @@ pre {
 
 .Titlebar-section-icon:hover {
   background-color: #44475a;
+  fill: #6272a4;
 }
 
 .Titlebar-section-icon--danger:hover {

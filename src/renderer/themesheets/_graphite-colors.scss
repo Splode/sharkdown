@@ -51,7 +51,8 @@ $colorComment: #bdbdbd;
 $colorTitlebar: #eeeeee;
 
 // titlebar text
-$colorTitlebarText: #2f313e;
+$colorTitlebarText: $color9;
+$colorTitlebarTextAlt: $color9;
 
 // titlebar close
 $colorDanger: #e57373;
@@ -67,5 +68,6 @@ $colorToolbarSecondary: $color2;
 $colorIconPrimary: $color7;
 $colorIconSecondary: $color2;
 $colorIconTertiary: $color6;
+$colorSectionBg: $color8;
 $colorSectionCodeBlockBg: #fafafa;
 $colorSettingsListItemActive: $color0;

@@ -5,7 +5,7 @@ $color3: #6f42c1;
 $color4: #ffb86c;
 $color5: #f6f8fa;
 $color6: #C8C9CB;
-$color7: #24292e;
+$color7: #dae0e5;
 $color8: #2f313e;
 $color9: #cb2431;
 
@@ -13,10 +13,10 @@ $color9: #cb2431;
 $colorBackground: $color0;
 
 // primary text, blockquote text
-$colorBody: $color2;
+$colorBody: $color1;
 
 // primary text selection
-$colorBodySelection: rgba(3, 102, 214, .99);
+$colorBodySelection: rgba(218, 224, 229, .99);
 
 // selection text color
 $colorSelection: $color0;
@@ -47,10 +47,11 @@ $colorCurrentLine: $color6;
 $colorComment: $color7;
 
 // titlebar
-$colorTitlebar: $color8;
+$colorTitlebar: $color1;
 
 // titlebar text
-$colorTitlebarText: $color9;
+$colorTitlebarText: $color6;
+$colorTitlebarTextAlt: $color8;
 
 // titlebar close
 $colorDanger: $color9;
@@ -59,12 +60,13 @@ $colorDanger: $color9;
 $colorWhite: $color0;
 
 // toolbar
-$colorToolbarPrimary: $color8;
+$colorToolbarPrimary: $color6;
 $colorToolbarSecondary: $color2;
 
 // Drawer colors
-$colorIconPrimary: $color7;
+$colorIconPrimary: $color6;
 $colorIconSecondary: $color2;
-$colorIconTertiary: $color6;
+$colorIconTertiary: $color0;
+$colorSectionBg: $color5;
 $colorSectionCodeBlockBg: $color0;
-$colorSettingsListItemActive: $color0;
+$colorSettingsListItemActive: $color7;

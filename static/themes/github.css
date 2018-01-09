@@ -1,6 +1,6 @@
 body {
   background-color: #fff;
-  color: #0366d6;
+  color: #24292e;
 }
 
 /* Custom scroll bar */
@@ -9,7 +9,7 @@ div::-webkit-scrollbar {
 }
 
 div::-webkit-scrollbar-track {
-  background-color: #24292e;
+  background-color: #dae0e5;
 }
 
 div::-webkit-scrollbar-thumb {
@@ -18,7 +18,7 @@ div::-webkit-scrollbar-thumb {
 
 .Button--block--field {
   background-color: #fff;
-  color: #0366d6;
+  color: #24292e;
 }
 
 .Button--block--field:hover {
@@ -26,11 +26,11 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Button--block--field:disabled {
-  color: #24292e;
+  color: #dae0e5;
 }
 
 .Button--transparent {
-  color: #2f313e;
+  color: #C8C9CB;
 }
 
 .Button--transparent:hover {
@@ -54,16 +54,16 @@ div::-webkit-scrollbar-thumb {
 
 .Checkbox.is-active {
   background-color: #0366d6;
-  border-color: #24292e;
+  border-color: #dae0e5;
 }
 
 .Checkbox.is-inactive {
   background: #C8C9CB;
-  border: 2px solid #0366d6;
+  border: 2px solid #24292e;
 }
 
 .Checkbox.is-inactive:hover {
-  background-color: #24292e;
+  background-color: #dae0e5;
 }
 
 .Drawer {
@@ -75,7 +75,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper {
-  color: #24292e;
+  color: #C8C9CB;
 }
 
 .Icon-wrapper:hover {
@@ -83,7 +83,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper--circle {
-  background-color: #24292e;
+  background-color: #C8C9CB;
 }
 
 .Icon-wrapper--circle:hover {
@@ -92,7 +92,7 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files.is-selected .Icon--files-primary {
   fill: #0366d6;
-  stroke: #24292e;
+  stroke: #C8C9CB;
 }
 
 .Icon--files:hover .Icon--files-primary {
@@ -101,31 +101,31 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files-primary {
   fill: #fff;
-  stroke: #24292e;
+  stroke: #C8C9CB;
   transition: all .3s ease;
 }
 
 .Icon--files-secondary {
   fill: #fff;
-  stroke: #24292e;
+  stroke: #C8C9CB;
 }
 
 .Icon--new line {
-  stroke: #C8C9CB;
+  stroke: #fff;
   transition: all .3s ease;
 }
 
 .Icon--new:hover line {
-  stroke: #C8C9CB;
+  stroke: #fff;
 }
 
 .Icon--slider line {
-  stroke: #24292e;
+  stroke: #C8C9CB;
 }
 
 .Icon--slider circle {
-  fill: #C8C9CB;
-  stroke: #24292e;
+  fill: #fff;
+  stroke: #C8C9CB;
   transition: all .3s ease;
 }
 
@@ -136,7 +136,7 @@ div::-webkit-scrollbar-thumb {
 
 .ql-editor blockquote {
   border-left: 3px solid #0366d6;
-  color: #0366d6;
+  color: #24292e;
   font-style: italic;
   margin: 2em 0 0 0;
   padding: 0 0 0 2em;
@@ -176,7 +176,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .ql-editor p {
-  color: #0366d6;
+  color: #24292e;
   font-weight: 400;
 }
 
@@ -225,7 +225,7 @@ pre {
 }
 
 .RadioButton {
-  border: 2px solid #0366d6;
+  border: 2px solid #24292e;
   border-radius: 50%;
   display: inline-block;
   margin: 4px 1em 0 0;
@@ -238,7 +238,7 @@ pre {
 }
 
 .Section {
-  background-color: #C8C9CB;
+  background-color: #f6f8fa;
   border-radius: 3px;
   margin: 1em 0 0 0;
   padding-top: 1em;
@@ -254,7 +254,7 @@ pre {
 }
 
 .Section-imagePreview-icon {
-  background-color: #24292e;
+  background-color: #dae0e5;
   color: #0366d6;
 }
 
@@ -275,11 +275,11 @@ pre {
 }
 
 .Settings-list-item:hover {
-  background-color: #fff;
+  background-color: #dae0e5;
 }
 
 .Settings-list-item.is-active {
-  background-color: #fff;
+  background-color: #dae0e5;
   border-color: #0366d6;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -302,7 +302,7 @@ pre {
 }
 
 .Slider::-webkit-slider-runnable-track {
-  background-color: #24292e;
+  background-color: #dae0e5;
   width: 100%;
   height: 3px;
 }
@@ -324,7 +324,7 @@ pre {
 }
 
 .Slider-label-list {
-  color: #0366d6;
+  color: #24292e;
   display: flex;
   font-size: .5rem;
   justify-content: space-between;
@@ -336,21 +336,22 @@ pre {
 .TextInput {
   background-color: #C8C9CB;
   border: 0;
-  border-bottom: 2px solid #0366d6;
+  border-bottom: 2px solid #24292e;
   color: #0366d6;
   outline: 0;
 }
 
 .Titlebar {
-  background: #2f313e;
+  background: #24292e;
 }
 
 .Titlebar-section-icon {
-  fill: #cb2431;
+  fill: #C8C9CB;
 }
 
 .Titlebar-section-icon:hover {
-  background-color: #24292e;
+  background-color: #dae0e5;
+  fill: #2f313e;
 }
 
 .Titlebar-section-icon--danger:hover {
@@ -359,5 +360,5 @@ pre {
 }
 
 .Titlebar-section--title {
-  color: #cb2431;
+  color: #C8C9CB;
 }
