@@ -208,7 +208,7 @@ pre {
 .ql-editor pre::selection,
 .ql-editor strong::selection,
 .ql-editor u::selection {
-  background: rgba(3, 102, 214, 0.99);
+  background: rgba(218, 224, 229, 0.99);
   opacity: 1;
 }
 
