@@ -54,7 +54,12 @@ div::-webkit-scrollbar-thumb {
 
 .Checkbox.is-active {
   background-color: #0de2c9;
-  border-color: #615769;
+  border-color: #0de2c9;
+}
+
+.Checkbox.is-active:hover {
+  background-color: #2d2731;
+  border-color: #dea9e4;
 }
 
 .Checkbox.is-inactive {
@@ -63,7 +68,8 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Checkbox.is-inactive:hover {
-  background-color: #615769;
+  background-color: #0de2c9;
+  border-color: #0de2c9;
 }
 
 .Drawer {
@@ -251,6 +257,7 @@ pre {
 
 .Section-codeBlock {
   background-color: #332d38;
+  color: #0de2c9;
 }
 
 .Section-imagePreview-icon {
@@ -319,8 +326,8 @@ pre {
 }
 
 .Slider::-webkit-slider-thumb:hover, .Slider::-webkit-slider-thumb:active {
-  background-color: #332d38;
-  border-color: #332d38;
+  background-color: #dea9e4;
+  border-color: #dea9e4;
 }
 
 .Slider-label-list {

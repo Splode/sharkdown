@@ -1,14 +1,13 @@
-$color0: #332d38;
-$color1: #dea9e4;
-$color2: #0de2c9;
-$color3: #279ee6;
-$color4: #e8d3ea;
-$color5: #332d38;
-$color6: #b2b8ce;
-$color7: #2d2731;
-$color8: #615769;
-$color9: #cb2431;
-$color10: #f8f8f2;
+$color0: #F6F5F1;
+$color1: #28272C;
+$color2: #A54040;
+$color3: #582D32;
+$color4: #7d736e;
+$color5: #EAE7E7;
+$color6: #887266;
+$color7: #e4e2db;
+// $color8: #ff5555;
+// $color9: #f8f8f2;
 
 // field
 $colorBackground: $color0;
@@ -17,10 +16,10 @@ $colorBackground: $color0;
 $colorBody: $color1;
 
 // primary text selection
-$colorBodySelection: rgba(3, 102, 214, .99);
+$colorBodySelection: rgba(68, 71, 90, .99);
 
 // selection text color
-$colorSelection: #ffffff;
+$colorSelection: $color1;
 
 // h1
 $colorHeading1: $color2;
@@ -29,42 +28,42 @@ $colorHeading1: $color2;
 $colorHeading2: $color3;
 
 // h3-h5
-$colorHeading3: $color4;
+$colorHeading3: $color7;
 
 // code, pre
-$colorCode: $color6;
+$colorCode: $color5;
 
 // scrollbar
 $colorScrollThumb: $color2;
-$colorScrollTrack: $color8;
+$colorScrollTrack: $color7;
 
-// scroll track, code & pre background
-$colorCurrentLine: $color7;
-
-// slider track
-$colorComment: $color8;
+// scroll track
+$colorCurrentLine: $color4;
 $colorSliderButton: $color2;
-$colorSliderButtonHover: $color1;
+$colorSliderButtonHover: $color3;
+
+// code & pre background
+$colorComment: $color4;
 
 // titlebar
 $colorTitlebar: $color7;
 
 // titlebar text
-$colorTitlebarText: $color8;
-$colorTitlebarTextAlt: $color6;
+$colorTitlebarText: $color7;
+$colorTitlebarTextAlt: $color7;
 
 // titlebar close
-$colorDanger: $color9;
+$colorDanger: $color2;
 
 // titlebar close icon
-$colorWhite: $color10;
+$colorWhite: $color0;
 
 // toolbar
-$colorToolbarPrimary: $color8;
+$colorToolbarPrimary: $color7;
 $colorToolbarSecondary: $color2;
 
 // Drawer colors
-$colorIconPrimary: $color8;
+$colorIconPrimary: $color7;
 $colorIconSecondary: $color2;
 $colorIconTertiary: $color0;
 

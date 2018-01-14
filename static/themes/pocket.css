@@ -1,6 +1,6 @@
 body {
-  background-color: #282a36;
-  color: #bd93f9;
+  background-color: #263040;
+  color: #FEF1E9;
 }
 
 /* Custom scroll bar */
@@ -9,36 +9,36 @@ div::-webkit-scrollbar {
 }
 
 div::-webkit-scrollbar-track {
-  background-color: #44475a;
+  background-color: #8fa1bf;
 }
 
 div::-webkit-scrollbar-thumb {
-  background-color: #bd93f9;
+  background-color: #e05753;
 }
 
 .Button--block--field {
-  background-color: #282a36;
-  color: #bd93f9;
+  background-color: #263040;
+  color: #FEF1E9;
 }
 
 .Button--block--field:hover {
-  color: #50fa7b;
+  color: #e05753;
 }
 
 .Button--block--field:disabled {
-  color: #44475a;
+  color: #8fa1bf;
 }
 
 .Button--transparent {
-  color: #44475a;
+  color: #8fa1bf;
 }
 
 .Button--transparent:hover {
-  color: #50fa7b;
+  color: #e05753;
 }
 
 .Button--transparent.is-selected {
-  color: #50fa7b;
+  color: #e05753;
 }
 
 .Checkbox {
@@ -53,96 +53,96 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Checkbox.is-active {
-  background-color: #50fa7b;
-  border-color: #50fa7b;
+  background-color: #e05753;
+  border-color: #e05753;
 }
 
 .Checkbox.is-active:hover {
-  background-color: #2f313e;
-  border-color: #bd93f9;
+  background-color: #364358;
+  border-color: #FEF1E9;
 }
 
 .Checkbox.is-inactive {
-  background: #2f313e;
-  border: 2px solid #bd93f9;
+  background: #364358;
+  border: 2px solid #FEF1E9;
 }
 
 .Checkbox.is-inactive:hover {
-  background-color: #50fa7b;
-  border-color: #50fa7b;
+  background-color: #e05753;
+  border-color: #e05753;
 }
 
 .Drawer {
-  background-color: #282a36;
+  background-color: #263040;
 }
 
 .Drawer-title {
-  color: #50fa7b;
+  color: #e05753;
 }
 
 .Icon-wrapper {
-  color: #44475a;
+  color: #8fa1bf;
 }
 
 .Icon-wrapper:hover {
-  color: #50fa7b;
+  color: #e05753;
 }
 
 .Icon-wrapper--circle {
-  background-color: #44475a;
+  background-color: #8fa1bf;
 }
 
 .Icon-wrapper--circle:hover {
-  background-color: #50fa7b;
+  background-color: #e05753;
 }
 
 .Icon--files.is-selected .Icon--files-primary {
-  fill: #50fa7b;
-  stroke: #44475a;
+  fill: #e05753;
+  stroke: #8fa1bf;
 }
 
 .Icon--files:hover .Icon--files-primary {
-  stroke: #50fa7b;
+  stroke: #e05753;
 }
 
 .Icon--files-primary {
-  fill: #282a36;
-  stroke: #44475a;
+  fill: #263040;
+  stroke: #8fa1bf;
   transition: all .3s ease;
 }
 
 .Icon--files-secondary {
-  fill: #282a36;
-  stroke: #44475a;
+  fill: #263040;
+  stroke: #8fa1bf;
 }
 
 .Icon--new line {
-  stroke: #2f313e;
+  stroke: #364358;
   transition: all .3s ease;
 }
 
 .Icon--new:hover line {
-  stroke: #2f313e;
+  stroke: #364358;
 }
 
 .Icon--slider line {
-  stroke: #44475a;
+  stroke: #8fa1bf;
 }
 
 .Icon--slider circle {
-  fill: #2f313e;
-  stroke: #44475a;
+  fill: #364358;
+  stroke: #8fa1bf;
   transition: all .3s ease;
 }
 
 .Icon--slider.is-selected circle,
 .Icon--slider:hover circle {
-  fill: #50fa7b;
+  fill: #e05753;
 }
 
 .ql-editor blockquote {
-  border-left: 3px solid #50fa7b;
-  color: #bd93f9;
+  border-left: 3px solid #e05753;
+  color: #FEF1E9;
   font-style: italic;
   margin: 2em 0 0 0;
   padding: 0 0 0 2em;
@@ -170,27 +170,27 @@ div::-webkit-scrollbar-thumb {
 }
 
 .ql-editor h1 {
-  color: #50fa7b;
+  color: #e05753;
 }
 
 .ql-editor h2 {
-  color: #8be9fd;
+  color: #EED179;
 }
 
 .ql-editor h3, h4, h5, h6 {
-  color: #6272a4;
+  color: #8fa1bf;
 }
 
 .ql-editor p {
-  color: #bd93f9;
+  color: #FEF1E9;
   font-weight: 400;
 }
 
 .ql-editor code,
 pre {
-  background-color: #2f313e;
+  background-color: #364358;
   border-radius: 2px;
-  color: #8be9fd;
+  color: #E9C9CA;
 }
 
 .ql-editor code {
@@ -219,19 +219,19 @@ pre {
 }
 
 .Modal-dialog {
-  background-color: #2f313e;
+  background-color: #364358;
 }
 
 .Modal-filename-wrapper {
-  background-color: #2f313e;
+  background-color: #364358;
 }
 
 .Modal-title {
-  color: #8be9fd;
+  color: #EED179;
 }
 
 .RadioButton {
-  border: 2px solid #bd93f9;
+  border: 2px solid #FEF1E9;
   border-radius: 50%;
   display: inline-block;
   margin: 4px 1em 0 0;
@@ -244,7 +244,7 @@ pre {
 }
 
 .Section {
-  background-color: #2f313e;
+  background-color: #364358;
   border-radius: 3px;
   margin: 1em 0 0 0;
   padding-top: 1em;
@@ -256,45 +256,45 @@ pre {
 }
 
 .Section-codeBlock {
-  background-color: #282a36;
-  color: #50fa7b;
+  background-color: #263040;
+  color: #e05753;
 }
 
 .Section-imagePreview-icon {
-  background-color: #44475a;
-  color: #50fa7b;
+  background-color: #8fa1bf;
+  color: #e05753;
 }
 
 .Section-subtitle {
-  color: #8be9fd;
+  color: #EED179;
 }
 
 .Section-title {
-  color: #8be9fd;
+  color: #EED179;
 }
 
 .Settings-contextMenu {
-  background-color: #282a36;
+  background-color: #263040;
 }
 
 .Settings-contextMenu-list-item:hover {
-  color: #50fa7b;
+  color: #e05753;
 }
 
 .Settings-list-item:hover {
-  background-color: #44475a;
+  background-color: #8fa1bf;
 }
 
 .Settings-list-item.is-active {
-  background-color: #44475a;
-  border-color: #50fa7b;
+  background-color: #8fa1bf;
+  border-color: #e05753;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 .Settings-list-item.is-active .RadioButton {
-  background-color: #50fa7b;
-  border-color: #50fa7b;
+  background-color: #e05753;
+  border-color: #e05753;
 }
 
 .Slider {
@@ -309,14 +309,14 @@ pre {
 }
 
 .Slider::-webkit-slider-runnable-track {
-  background-color: #44475a;
+  background-color: #8fa1bf;
   width: 100%;
   height: 3px;
 }
 
 .Slider::-webkit-slider-thumb {
-  background-color: #50fa7b;
-  border: 2px solid #50fa7b;
+  background-color: #e05753;
+  border: 2px solid #e05753;
   border-radius: 50%;
   margin-top: -7px;
   transition: all .3s ease;
@@ -326,12 +326,12 @@ pre {
 }
 
 .Slider::-webkit-slider-thumb:hover, .Slider::-webkit-slider-thumb:active {
-  background-color: #ffb86c;
-  border-color: #ffb86c;
+  background-color: #EED179;
+  border-color: #EED179;
 }
 
 .Slider-label-list {
-  color: #bd93f9;
+  color: #FEF1E9;
   display: flex;
   font-size: .5rem;
   justify-content: space-between;
@@ -341,24 +341,24 @@ pre {
 }
 
 .TextInput {
-  background-color: #2f313e;
+  background-color: #364358;
   border: 0;
-  border-bottom: 2px solid #bd93f9;
-  color: #50fa7b;
+  border-bottom: 2px solid #FEF1E9;
+  color: #e05753;
   outline: 0;
 }
 
 .Titlebar {
-  background: #2f313e;
+  background: #364358;
 }
 
 .Titlebar-section-icon {
-  fill: #6272a4;
+  fill: #212a38;
 }
 
 .Titlebar-section-icon:hover {
-  background-color: #44475a;
-  fill: #6272a4;
+  background-color: #8fa1bf;
+  fill: #212a38;
 }
 
 .Titlebar-section-icon--danger:hover {
@@ -367,5 +367,5 @@ pre {
 }
 
 .Titlebar-section--title {
-  color: #6272a4;
+  color: #212a38;
 }

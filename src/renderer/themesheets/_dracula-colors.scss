@@ -30,9 +30,6 @@ $colorHeading2: $color4;
 // h3-h5
 $colorHeading3: $color7;
 
-// button hover
-$colorHighlight: $color3;
-
 // code, pre
 $colorCode: $color4;
 
@@ -42,6 +39,8 @@ $colorScrollTrack: $color6;
 
 // scroll track
 $colorCurrentLine: $color5;
+$colorSliderButton: $color2;
+$colorSliderButtonHover: $color3;
 
 // code & pre background
 $colorComment: $color6;
@@ -67,6 +66,8 @@ $colorToolbarSecondary: $color2;
 $colorIconPrimary: $color6;
 $colorIconSecondary: $color2;
 $colorIconTertiary: $color5;
+
 $colorSectionBg: $color5;
+$colorSectionCodeBlock: $color2;
 $colorSectionCodeBlockBg: $color0;
 $colorSettingsListItemActive: $color6;

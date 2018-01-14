@@ -1,13 +1,13 @@
-$color0: #2C292D;
-$color1: #dad2c6;
-$color2: #FFD866;
-$color3: #78DCE8;
-$color4: #fc9867;
-$color5: #211F22;
-$color6: #3E3B3F;
-$color7: #9a959c;
-$color8: #FF6188;
-$color9: #FDF9F3;
+$color0: #2d3748;
+$color1: #EAF2F4;
+$color2: #61ffab;
+$color3: #65f3ef;
+$color4: #354258;
+$color5: #BA68C8;
+$color6: #283140;
+$color7: #516280;
+$color8: #ff5555;
+$color9: #f8f8f2;
 
 // field
 $colorBackground: $color0;
@@ -16,7 +16,7 @@ $colorBackground: $color0;
 $colorBody: $color1;
 
 // primary text selection
-$colorBodySelection: rgba(33, 31, 34, 0.99);
+$colorBodySelection: rgba(68, 71, 90, .99);
 
 // selection text color
 $colorSelection: $color1;
@@ -28,22 +28,22 @@ $colorHeading1: $color2;
 $colorHeading2: $color3;
 
 // h3-h5
-$colorHeading3: $color4;
+$colorHeading3: $color7;
 
 // code, pre
-$colorCode: $color3;
+$colorCode: $color5;
 
 // scrollbar
 $colorScrollThumb: $color2;
-$colorScrollTrack: $color6;
+$colorScrollTrack: $color7;
 
-// scroll track, slider track
-$colorComment: $color5;
+// scroll track
+$colorCurrentLine: $color4;
 $colorSliderButton: $color2;
-$colorSliderButtonHover: $color4;
+$colorSliderButtonHover: $color3;
 
-// code & pre background, section background
-$colorCurrentLine: $color6;
+// code & pre background
+$colorComment: $color4;
 
 // titlebar
 $colorTitlebar: $color6;
@@ -59,15 +59,15 @@ $colorDanger: $color8;
 $colorWhite: $color9;
 
 // toolbar
-$colorToolbarPrimary: $color6;
+$colorToolbarPrimary: $color7;
 $colorToolbarSecondary: $color2;
 
 // Drawer colors
-$colorIconPrimary: $color6;
+$colorIconPrimary: $color7;
 $colorIconSecondary: $color2;
 $colorIconTertiary: $color0;
 
-$colorSectionBg: $color6;
+$colorSectionBg: $color4;
 $colorSectionCodeBlock: $color2;
 $colorSectionCodeBlockBg: $color0;
-$colorSettingsListItemActive: $color0;
+$colorSettingsListItemActive: $color6;

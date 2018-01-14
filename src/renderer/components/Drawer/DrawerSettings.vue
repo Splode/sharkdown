@@ -135,8 +135,11 @@ export default {
         'dracula',
         'D.Va',
         'oneDark',
+        'phospho',
+        'pocket',
         'monokai',
-        'github'
+        'github',
+        'winter-berry'
       ]
     }
   },

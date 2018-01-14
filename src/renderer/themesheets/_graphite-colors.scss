@@ -31,9 +31,6 @@ $colorHeading2: #424242;
 // h3-h5
 $colorHeading3: #424242;
 
-// button hover
-$colorHighlight: #9e9e9e;
-
 // code, pre
 $colorCode: #757575;
 
@@ -46,6 +43,8 @@ $colorCurrentLine: #eeeeee;
 
 // slider track, 
 $colorComment: #bdbdbd;
+$colorSliderButton: $color2;
+$colorSliderButtonHover: #9e9e9e;
 
 // titlebar
 $colorTitlebar: #eeeeee;
@@ -61,13 +60,15 @@ $colorDanger: #e57373;
 $colorWhite: #fafafa;
 
 // toolbar
-$colorToolbarPrimary: $color8;
+$colorToolbarPrimary: $color7;
 $colorToolbarSecondary: $color2;
 
 // Drawer colors
 $colorIconPrimary: $color7;
 $colorIconSecondary: $color2;
 $colorIconTertiary: $color6;
+
 $colorSectionBg: $color8;
+$colorSectionCodeBlock: $color1;
 $colorSectionCodeBlockBg: #fafafa;
 $colorSettingsListItemActive: $color0;

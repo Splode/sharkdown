@@ -1,6 +1,6 @@
 body {
-  background-color: #282a36;
-  color: #bd93f9;
+  background-color: #F6F5F1;
+  color: #28272C;
 }
 
 /* Custom scroll bar */
@@ -9,36 +9,36 @@ div::-webkit-scrollbar {
 }
 
 div::-webkit-scrollbar-track {
-  background-color: #44475a;
+  background-color: #e4e2db;
 }
 
 div::-webkit-scrollbar-thumb {
-  background-color: #bd93f9;
+  background-color: #A54040;
 }
 
 .Button--block--field {
-  background-color: #282a36;
-  color: #bd93f9;
+  background-color: #F6F5F1;
+  color: #28272C;
 }
 
 .Button--block--field:hover {
-  color: #50fa7b;
+  color: #A54040;
 }
 
 .Button--block--field:disabled {
-  color: #44475a;
+  color: #7d736e;
 }
 
 .Button--transparent {
-  color: #44475a;
+  color: #e4e2db;
 }
 
 .Button--transparent:hover {
-  color: #50fa7b;
+  color: #A54040;
 }
 
 .Button--transparent.is-selected {
-  color: #50fa7b;
+  color: #A54040;
 }
 
 .Checkbox {
@@ -53,96 +53,96 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Checkbox.is-active {
-  background-color: #50fa7b;
-  border-color: #50fa7b;
+  background-color: #A54040;
+  border-color: #A54040;
 }
 
 .Checkbox.is-active:hover {
-  background-color: #2f313e;
-  border-color: #bd93f9;
+  background-color: #7d736e;
+  border-color: #28272C;
 }
 
 .Checkbox.is-inactive {
-  background: #2f313e;
-  border: 2px solid #bd93f9;
+  background: #7d736e;
+  border: 2px solid #28272C;
 }
 
 .Checkbox.is-inactive:hover {
-  background-color: #50fa7b;
-  border-color: #50fa7b;
+  background-color: #A54040;
+  border-color: #A54040;
 }
 
 .Drawer {
-  background-color: #282a36;
+  background-color: #F6F5F1;
 }
 
 .Drawer-title {
-  color: #50fa7b;
+  color: #A54040;
 }
 
 .Icon-wrapper {
-  color: #44475a;
+  color: #e4e2db;
 }
 
 .Icon-wrapper:hover {
-  color: #50fa7b;
+  color: #A54040;
 }
 
 .Icon-wrapper--circle {
-  background-color: #44475a;
+  background-color: #e4e2db;
 }
 
 .Icon-wrapper--circle:hover {
-  background-color: #50fa7b;
+  background-color: #A54040;
 }
 
 .Icon--files.is-selected .Icon--files-primary {
-  fill: #50fa7b;
-  stroke: #44475a;
+  fill: #A54040;
+  stroke: #e4e2db;
 }
 
 .Icon--files:hover .Icon--files-primary {
-  stroke: #50fa7b;
+  stroke: #A54040;
 }
 
 .Icon--files-primary {
-  fill: #282a36;
-  stroke: #44475a;
+  fill: #F6F5F1;
+  stroke: #e4e2db;
   transition: all .3s ease;
 }
 
 .Icon--files-secondary {
-  fill: #282a36;
-  stroke: #44475a;
+  fill: #F6F5F1;
+  stroke: #e4e2db;
 }
 
 .Icon--new line {
-  stroke: #2f313e;
+  stroke: #F6F5F1;
   transition: all .3s ease;
 }
 
 .Icon--new:hover line {
-  stroke: #2f313e;
+  stroke: #F6F5F1;
 }
 
 .Icon--slider line {
-  stroke: #44475a;
+  stroke: #e4e2db;
 }
 
 .Icon--slider circle {
-  fill: #2f313e;
-  stroke: #44475a;
+  fill: #F6F5F1;
+  stroke: #e4e2db;
   transition: all .3s ease;
 }
 
 .Icon--slider.is-selected circle,
 .Icon--slider:hover circle {
-  fill: #50fa7b;
+  fill: #A54040;
 }
 
 .ql-editor blockquote {
-  border-left: 3px solid #50fa7b;
-  color: #bd93f9;
+  border-left: 3px solid #A54040;
+  color: #28272C;
   font-style: italic;
   margin: 2em 0 0 0;
   padding: 0 0 0 2em;
@@ -170,27 +170,27 @@ div::-webkit-scrollbar-thumb {
 }
 
 .ql-editor h1 {
-  color: #50fa7b;
+  color: #A54040;
 }
 
 .ql-editor h2 {
-  color: #8be9fd;
+  color: #582D32;
 }
 
 .ql-editor h3, h4, h5, h6 {
-  color: #6272a4;
+  color: #e4e2db;
 }
 
 .ql-editor p {
-  color: #bd93f9;
+  color: #28272C;
   font-weight: 400;
 }
 
 .ql-editor code,
 pre {
-  background-color: #2f313e;
+  background-color: #7d736e;
   border-radius: 2px;
-  color: #8be9fd;
+  color: #EAE7E7;
 }
 
 .ql-editor code {
@@ -219,19 +219,19 @@ pre {
 }
 
 .Modal-dialog {
-  background-color: #2f313e;
+  background-color: #7d736e;
 }
 
 .Modal-filename-wrapper {
-  background-color: #2f313e;
+  background-color: #7d736e;
 }
 
 .Modal-title {
-  color: #8be9fd;
+  color: #582D32;
 }
 
 .RadioButton {
-  border: 2px solid #bd93f9;
+  border: 2px solid #28272C;
   border-radius: 50%;
   display: inline-block;
   margin: 4px 1em 0 0;
@@ -244,7 +244,7 @@ pre {
 }
 
 .Section {
-  background-color: #2f313e;
+  background-color: #e4e2db;
   border-radius: 3px;
   margin: 1em 0 0 0;
   padding-top: 1em;
@@ -256,45 +256,45 @@ pre {
 }
 
 .Section-codeBlock {
-  background-color: #282a36;
-  color: #50fa7b;
+  background-color: #F6F5F1;
+  color: #A54040;
 }
 
 .Section-imagePreview-icon {
-  background-color: #44475a;
-  color: #50fa7b;
+  background-color: #7d736e;
+  color: #A54040;
 }
 
 .Section-subtitle {
-  color: #8be9fd;
+  color: #582D32;
 }
 
 .Section-title {
-  color: #8be9fd;
+  color: #582D32;
 }
 
 .Settings-contextMenu {
-  background-color: #282a36;
+  background-color: #F6F5F1;
 }
 
 .Settings-contextMenu-list-item:hover {
-  color: #50fa7b;
+  color: #A54040;
 }
 
 .Settings-list-item:hover {
-  background-color: #44475a;
+  background-color: #F6F5F1;
 }
 
 .Settings-list-item.is-active {
-  background-color: #44475a;
-  border-color: #50fa7b;
+  background-color: #F6F5F1;
+  border-color: #A54040;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 .Settings-list-item.is-active .RadioButton {
-  background-color: #50fa7b;
-  border-color: #50fa7b;
+  background-color: #A54040;
+  border-color: #A54040;
 }
 
 .Slider {
@@ -309,14 +309,14 @@ pre {
 }
 
 .Slider::-webkit-slider-runnable-track {
-  background-color: #44475a;
+  background-color: #7d736e;
   width: 100%;
   height: 3px;
 }
 
 .Slider::-webkit-slider-thumb {
-  background-color: #50fa7b;
-  border: 2px solid #50fa7b;
+  background-color: #A54040;
+  border: 2px solid #A54040;
   border-radius: 50%;
   margin-top: -7px;
   transition: all .3s ease;
@@ -326,12 +326,12 @@ pre {
 }
 
 .Slider::-webkit-slider-thumb:hover, .Slider::-webkit-slider-thumb:active {
-  background-color: #ffb86c;
-  border-color: #ffb86c;
+  background-color: #582D32;
+  border-color: #582D32;
 }
 
 .Slider-label-list {
-  color: #bd93f9;
+  color: #28272C;
   display: flex;
   font-size: .5rem;
   justify-content: space-between;
@@ -341,31 +341,31 @@ pre {
 }
 
 .TextInput {
-  background-color: #2f313e;
+  background-color: #7d736e;
   border: 0;
-  border-bottom: 2px solid #bd93f9;
-  color: #50fa7b;
+  border-bottom: 2px solid #28272C;
+  color: #A54040;
   outline: 0;
 }
 
 .Titlebar {
-  background: #2f313e;
+  background: #e4e2db;
 }
 
 .Titlebar-section-icon {
-  fill: #6272a4;
+  fill: #e4e2db;
 }
 
 .Titlebar-section-icon:hover {
-  background-color: #44475a;
-  fill: #6272a4;
+  background-color: #7d736e;
+  fill: #e4e2db;
 }
 
 .Titlebar-section-icon--danger:hover {
-  background-color: #ff5555;
-  fill: #f8f8f2;
+  background-color: #A54040;
+  fill: #F6F5F1;
 }
 
 .Titlebar-section--title {
-  color: #6272a4;
+  color: #e4e2db;
 }

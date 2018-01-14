@@ -30,7 +30,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Button--transparent {
-  color: #eee;
+  color: #bdbdbd;
 }
 
 .Button--transparent:hover {
@@ -54,7 +54,12 @@ div::-webkit-scrollbar-thumb {
 
 .Checkbox.is-active {
   background-color: #424242;
-  border-color: #bdbdbd;
+  border-color: #424242;
+}
+
+.Checkbox.is-active:hover {
+  background-color: #eeeeee;
+  border-color: #212121;
 }
 
 .Checkbox.is-inactive {
@@ -63,7 +68,8 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Checkbox.is-inactive:hover {
-  background-color: #bdbdbd;
+  background-color: #424242;
+  border-color: #424242;
 }
 
 .Drawer {
@@ -251,6 +257,7 @@ pre {
 
 .Section-codeBlock {
   background-color: #fafafa;
+  color: #212121;
 }
 
 .Section-imagePreview-icon {

@@ -1,13 +1,13 @@
-$color0: #fff;
-$color1: #24292e;
-$color2: #0366d6;
-$color3: #6f42c1;
-$color4: #ffb86c;
-$color5: #f6f8fa;
-$color6: #C8C9CB;
-$color7: #dae0e5;
-$color8: #2f313e;
-$color9: #cb2431;
+$color0: #263040;
+$color1: #FEF1E9;
+$color2: #e05753;
+$color3: #EED179;
+$color4: #E9C9CA;
+$color5: #364358;
+$color6: #8fa1bf;
+$color7: #212a38;
+$color8: #ff5555;
+$color9: #f8f8f2;
 
 // field
 $colorBackground: $color0;
@@ -16,10 +16,10 @@ $colorBackground: $color0;
 $colorBody: $color1;
 
 // primary text selection
-$colorBodySelection: rgba(218, 224, 229, .99);
+$colorBodySelection: rgba(68, 71, 90, .99);
 
 // selection text color
-$colorSelection: $color0;
+$colorSelection: $color1;
 
 // h1
 $colorHeading1: $color2;
@@ -28,35 +28,35 @@ $colorHeading1: $color2;
 $colorHeading2: $color3;
 
 // h3-h5
-$colorHeading3: $color1;
+$colorHeading3: $color6;
 
 // code, pre
-$colorCode: $color3;
+$colorCode: $color4;
 
 // scrollbar
 $colorScrollThumb: $color2;
 $colorScrollTrack: $color6;
 
-// scroll track, code & pre background
-$colorCurrentLine: $color6;
-
-// slider track
-$colorComment: $color7;
+// scroll track
+$colorCurrentLine: $color5;
 $colorSliderButton: $color2;
-$colorSliderButtonHover: $color4;
+$colorSliderButtonHover: $color3;
+
+// code & pre background
+$colorComment: $color6;
 
 // titlebar
-$colorTitlebar: $color1;
+$colorTitlebar: $color5;
 
 // titlebar text
-$colorTitlebarText: $color6;
-$colorTitlebarTextAlt: $color8;
+$colorTitlebarText: $color7;
+$colorTitlebarTextAlt: $color7;
 
 // titlebar close
-$colorDanger: $color9;
+$colorDanger: $color8;
 
 // titlebar close icon
-$colorWhite: $color0;
+$colorWhite: $color9;
 
 // toolbar
 $colorToolbarPrimary: $color6;
@@ -65,9 +65,9 @@ $colorToolbarSecondary: $color2;
 // Drawer colors
 $colorIconPrimary: $color6;
 $colorIconSecondary: $color2;
-$colorIconTertiary: $color0;
+$colorIconTertiary: $color5;
 
 $colorSectionBg: $color5;
 $colorSectionCodeBlock: $color2;
 $colorSectionCodeBlockBg: $color0;
-$colorSettingsListItemActive: $color7;
+$colorSettingsListItemActive: $color6;

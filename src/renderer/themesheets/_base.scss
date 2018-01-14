@@ -51,15 +51,18 @@ div::-webkit-scrollbar-thumb {
   vertical-align: middle;
   &.is-active {
     background-color: $colorHeading1;
-    border-color: $colorComment; // &:hover {
-    //   background-color: $colorCurrentLine;
-    // }
+    border-color: $colorHeading1;  
+    &:hover {
+      background-color: $colorCurrentLine;
+      border-color: $colorBody;
+    }
   }
   &.is-inactive {
     background: $colorCurrentLine;
     border: 2px solid $colorBody;
     &:hover {
-      background-color: $colorComment;
+      background-color: $colorHeading1;
+      border-color: $colorHeading1;
     }
   }
 }
@@ -255,6 +258,7 @@ pre {
 
 .Section-codeBlock {
   background-color: $colorSectionCodeBlockBg;
+  color: $colorSectionCodeBlock;
 }
 
 .Section-imagePreview-icon {
@@ -310,8 +314,10 @@ pre {
     height: 3px;
   }
   &::-webkit-slider-thumb {
-    background-color: $colorHeading1;
-    border: 2px solid $colorHeading1;
+    // background-color: $colorHeading1;
+    // border: 2px solid $colorHeading1;
+    background-color: $colorSliderButton;
+    border: 2px solid $colorSliderButton;
     border-radius: 50%;
     margin-top: -7px;
     transition: all .3s ease;
@@ -320,8 +326,8 @@ pre {
     -webkit-appearance: none;
     &:hover,
     &:active {
-      background-color: $colorHighlight;
-      border-color: $colorHighlight;
+      background-color: $colorSliderButtonHover;
+      border-color: $colorSliderButtonHover;
     }
   }
 }

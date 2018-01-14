@@ -1,6 +1,6 @@
 body {
   background-color: #212121;
-  color: #9e9e9e;
+  color: #bdbdbd;
 }
 
 /* Custom scroll bar */
@@ -18,7 +18,7 @@ div::-webkit-scrollbar-thumb {
 
 .Button--block--field {
   background-color: #212121;
-  color: #9e9e9e;
+  color: #bdbdbd;
 }
 
 .Button--block--field:hover {
@@ -30,7 +30,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Button--transparent {
-  color: #fafafa;
+  color: #424242;
 }
 
 .Button--transparent:hover {
@@ -54,16 +54,22 @@ div::-webkit-scrollbar-thumb {
 
 .Checkbox.is-active {
   background-color: #eee;
+  border-color: #eee;
+}
+
+.Checkbox.is-active:hover {
+  background-color: #292929;
   border-color: #bdbdbd;
 }
 
 .Checkbox.is-inactive {
   background: #292929;
-  border: 2px solid #9e9e9e;
+  border: 2px solid #bdbdbd;
 }
 
 .Checkbox.is-inactive:hover {
-  background-color: #bdbdbd;
+  background-color: #eee;
+  border-color: #eee;
 }
 
 .Drawer {
@@ -75,7 +81,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper {
-  color: #e57373;
+  color: #424242;
 }
 
 .Icon-wrapper:hover {
@@ -83,7 +89,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper--circle {
-  background-color: #e57373;
+  background-color: #424242;
 }
 
 .Icon-wrapper--circle:hover {
@@ -92,7 +98,7 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files.is-selected .Icon--files-primary {
   fill: #eee;
-  stroke: #e57373;
+  stroke: #424242;
 }
 
 .Icon--files:hover .Icon--files-primary {
@@ -101,31 +107,31 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files-primary {
   fill: #212121;
-  stroke: #e57373;
+  stroke: #424242;
   transition: all .3s ease;
 }
 
 .Icon--files-secondary {
   fill: #212121;
-  stroke: #e57373;
+  stroke: #424242;
 }
 
 .Icon--new line {
-  stroke: #424242;
+  stroke: #212121;
   transition: all .3s ease;
 }
 
 .Icon--new:hover line {
-  stroke: #424242;
+  stroke: #212121;
 }
 
 .Icon--slider line {
-  stroke: #e57373;
+  stroke: #424242;
 }
 
 .Icon--slider circle {
-  fill: #424242;
-  stroke: #e57373;
+  fill: #212121;
+  stroke: #424242;
   transition: all .3s ease;
 }
 
@@ -136,7 +142,7 @@ div::-webkit-scrollbar-thumb {
 
 .ql-editor blockquote {
   border-left: 3px solid #eee;
-  color: #9e9e9e;
+  color: #bdbdbd;
   font-style: italic;
   margin: 2em 0 0 0;
   padding: 0 0 0 2em;
@@ -172,11 +178,11 @@ div::-webkit-scrollbar-thumb {
 }
 
 .ql-editor h3, h4, h5, h6 {
-  color: #424242;
+  color: #616161;
 }
 
 .ql-editor p {
-  color: #9e9e9e;
+  color: #bdbdbd;
   font-weight: 400;
 }
 
@@ -225,7 +231,7 @@ pre {
 }
 
 .RadioButton {
-  border: 2px solid #9e9e9e;
+  border: 2px solid #bdbdbd;
   border-radius: 50%;
   display: inline-block;
   margin: 4px 1em 0 0;
@@ -251,6 +257,7 @@ pre {
 
 .Section-codeBlock {
   background-color: #212121;
+  color: #bdbdbd;
 }
 
 .Section-imagePreview-icon {
@@ -324,7 +331,7 @@ pre {
 }
 
 .Slider-label-list {
-  color: #9e9e9e;
+  color: #bdbdbd;
   display: flex;
   font-size: .5rem;
   justify-content: space-between;
@@ -336,7 +343,7 @@ pre {
 .TextInput {
   background-color: #292929;
   border: 0;
-  border-bottom: 2px solid #9e9e9e;
+  border-bottom: 2px solid #bdbdbd;
   color: #eee;
   outline: 0;
 }
@@ -346,12 +353,12 @@ pre {
 }
 
 .Titlebar-section-icon {
-  fill: #424242;
+  fill: #616161;
 }
 
 .Titlebar-section-icon:hover {
   background-color: #bdbdbd;
-  fill: #424242;
+  fill: #616161;
 }
 
 .Titlebar-section-icon--danger:hover {
@@ -360,5 +367,5 @@ pre {
 }
 
 .Titlebar-section--title {
-  color: #424242;
+  color: #616161;
 }

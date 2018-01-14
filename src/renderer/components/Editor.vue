@@ -311,7 +311,7 @@ export default {
   },
 
   created () {
-    EventBus.$on('loadDoc', (file) => {
+    EventBus.$on('loadDoc', file => {
       this.load(file)
     })
     EventBus.$on('new-doc-init', () => {
@@ -327,7 +327,7 @@ export default {
       this.quill.setText('')
       ipcRenderer.send('title-change', this.settings.currentDoc)
     })
-    EventBus.$on('request-editor-data', (type) => {
+    EventBus.$on('request-editor-data', type => {
       let data
       let response = {
         data: null,

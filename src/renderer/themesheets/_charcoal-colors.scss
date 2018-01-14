@@ -6,14 +6,14 @@ $color4: #292929;
 $color5: #bdbdbd;
 $color6: #424242;
 $color7: #e57373;
-$color8: #fafafa;
+$color8: #616161;
 // $color9: ;
 
 // field
-$colorBackground: #212121;
+$colorBackground: $color0;
 
 // primary text, blockquote text
-$colorBody: #9e9e9e;
+$colorBody: $color5;
 
 // primary text selection
 $colorBodySelection: rgba(66, 66, 66, .99);
@@ -28,10 +28,7 @@ $colorHeading1: $color2;
 $colorHeading2: $color1;
 
 // h3-h5
-$colorHeading3: $color6;
-
-// button hover
-$colorHighlight: #9e9e9e;
+$colorHeading3: $color8;
 
 // code, pre
 $colorCode: #737373;
@@ -45,13 +42,15 @@ $colorCurrentLine: #292929;
 
 // slider track
 $colorComment: #bdbdbd;
+$colorSliderButton: $color2;
+$colorSliderButtonHover: #9e9e9e;
 
 // titlebar
 $colorTitlebar: #292929;
 
 // titlebar text
-$colorTitlebarText: $color6;
-$colorTitlebarTextAlt: $color6;
+$colorTitlebarText: $color8;
+$colorTitlebarTextAlt: $color8;
 
 // titlebar close
 $colorDanger: #e57373;
@@ -60,13 +59,15 @@ $colorDanger: #e57373;
 $colorWhite: #fafafa;
 
 // toolbar
-$colorToolbarPrimary: $color8;
+$colorToolbarPrimary: $color6;
 $colorToolbarSecondary: $color2;
 
 // Drawer colors
-$colorIconPrimary: $color7;
+$colorIconPrimary: $color6;
 $colorIconSecondary: $color2;
-$colorIconTertiary: $color6;
+$colorIconTertiary: $color0;
+
 $colorSectionBg: $color4;
+$colorSectionCodeBlock: $color5;
 $colorSectionCodeBlockBg: $color0;
 $colorSettingsListItemActive: $color0;
