@@ -7,7 +7,7 @@ $color5: #364358;
 $color6: #8fa1bf;
 $color7: #212a38;
 $color8: #ff5555;
-$color9: #f8f8f2;
+$color9: #475265;
 
 // field
 $colorBackground: $color0;
@@ -35,7 +35,7 @@ $colorCode: $color4;
 
 // scrollbar
 $colorScrollThumb: $color2;
-$colorScrollTrack: $color6;
+$colorScrollTrack: $color5;
 
 // scroll track
 $colorCurrentLine: $color5;
@@ -49,8 +49,8 @@ $colorComment: $color6;
 $colorTitlebar: $color5;
 
 // titlebar text
-$colorTitlebarText: $color7;
-$colorTitlebarTextAlt: $color7;
+$colorTitlebarText: $color6;
+$colorTitlebarTextAlt: $color6;
 
 // titlebar close
 $colorDanger: $color8;
@@ -59,15 +59,15 @@ $colorDanger: $color8;
 $colorWhite: $color9;
 
 // toolbar
-$colorToolbarPrimary: $color6;
+$colorToolbarPrimary: $color9;
 $colorToolbarSecondary: $color2;
 
 // Drawer colors
-$colorIconPrimary: $color6;
+$colorIconPrimary: $color9;
 $colorIconSecondary: $color2;
-$colorIconTertiary: $color5;
+$colorIconTertiary: $color0;
 
 $colorSectionBg: $color5;
 $colorSectionCodeBlock: $color2;
 $colorSectionCodeBlockBg: $color0;
-$colorSettingsListItemActive: $color6;
+$colorSettingsListItemActive: $color0;

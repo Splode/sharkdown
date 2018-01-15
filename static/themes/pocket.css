@@ -9,7 +9,7 @@ div::-webkit-scrollbar {
 }
 
 div::-webkit-scrollbar-track {
-  background-color: #8fa1bf;
+  background-color: #364358;
 }
 
 div::-webkit-scrollbar-thumb {
@@ -30,7 +30,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Button--transparent {
-  color: #8fa1bf;
+  color: #475265;
 }
 
 .Button--transparent:hover {
@@ -81,7 +81,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper {
-  color: #8fa1bf;
+  color: #475265;
 }
 
 .Icon-wrapper:hover {
@@ -89,7 +89,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper--circle {
-  background-color: #8fa1bf;
+  background-color: #475265;
 }
 
 .Icon-wrapper--circle:hover {
@@ -98,7 +98,7 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files.is-selected .Icon--files-primary {
   fill: #e05753;
-  stroke: #8fa1bf;
+  stroke: #475265;
 }
 
 .Icon--files:hover .Icon--files-primary {
@@ -107,31 +107,31 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files-primary {
   fill: #263040;
-  stroke: #8fa1bf;
+  stroke: #475265;
   transition: all .3s ease;
 }
 
 .Icon--files-secondary {
   fill: #263040;
-  stroke: #8fa1bf;
+  stroke: #475265;
 }
 
 .Icon--new line {
-  stroke: #364358;
+  stroke: #263040;
   transition: all .3s ease;
 }
 
 .Icon--new:hover line {
-  stroke: #364358;
+  stroke: #263040;
 }
 
 .Icon--slider line {
-  stroke: #8fa1bf;
+  stroke: #475265;
 }
 
 .Icon--slider circle {
-  fill: #364358;
-  stroke: #8fa1bf;
+  fill: #263040;
+  stroke: #475265;
   transition: all .3s ease;
 }
 
@@ -282,11 +282,11 @@ pre {
 }
 
 .Settings-list-item:hover {
-  background-color: #8fa1bf;
+  background-color: #263040;
 }
 
 .Settings-list-item.is-active {
-  background-color: #8fa1bf;
+  background-color: #263040;
   border-color: #e05753;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -353,19 +353,19 @@ pre {
 }
 
 .Titlebar-section-icon {
-  fill: #212a38;
+  fill: #8fa1bf;
 }
 
 .Titlebar-section-icon:hover {
   background-color: #8fa1bf;
-  fill: #212a38;
+  fill: #8fa1bf;
 }
 
 .Titlebar-section-icon--danger:hover {
   background-color: #ff5555;
-  fill: #f8f8f2;
+  fill: #475265;
 }
 
 .Titlebar-section--title {
-  color: #212a38;
+  color: #8fa1bf;
 }

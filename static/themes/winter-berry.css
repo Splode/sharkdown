@@ -30,7 +30,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Button--transparent {
-  color: #e4e2db;
+  color: #c3b6af;
 }
 
 .Button--transparent:hover {
@@ -81,7 +81,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper {
-  color: #e4e2db;
+  color: #c3b6af;
 }
 
 .Icon-wrapper:hover {
@@ -89,7 +89,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon-wrapper--circle {
-  background-color: #e4e2db;
+  background-color: #c3b6af;
 }
 
 .Icon-wrapper--circle:hover {
@@ -98,7 +98,7 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files.is-selected .Icon--files-primary {
   fill: #A54040;
-  stroke: #e4e2db;
+  stroke: #c3b6af;
 }
 
 .Icon--files:hover .Icon--files-primary {
@@ -107,13 +107,13 @@ div::-webkit-scrollbar-thumb {
 
 .Icon--files-primary {
   fill: #F6F5F1;
-  stroke: #e4e2db;
+  stroke: #c3b6af;
   transition: all .3s ease;
 }
 
 .Icon--files-secondary {
   fill: #F6F5F1;
-  stroke: #e4e2db;
+  stroke: #c3b6af;
 }
 
 .Icon--new line {
@@ -126,12 +126,12 @@ div::-webkit-scrollbar-thumb {
 }
 
 .Icon--slider line {
-  stroke: #e4e2db;
+  stroke: #c3b6af;
 }
 
 .Icon--slider circle {
   fill: #F6F5F1;
-  stroke: #e4e2db;
+  stroke: #c3b6af;
   transition: all .3s ease;
 }
 
@@ -178,7 +178,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .ql-editor h3, h4, h5, h6 {
-  color: #e4e2db;
+  color: #7d736e;
 }
 
 .ql-editor p {
@@ -214,7 +214,7 @@ pre {
 .ql-editor pre::selection,
 .ql-editor strong::selection,
 .ql-editor u::selection {
-  background: rgba(68, 71, 90, 0.99);
+  background: rgba(228, 226, 219, 0.99);
   opacity: 1;
 }
 
@@ -353,12 +353,12 @@ pre {
 }
 
 .Titlebar-section-icon {
-  fill: #e4e2db;
+  fill: #7d736e;
 }
 
 .Titlebar-section-icon:hover {
   background-color: #7d736e;
-  fill: #e4e2db;
+  fill: #7d736e;
 }
 
 .Titlebar-section-icon--danger:hover {
@@ -367,5 +367,5 @@ pre {
 }
 
 .Titlebar-section--title {
-  color: #e4e2db;
+  color: #7d736e;
 }

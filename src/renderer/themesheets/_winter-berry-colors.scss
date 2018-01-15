@@ -6,7 +6,7 @@ $color4: #7d736e;
 $color5: #EAE7E7;
 $color6: #887266;
 $color7: #e4e2db;
-// $color8: #ff5555;
+$color8: #c3b6af;
 // $color9: #f8f8f2;
 
 // field
@@ -16,7 +16,7 @@ $colorBackground: $color0;
 $colorBody: $color1;
 
 // primary text selection
-$colorBodySelection: rgba(68, 71, 90, .99);
+$colorBodySelection: rgba(228, 226, 219, .99);
 
 // selection text color
 $colorSelection: $color1;
@@ -28,7 +28,7 @@ $colorHeading1: $color2;
 $colorHeading2: $color3;
 
 // h3-h5
-$colorHeading3: $color7;
+$colorHeading3: $color4;
 
 // code, pre
 $colorCode: $color5;
@@ -49,8 +49,8 @@ $colorComment: $color4;
 $colorTitlebar: $color7;
 
 // titlebar text
-$colorTitlebarText: $color7;
-$colorTitlebarTextAlt: $color7;
+$colorTitlebarText: $color4;
+$colorTitlebarTextAlt: $color4;
 
 // titlebar close
 $colorDanger: $color2;
@@ -59,11 +59,11 @@ $colorDanger: $color2;
 $colorWhite: $color0;
 
 // toolbar
-$colorToolbarPrimary: $color7;
+$colorToolbarPrimary: $color8;
 $colorToolbarSecondary: $color2;
 
 // Drawer colors
-$colorIconPrimary: $color7;
+$colorIconPrimary: $color8;
 $colorIconSecondary: $color2;
 $colorIconTertiary: $color0;
 
