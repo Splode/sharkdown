@@ -1,0 +1,73 @@
+$color0: #F6F5F1;
+$color1: #28272C;
+$color2: #A54040;
+$color3: #582D32;
+$color4: #7d736e;
+$color5: #EAE7E7;
+$color6: #887266;
+$color7: #e4e2db;
+$color8: #c3b6af;
+// $color9: #f8f8f2;
+
+// field
+$colorBackground: $color0;
+
+// primary text, blockquote text
+$colorBody: $color1;
+
+// primary text selection
+$colorBodySelection: rgba(228, 226, 219, .99);
+
+// selection text color
+$colorSelection: $color1;
+
+// h1
+$colorHeading1: $color2;
+
+// h2
+$colorHeading2: $color3;
+
+// h3-h5
+$colorHeading3: $color4;
+
+// code, pre
+$colorCode: $color5;
+
+// scrollbar
+$colorScrollThumb: $color2;
+$colorScrollTrack: $color7;
+
+// scroll track
+$colorCurrentLine: $color4;
+$colorSliderButton: $color2;
+$colorSliderButtonHover: $color3;
+
+// code & pre background
+$colorComment: $color4;
+
+// titlebar
+$colorTitlebar: $color7;
+
+// titlebar text
+$colorTitlebarText: $color4;
+$colorTitlebarTextAlt: $color4;
+
+// titlebar close
+$colorDanger: $color2;
+
+// titlebar close icon
+$colorWhite: $color0;
+
+// toolbar
+$colorToolbarPrimary: $color8;
+$colorToolbarSecondary: $color2;
+
+// Drawer colors
+$colorIconPrimary: $color8;
+$colorIconSecondary: $color2;
+$colorIconTertiary: $color0;
+
+$colorSectionBg: $color7;
+$colorSectionCodeBlock: $color2;
+$colorSectionCodeBlockBg: $color0;
+$colorSettingsListItemActive: $color0;

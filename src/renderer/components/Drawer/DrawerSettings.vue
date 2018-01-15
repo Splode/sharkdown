@@ -127,19 +127,20 @@ export default {
         'Lora',
         'Open Sans',
         'Roboto',
-        'Roboto Condensed'
+        'Roboto Condensed',
+        'Source Sans Pro'
       ],
       themes: [
         'charcoal',
-        'graphite',
-        'dracula',
+        'craft',
         'D.Va',
-        'oneDark',
-        'phospho',
-        'pocket',
-        'monokai',
+        'dracula',
         'github',
-        'winter-berry'
+        'graphite',
+        'jelly',
+        'monokai',
+        'oneDark',
+        'pocket'
       ]
     }
   },
