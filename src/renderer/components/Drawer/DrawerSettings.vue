@@ -133,7 +133,7 @@ export default {
       themes: [
         'charcoal',
         'craft',
-        'D.Va',
+        'dva',
         'dracula',
         'github',
         'graphite',
