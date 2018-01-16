@@ -37,7 +37,6 @@ export default {
   z-index: 2;
   &.is-closed {
     animation: fade-out .3s ease forwards;
-    // width: 0;
   }
   &.is-open {
     animation: fade-in .3s ease forwards;
@@ -52,7 +51,7 @@ export default {
 @keyframes fade-in {
   0% {
     opacity: 0;
-    transform: translateX(-400px);
+    transform: translateX(-420px);
   }
   100% {
     opacity: 1;
@@ -67,7 +66,7 @@ export default {
   }
   100% {
     opacity: 0;
-    transform: translateX(-400px);
+    transform: translateX(-420px);
   }
 }
 </style>
