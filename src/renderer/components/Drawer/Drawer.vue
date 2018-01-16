@@ -37,15 +37,9 @@ export default {
   z-index: 2;
   &.is-closed {
     animation: fade-out .3s ease forwards;
-    width: 0;
-    // display: none;
-    // opacity: 0;
-    // transform: translateX(-100vw);
+    // width: 0;
   }
   &.is-open {
-    // border-right: 2px solid;
-    // opacity: 1;
-    // transform: translateX(0);
     animation: fade-in .3s ease forwards;
   }
 }
