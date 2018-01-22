@@ -8,6 +8,11 @@
 
 .ql-container {
   margin-top: 80px;
+  &.is-indented {
+    & p {
+      text-indent: 2em;
+    }
+  }
 }
 
 .ql-editor {

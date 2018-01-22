@@ -9,7 +9,7 @@
       <div 
         id="Quill"
         class="ql-container mx-auto"
-        :class="'col-' + settings.colWidth" 
+        :class="['col-' + settings.colWidth, editorClasses]" 
         :style="{
           'font-size': settings.fontSize + 'rem', 
           'line-height': settings.lineHeight,
@@ -138,6 +138,12 @@ export default {
 
     editorOps () {
       return this.quill.getContents()
+    },
+
+    editorClasses () {
+      return {
+        'is-indented': this.settings.indent
+      }
     },
 
     settings () {

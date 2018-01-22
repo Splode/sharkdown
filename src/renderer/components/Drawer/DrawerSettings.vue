@@ -34,6 +34,12 @@
             <label>Justify Text</label>
           </div>
 
+          <!-- paragraph indent -->
+          <div class="col-6 Section-option">
+            <div class="Checkbox" @click="toggleSetting('indent')" :class="settings.indent ? 'is-active' : 'is-inactive'"></div>
+            <label>Paragraph Indent</label>
+          </div>
+
         </div>
         <!-- font -->
         <h3 class="Section-subtitle">Font</h3>
