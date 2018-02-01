@@ -32,7 +32,7 @@
   },
   "build": {
     "productName": "Waldo",
-    "appId": "org.simulatedgreg.electron-vue",
+    "appId": "com.splode.waldo",
     "directories": {
       "output": "build"
     },
